@@ -25,11 +25,6 @@
     "format": "prettier --write .",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "**/*": [
-      "prettier --write --ignore-unknown"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
