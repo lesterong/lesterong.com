@@ -1,18 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container mx-auto flex h-screen justify-center">
+      <div className="my-auto">
+        <h1 className="text-center"> Hello there. </h1>
         <p>
-          Edit
-          <code> src/App.tsx </code>
-          and save to reload.
+          This site is under construction! Visit&nbsp;
+          <a href="https://lesterong.com">lesterong.com</a>
+          &nbsp;instead.
         </p>
-      </header>
+      </div>
     </div>
   );
 };
