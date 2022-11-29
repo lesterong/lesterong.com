@@ -6,10 +6,12 @@ import Bgcolors from './types/Bgcolors';
 
 const App = () => {
   return (
-    <Section color={Bgcolors.Beige}>
+    <>
       <Navbar />
-      <HeroSection />
-    </Section>
+      <Section color={Bgcolors.Beige}>
+        <HeroSection />
+      </Section>
+    </>
   );
 };
 
