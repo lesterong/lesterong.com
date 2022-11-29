@@ -21,9 +21,30 @@
 }
 
 h1 {
-  @apply font-display text-5xl font-bold sm:text-7xl;
+  @apply font-display text-6xl font-bold sm:text-7xl;
 }
 
 p {
-  @apply font-body text-lg font-normal md:text-base;
+  @apply font-body text-base font-normal sm:text-lg;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-indigo-200 to-indigo-300 bg-clip-text text-transparent;
+}
+
+.animate-gradient {
+  background-size: 250% 250%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -14,6 +14,7 @@ module.exports = {
       'indigo-200': 'hsl(243, 75%, 59%)',
       'indigo-300': 'hsl(244, 55%, 41%)',
       white: 'hsl(0, 0%, 100%)',
+      transparent: 'transparent',
     },
     extend: {},
   },
