@@ -21,17 +21,9 @@
 }
 
 h1 {
-  @apply font-display text-7xl font-bold md:text-5xl;
+  @apply font-display text-5xl font-bold sm:text-7xl;
 }
 
 p {
   @apply font-body text-lg font-normal md:text-base;
-}
-
-a {
-  @apply text-blue-600;
-}
-
-a:hover {
-  @apply text-blue-700;
 }

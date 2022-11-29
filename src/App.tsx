@@ -1,17 +1,14 @@
 import React from 'react';
+import HeroSection from './components/HeroSection';
+import Navbar from './components/Navbar';
+import Section from './components/Section';
 
 const App = () => {
   return (
-    <div className="container mx-auto flex h-screen justify-center">
-      <div className="my-auto">
-        <h1 className="text-center"> Hello there. </h1>
-        <p className="text-center">
-          This site is under construction! Visit&nbsp;
-          <a href="https://lesterong.com">lesterong.com</a>
-          &nbsp;instead.
-        </p>
-      </div>
-    </div>
+    <Section color="bg-beige-100">
+      <Navbar />
+      <HeroSection />
+    </Section>
   );
 };
 
