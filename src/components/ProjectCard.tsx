@@ -13,7 +13,7 @@ const ProjectCard = ({ title, duty, description }: ProjectCardProps) => {
             </p>
           ))}
         </div>
-        <a className="mt-6" href="/">
+        <a className="project-link mt-6" href="/">
           View Project <span className="move-arrow inline-block">&#x2192;</span>
         </a>
       </div>

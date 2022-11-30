@@ -44,7 +44,7 @@ p {
   @apply font-body text-base font-normal sm:text-lg;
 }
 
-a {
+.project-link {
   @apply text-base text-indigo-200 hover:text-indigo-300;
 }
 
@@ -52,7 +52,7 @@ a {
   @apply transition-transform;
 }
 
-a:hover .move-arrow {
+.project-link:hover .move-arrow {
   animation: bounce-right 1.2s infinite;
 }
 
