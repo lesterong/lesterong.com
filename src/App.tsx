@@ -1,5 +1,6 @@
 import React from 'react';
-import HeroSection from './components/HeroSection';
+import AboutSection from './sections/AboutSection';
+import HeroSection from './sections/HeroSection';
 import Navbar from './components/Navbar';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <>
       <Navbar />
       <HeroSection />
+      <AboutSection />
     </>
   );
 };
