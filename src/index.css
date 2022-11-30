@@ -32,8 +32,20 @@ h2 {
   @apply font-display text-3xl font-bold underline decoration-indigo-200 underline-offset-8 sm:text-4xl;
 }
 
+h3 {
+  @apply font-display text-xl font-bold sm:text-2xl;
+}
+
+h4 {
+  @apply font-display text-sm font-bold;
+}
+
 p {
   @apply font-body text-base font-normal sm:text-lg;
+}
+
+a {
+  @apply text-base text-indigo-200 hover:text-indigo-300;
 }
 
 .text-gradient {
