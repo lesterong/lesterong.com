@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-  @apply font-display text-3xl font-bold underline decoration-indigo-200 underline-offset-8 sm:text-4xl;
+  @apply font-display text-3xl font-bold underline decoration-indigo-200 underline-offset-4 sm:text-4xl;
 }
 
 h3 {
@@ -46,6 +46,10 @@ h5 {
 
 p {
   @apply font-body text-base font-normal sm:text-lg;
+}
+
+ul {
+  @apply ml-4 list-disc;
 }
 
 .project-link {
