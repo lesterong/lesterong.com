@@ -1,0 +1,24 @@
+.skill-icon {
+  @apply flex w-12 flex-col items-center;
+}
+
+.skill-icon svg {
+  @apply h-12 w-12 grayscale last:hidden hover:grayscale-0;
+  transition-property: filter, -webkit-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.skill-icon h5 {
+  @apply text-center opacity-0 transition-opacity duration-200;
+}
+
+.skill-icon:hover h5 {
+  @apply opacity-100;
+}
+
+.transition-filters {
+  transition-property: filter, -webkit-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}

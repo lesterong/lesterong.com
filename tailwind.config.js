@@ -16,7 +16,11 @@ module.exports = {
       white: 'hsl(0, 0%, 100%)',
       transparent: 'transparent',
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'auto-fill': 'repeat(auto-fill, 3rem)',
+      },
+    },
   },
   plugins: [],
 };
