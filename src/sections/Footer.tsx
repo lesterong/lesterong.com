@@ -2,7 +2,7 @@ import Bgcolors from '../types/Bgcolors';
 import Section from './Section';
 import Contact from '../assets/Contact';
 
-const FooterSection = () => (
+const Footer = () => (
   <Section color={Bgcolors.Beige}>
     <hr className="border-gray-200" />
     <h2 className="mt-6">Like what you see?</h2>
@@ -22,4 +22,4 @@ const FooterSection = () => (
   </Section>
 );
 
-export default FooterSection;
+export default Footer;
