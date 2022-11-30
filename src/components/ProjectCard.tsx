@@ -14,7 +14,7 @@ const ProjectCard = ({ title, duty, description }: ProjectCardProps) => {
           ))}
         </div>
         <a className="mt-6" href="/">
-          View Project
+          View Project <span className="move-arrow inline-block">&#x2192;</span>
         </a>
       </div>
       <div className="w-full bg-beige-100">IMAGE</div>
