@@ -1,5 +1,5 @@
 export type ProjectCardProps = {
   title: string;
-  duty: string;
+  position: string;
   description: Array<string>;
 };

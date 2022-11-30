@@ -9,8 +9,8 @@ const Navbar = () => {
         <Logo />
       </Link>
       <div className="flex space-x-4">
-        <Link to="/" className={navLink}>
-          Work
+        <Link to="/projects" className={navLink}>
+          Projects
         </Link>
         <Link to="/" className={navLink}>
           Resume
