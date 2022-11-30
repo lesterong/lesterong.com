@@ -1,21 +1,20 @@
 import React from 'react';
-import AboutSection from './sections/AboutSection';
-import HeroSection from './sections/HeroSection';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import SkillsSection from './sections/SkillsSection';
-import ProjectsSection from './sections/ProjectsSection';
-import FooterSection from './sections/FooterSection';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <FooterSection />
-    </>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 

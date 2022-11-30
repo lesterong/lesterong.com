@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ProjectCardProps } from '../types/ProjectCard';
 
 const ProjectCard = ({ title, duty, description }: ProjectCardProps) => {
@@ -13,9 +14,9 @@ const ProjectCard = ({ title, duty, description }: ProjectCardProps) => {
             </p>
           ))}
         </div>
-        <a className="project-link mt-6" href="/">
+        <Link to="/" className="project-link mt-6">
           View Project <span className="move-arrow inline-block">&#x2192;</span>
-        </a>
+        </Link>
       </div>
       <div className="w-full bg-beige-100">IMAGE</div>
     </div>
