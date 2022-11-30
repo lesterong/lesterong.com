@@ -4,6 +4,7 @@ import HeroSection from './sections/HeroSection';
 import Navbar from './components/Navbar';
 import SkillsSection from './sections/SkillsSection';
 import ProjectsSection from './sections/ProjectsSection';
+import FooterSection from './sections/FooterSection';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <FooterSection />
     </>
   );
 };
