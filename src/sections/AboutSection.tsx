@@ -10,9 +10,9 @@ const AboutSection = () => (
     </div>
     <Section color={Bgcolors.Gray} textColor={Textcolors.White}>
       <div className="max-w-xl">
-        <h2 className="pt-6">About Me</h2>
-        <p className="pt-6">Hey there, nice to meet you!</p>
-        <p className="pt-2 pb-6">
+        <h2 className="mt-6">About Me</h2>
+        <p className="mt-6">Hey there, nice to meet you!</p>
+        <p className="mt-2 mb-6">
           I am a software engineer, with a dose of designer. I love designing and building fluid software that are
           functional, yet fun to use.
         </p>

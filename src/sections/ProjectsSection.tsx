@@ -4,8 +4,8 @@ import Section from './Section';
 
 const ProjectsSection = () => (
   <Section color={Bgcolors.Beige}>
-    <div className="pb-6">
-      <h2 className="pt-6">Featured Projects</h2>
+    <div className="mb-6">
+      <h2 className="mt-6">Featured Projects</h2>
       <ProjectCard
         title="Dine Inn Pte Ltd"
         duty="UI/UX Design"

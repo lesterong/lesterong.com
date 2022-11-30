@@ -7,7 +7,7 @@ const SkillsSection = () => {
   return (
     <Section color={Bgcolors.Gray} textColor={Textcolors.White}>
       <div className="max-w-xl">
-        <h2 className="pt-6">Skills</h2>
+        <h2 className="mt-6">Skills</h2>
         <div className="mt-4 mb-6">
           <p>Familiar with...</p>
           <div className="grid grid-cols-auto-fill gap-2">
