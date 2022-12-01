@@ -5,4 +5,5 @@ export type ProjectProps = {
   isFeatured: boolean;
   sourceCode: string;
   viewProject: string;
+  imageSource: string;
 };

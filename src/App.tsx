@@ -6,14 +6,14 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Projects from './pages/Projects';
 import Footer from './sections/Footer';
-// import ScrollToTop from './utils/ScrollToTop';
+import ScrollToTop from './utils/ScrollToTop';
 import Resume from './pages/Resume';
 
 const App = () => {
   return (
     <BrowserRouter>
       <>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

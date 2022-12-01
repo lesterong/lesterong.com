@@ -7,6 +7,7 @@ const projects = [
     isFeatured: true,
     sourceCode: 'https://www.github.com/lesterong/taskority',
     viewProject: 'https://taskority.lesterong.com',
+    imageSource: 'taskority',
   },
   {
     title: 'Dine Inn Pte Ltd',
@@ -15,7 +16,8 @@ const projects = [
       'Dine Inn is a e-commerce platform that connects home chefs to their customers. I redesigned their user interface for improved user experience and conversion rates.',
     isFeatured: true,
     sourceCode: '',
-    viewProject: 'https://figma.com',
+    viewProject: '',
+    imageSource: 'dineinn',
   },
 ];
 

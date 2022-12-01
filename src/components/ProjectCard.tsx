@@ -1,10 +1,13 @@
+import useImage from '../hooks/useImage';
 import { ProjectProps } from '../types/Project';
+import errorImage from '../assets/images/error.png';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  const { title, position, description, sourceCode, viewProject } = project;
+  const { title, position, description, sourceCode, viewProject, imageSource } = project;
+  const { loading, error, image } = useImage(imageSource);
   return (
     <div className="my-6 grid min-h-[318px] grid-rows-2 gap-6 rounded-lg bg-white p-4 shadow-sm md:grid-cols-2 md:grid-rows-1 md:p-6">
-      <div className="order-last flex flex-col justify-between md:-order-last">
+      <div className="order-last flex flex-col justify-between space-y-6 md:-order-last md:space-y-0">
         <div>
           <h3>{title}</h3>
           <h4 className="mb-4">{position}</h4>
@@ -17,7 +20,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               )
           )}
         </div>
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-row space-x-4 empty:hidden">
           {viewProject && (
             <a href={viewProject} target="blank" className="nav-link text-base">
               View Project <span className="right-arrow inline-block">&#x2192;</span>
@@ -30,7 +33,11 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           )}
         </div>
       </div>
-      <div className="w-full bg-beige-100">IMAGE</div>
+      <div className="max-h-[288px] w-full bg-beige-100 p-6">
+        {loading && <div>Loading...</div>}
+        {image && <img className="mx-auto max-h-full" src={image} alt={title} />}
+        {error && <img className="mx-auto max-h-full" src={errorImage} alt="error loading" />}
+      </div>
     </div>
   );
 };
