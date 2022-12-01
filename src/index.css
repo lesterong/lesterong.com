@@ -56,8 +56,12 @@ ul {
   @apply text-indigo-200 hover:text-indigo-300;
 }
 
-.nav-link:hover .move-arrow {
+.nav-link:hover .right-arrow {
   @apply animate-bounce-right motion-reduce:animate-none;
+}
+
+.nav-link:hover .down-arrow {
+  @apply animate-bounce-down motion-reduce:animate-none;
 }
 
 .text-gradient {

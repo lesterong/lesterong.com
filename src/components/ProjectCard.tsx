@@ -17,7 +17,7 @@ const ProjectCard = ({ title, position, description }: ProjectCardProps) => (
         )}
       </div>
       <Link to="/" className="nav-link mt-6 text-base">
-        View Project <span className="move-arrow inline-block">&#x2192;</span>
+        View Project <span className="right-arrow inline-block">&#x2192;</span>
       </Link>
     </div>
     <div className="w-full bg-beige-100">IMAGE</div>

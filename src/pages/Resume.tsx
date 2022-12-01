@@ -48,8 +48,13 @@ const Resume = () => (
       </div>
     </section>
 
-    <a className="text-indigo-200 transition duration-300 hover:text-indigo-300" href="../files/Lester_Ong_CV" download>
-      <p className="mb-6 mt-8 text-center">Download PDF Resume</p>
+    <a
+      className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2 text-indigo-200 transition duration-300 hover:text-indigo-300"
+      href="../files/Lester_Ong_CV"
+      download
+    >
+      <span className="text-center">Download PDF Resume</span>
+      <span className="down-arrow inline-block">&#x2913;</span>
     </a>
   </Section>
 );

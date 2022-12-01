@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       animation: {
         'bounce-right': 'bounce-right 1.2s infinite',
+        'bounce-down': 'bounce-down 1.2s infinite',
         'gradient-shift': 'gradient-shift 3s ease infinite',
       },
       keyframes: {
@@ -28,6 +29,14 @@ module.exports = {
           },
           '50%': {
             transform: 'translateX(25%)',
+          },
+        },
+        'bounce-down': {
+          '0%, 100%': {
+            transform: 'translateY(-10%)',
+          },
+          '50%': {
+            transform: 'translateY(10%)',
           },
         },
         'gradient-shift': {

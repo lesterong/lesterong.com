@@ -14,7 +14,7 @@ const ProjectsSection = () => {
           <ProjectCard key={p.title} title={p.title} position={p.position} description={p.description} />
         ))}
         <Link to="projects" className="nav-link mt-6">
-          View All Projects <span className="move-arrow inline-block">&#x2192;</span>
+          View All Projects <span className="right-arrow inline-block">&#x2192;</span>
         </Link>
       </div>
     </Section>

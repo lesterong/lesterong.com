@@ -12,7 +12,7 @@ const Footer = () => (
         <p>I&apos;d love to work with you.</p>
         <Link to="contact" className="nav-link w-fit">
           <p className="mb-6 inline-block">
-            Come say hello! <span className="move-arrow inline-block">&#x2192;</span>
+            Come say hello! <span className="right-arrow inline-block">&#x2192;</span>
           </p>
         </Link>
       </div>
