@@ -65,6 +65,10 @@ const Contact = () => {
         setValues(initialValues);
         setStartValidation(initialValidation);
         setErrors(initialErrors);
+        const elem = document.querySelector('#message-input');
+        if (elem) {
+          elem.innerHTML = '';
+        }
       })
       .catch((err) => console.log('Error :', err));
   };
@@ -111,6 +115,7 @@ const Contact = () => {
           Message
           <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
           <div
+            id="message-input"
             className="message-input min-h-[144px]"
             contentEditable
             onInput={handleChangeMessage}
