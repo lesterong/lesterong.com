@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from '../components/Alert';
 import Section from '../sections/Section';
 import Bgcolors from '../types/Bgcolors';
 import { FormDataProps } from '../types/Formdata';
@@ -26,6 +27,9 @@ const Contact = () => {
     message: false,
   };
   const [errors, setErrors] = useState(initialErrors);
+
+  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<any>) => {
     const type: 'name' | 'email' | 'message' = e.currentTarget.parentNode.htmlFor;
@@ -66,6 +70,7 @@ const Contact = () => {
       }),
     })
       .then(() => {
+        setShowSuccess(true);
         setValues(initialValues);
         setStartValidation(initialValidation);
         setErrors(initialErrors);
@@ -73,8 +78,12 @@ const Contact = () => {
         if (elem) {
           elem.innerHTML = ''; // Clears the message input
         }
+        setTimeout(() => setShowSuccess(false), 4500);
       })
-      .catch((err) => console.log('Error :', err));
+      .catch(() => {
+        setShowError(true);
+        setTimeout(() => setShowError(false), 4500);
+      });
   };
 
   const handleValidation = (e: React.FocusEvent<any>) => {
@@ -88,50 +97,64 @@ const Contact = () => {
   };
 
   return (
-    <Section color={Bgcolors.Beige}>
-      <h1 className="mt-16 text-center">Contact</h1>
-      <h2 className="mt-6">Let&apos;s chat!</h2>
-      <p>
-        Fill up this form to contact me. Alternatively, drop me an{' '}
-        <a
-          className="text-indigo-200 transition duration-200 hover:text-indigo-300"
-          href="mailto:lesterong776@gmail.com"
-        >
-          email
-        </a>
-        .
-      </p>
-      <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
-        <label htmlFor="name">
-          Name
-          <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
-          {errors.name && <span className="text-red-100">A name is required.</span>}
-        </label>
-        <label htmlFor="email">
-          Email
-          <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
-          {errors.email && <span className="text-red-100">A valid email is required.</span>}
-        </label>
-        <label htmlFor="message">
-          Message
-          <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
-          <div
-            id="message-input"
-            className="message-input min-h-[144px]"
-            contentEditable
-            onInput={handleChange}
-            onBlur={handleValidation}
-          />
-          {errors.message && <span className="text-red-100">A message is required.</span>}
-        </label>
+    <>
+      <Alert
+        handleClose={() => setShowError(false)}
+        isSuccess={false}
+        message="An error occurred. Please try again, or contact me via email."
+        isShowing={showError}
+      />
+      <Alert
+        handleClose={() => setShowSuccess(false)}
+        isSuccess
+        message="Messaged sent successfully."
+        isShowing={showSuccess}
+      />
+      <Section color={Bgcolors.Beige}>
+        <h1 className="mt-16 text-center">Contact</h1>
+        <h2 className="mt-6">Let&apos;s chat!</h2>
         <p>
-          <button className="nav-link w-max" type="submit">
-            Send message <span className="right-arrow inline-block">&#x2192;</span>
-          </button>
+          Fill up this form to contact me. Alternatively, drop me an{' '}
+          <a
+            className="text-indigo-200 transition duration-200 hover:text-indigo-300"
+            href="mailto:lesterong776@gmail.com"
+          >
+            email
+          </a>
+          .
         </p>
-      </form>
-    </Section>
+        <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
+          <label htmlFor="name">
+            Name
+            <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
+            {errors.name && <span className="text-red-100">A name is required.</span>}
+          </label>
+          <label htmlFor="email">
+            Email
+            <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
+            {errors.email && <span className="text-red-100">A valid email is required.</span>}
+          </label>
+          <label htmlFor="message">
+            Message
+            <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
+            <div
+              id="message-input"
+              className="message-input min-h-[144px]"
+              contentEditable
+              onInput={handleChange}
+              onBlur={handleValidation}
+            />
+            {errors.message && <span className="text-red-100">A message is required.</span>}
+          </label>
+          <p>
+            <button className="nav-link w-max" type="submit">
+              Send message <span className="right-arrow inline-block">&#x2192;</span>
+            </button>
+          </p>
+        </form>
+      </Section>
+    </>
   );
 };
 
