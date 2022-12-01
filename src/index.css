@@ -54,7 +54,7 @@ ul {
 
 input,
 textarea {
-  @apply w-full;
+  @apply w-full border-b bg-beige-100 focus:border-b-indigo-200 focus:outline-none;
 }
 
 .nav-link {
