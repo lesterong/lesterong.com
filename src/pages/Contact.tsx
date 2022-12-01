@@ -5,14 +5,41 @@ import { FormDataProps } from '../types/Formdata';
 
 const Contact = () => {
   document.title = 'Lester Ong | Contact';
-  const [values, setValues] = useState({
+
+  const initialValues = {
     name: '',
     email: '',
     message: '',
-  });
+  };
+
+  const initialValidation = {
+    name: false,
+    email: false,
+    message: false,
+  };
+
+  const initialErrors = {
+    name: false,
+    email: false,
+    message: false,
+  };
+
+  const [values, setValues] = useState(initialValues);
+
+  const [startValidation, setStartValidation] = useState(initialValidation);
+
+  const [errors, setErrors] = useState(initialErrors);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setStartValidation({ ...startValidation, [e.target.name]: true });
+    setErrors({ ...errors, [e.target.name]: false });
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeMessage = (e: React.ChangeEvent<HTMLDivElement>) => {
+    setStartValidation({ ...startValidation, message: true });
+    setErrors({ ...errors, message: false });
+    setValues({ ...values, message: e.currentTarget.innerText || '' });
   };
 
   const encode = (data: FormDataProps) => {
@@ -23,6 +50,9 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (Object.values(errors).includes(true)) {
+      return;
+    }
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -31,8 +61,24 @@ const Contact = () => {
         ...values,
       }),
     })
-      .then(() => console.log('success'))
+      .then(() => {
+        setValues(initialValues);
+        setStartValidation(initialValidation);
+        setErrors(initialErrors);
+      })
       .catch((err) => console.log('Error :', err));
+  };
+
+  const handleEmpty = (type: 'name' | 'email' | 'message') => (e: React.FocusEvent<any>) => {
+    if (!startValidation[type]) {
+      return;
+    }
+    if (values[type].trim() === '') {
+      setErrors({ ...errors, [type]: true });
+    }
+    if (type === 'email' && !e.target.checkValidity()) {
+      setErrors({ ...errors, email: true });
+    }
   };
 
   return (
@@ -52,21 +98,25 @@ const Contact = () => {
       <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name">
-          Name <input type="text" name="name" required onChange={handleChange} value={values.name} />
+          Name
+          <input type="text" name="name" onChange={handleChange} onBlur={handleEmpty('name')} value={values.name} />
+          {errors.name && <span className="text-red-100">A name is required.</span>}
         </label>
         <label htmlFor="email">
-          Email <input type="email" name="email" required onChange={handleChange} value={values.email} />
+          Email
+          <input type="email" name="email" onChange={handleChange} onBlur={handleEmpty('email')} value={values.email} />
+          {errors.email && <span className="text-red-100">A valid email is required.</span>}
         </label>
         <label htmlFor="message">
           Message
-          <textarea className="hidden" name="message" onChange={handleChange} value={values.message} required />
+          <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
           <div
             className="message-input min-h-[144px]"
             contentEditable
-            onInput={(e) => {
-              setValues({ ...values, message: e.currentTarget.innerText || '' });
-            }}
+            onInput={handleChangeMessage}
+            onBlur={handleEmpty('message')}
           />
+          {errors.message && <span className="text-red-100">A message is required.</span>}
         </label>
         <p>
           <button className="nav-link w-max" type="submit">

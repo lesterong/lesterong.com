@@ -7,6 +7,8 @@ module.exports = {
       body: ['Figtree', 'system-ui', 'ui-sans-serif'],
     },
     colors: {
+      'red-100': 'hsl(0, 74%, 42%)',
+      'green-100': 'hsl(142, 76%, 36%)',
       'beige-100': 'hsl(52, 94%, 94%)',
       'gray-200': 'hsl(0, 0%, 15%)',
       'gray-300': 'hsl(0, 0%, 10%)',
