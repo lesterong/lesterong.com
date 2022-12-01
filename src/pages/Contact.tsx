@@ -11,29 +11,27 @@ const Contact = () => {
     email: '',
     message: '',
   };
+  const [values, setValues] = useState(initialValues);
 
   const initialValidation = {
     name: false,
     email: false,
     message: false,
   };
+  const [startValidation, setStartValidation] = useState(initialValidation);
 
   const initialErrors = {
     name: false,
     email: false,
     message: false,
   };
-
-  const [values, setValues] = useState(initialValues);
-
-  const [startValidation, setStartValidation] = useState(initialValidation);
-
   const [errors, setErrors] = useState(initialErrors);
 
   const handleChange = (e: React.ChangeEvent<any>) => {
     const type: 'name' | 'email' | 'message' = e.currentTarget.parentNode.htmlFor;
     setStartValidation({ ...startValidation, [type]: true });
     setErrors({ ...errors, [type]: false });
+    // innerText and '' is to extract the value from the message-input div
     setValues({ ...values, [type]: e.target.value || e.currentTarget.innerText || '' });
   };
 
@@ -45,6 +43,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const hasInvalidValue =
       Object.values(values)
         .map((v: string) => v.length)
@@ -57,6 +56,7 @@ const Contact = () => {
       });
       return;
     }
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -71,7 +71,7 @@ const Contact = () => {
         setErrors(initialErrors);
         const elem = document.querySelector('#message-input');
         if (elem) {
-          elem.innerHTML = '';
+          elem.innerHTML = ''; // Clears the message input
         }
       })
       .catch((err) => console.log('Error :', err));
@@ -82,11 +82,8 @@ const Contact = () => {
     if (!startValidation[type]) {
       return;
     }
-    if (values[type].trim().length <= 0) {
+    if (values[type].trim().length <= 0 || (e.target.validity && !e.target.checkValidity())) {
       setErrors({ ...errors, [type]: true });
-    }
-    if (type === 'email' && !e.target.checkValidity()) {
-      setErrors({ ...errors, email: true });
     }
   };
 
