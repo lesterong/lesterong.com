@@ -9,7 +9,7 @@ const Projects = () => {
     <Section color={Bgcolors.Beige}>
       <h1 className="mt-16 text-center">Projects</h1>
       {projects.map((p) => (
-        <ProjectCard key={p.title} title={p.title} position={p.position} description={p.description} />
+        <ProjectCard key={p.title} project={p} />
       ))}
     </Section>
   );

@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       <div className="mb-6">
         <h2 className="mt-6">Featured Projects</h2>
         {featProjects.map((p) => (
-          <ProjectCard key={p.title} title={p.title} position={p.position} description={p.description} />
+          <ProjectCard key={p.title} project={p} />
         ))}
         <Link to="projects" className="nav-link mt-6">
           View All Projects <span className="right-arrow inline-block">&#x2192;</span>
