@@ -4,6 +4,7 @@ import Section from '../sections/Section';
 import Bgcolors from '../types/Bgcolors';
 
 const Projects = () => {
+  document.title = 'Lester Ong | Projects';
   return (
     <Section color={Bgcolors.Beige}>
       <h1 className="mt-16 text-center">Projects</h1>

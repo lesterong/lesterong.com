@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "https://beta-lesterong.netlify.app/*"
-  to = "https://beta.lesterong.com/:splat"
+  from = "https://lesterong.netlify.app/*"
+  to = "https://www.lesterong.com/:splat"
   status = 301
   force = true
 

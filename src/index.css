@@ -52,6 +52,11 @@ ul {
   @apply ml-4 list-disc;
 }
 
+input,
+textarea {
+  @apply w-full;
+}
+
 .nav-link {
   @apply text-indigo-200 hover:text-indigo-300;
 }
