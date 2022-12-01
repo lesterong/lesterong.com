@@ -21,7 +21,7 @@
 }
 
 body {
-  @apply font-body text-gray-300;
+  @apply bg-beige-100 font-body text-gray-300;
 }
 
 h1 {
