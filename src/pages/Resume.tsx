@@ -48,11 +48,7 @@ const Resume = () => (
       </div>
     </section>
 
-    <a
-      className="text-indigo-200 transition-colors duration-300 hover:text-indigo-300"
-      href="../files/Lester_Ong_CV"
-      download
-    >
+    <a className="text-indigo-200 transition duration-300 hover:text-indigo-300" href="../files/Lester_Ong_CV" download>
       <p className="mb-6 mt-8 text-center">Download PDF Resume</p>
     </a>
   </Section>
