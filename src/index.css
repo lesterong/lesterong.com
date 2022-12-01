@@ -53,7 +53,7 @@ ul {
 }
 
 input,
-textarea {
+.message-input {
   @apply w-full border-b bg-beige-100 focus:border-b-indigo-200 focus:outline-none;
 }
 

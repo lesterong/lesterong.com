@@ -38,12 +38,13 @@ const Contact = () => {
         </label>
         <label htmlFor="message">
           Message
-          <textarea
-            className="h-36 min-h-[144px] resize-y"
-            name="message"
-            onChange={handleChange}
-            value={values.message}
-            required
+          <textarea className="hidden" name="message" onChange={handleChange} value={values.message} required />
+          <div
+            className="message-input min-h-[144px]"
+            contentEditable
+            onInput={(e) => {
+              setValues({ ...values, message: e.currentTarget.innerText || '' });
+            }}
           />
         </label>
         <p>
