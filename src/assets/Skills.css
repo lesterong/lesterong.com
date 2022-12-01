@@ -3,7 +3,11 @@
 }
 
 .skill-icon svg {
-  @apply h-12 w-12 grayscale transition-all duration-300 last:hidden hover:grayscale-0;
+  @apply h-12 w-12 grayscale transition-all duration-300;
+}
+
+.skill-icon:hover svg {
+  @apply grayscale-0;
 }
 
 .skill-icon h5 {
