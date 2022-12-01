@@ -30,16 +30,11 @@ const Contact = () => {
 
   const [errors, setErrors] = useState(initialErrors);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setStartValidation({ ...startValidation, [e.target.name]: true });
-    setErrors({ ...errors, [e.target.name]: false });
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
-
-  const handleChangeMessage = (e: React.ChangeEvent<HTMLDivElement>) => {
-    setStartValidation({ ...startValidation, message: true });
-    setErrors({ ...errors, message: false });
-    setValues({ ...values, message: e.currentTarget.innerText || '' });
+  const handleChange = (e: React.ChangeEvent<any>) => {
+    const type: 'name' | 'email' | 'message' = e.currentTarget.parentNode.htmlFor;
+    setStartValidation({ ...startValidation, [type]: true });
+    setErrors({ ...errors, [type]: false });
+    setValues({ ...values, [type]: e.target.value || e.currentTarget.innerText || '' });
   };
 
   const encode = (data: FormDataProps) => {
@@ -50,7 +45,16 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (Object.values(errors).includes(true)) {
+    const hasInvalidValue =
+      Object.values(values)
+        .map((v: string) => v.length)
+        .includes(0) && e.currentTarget.checkValidity();
+    if (hasInvalidValue) {
+      setErrors({
+        name: values.name.trim().length <= 0,
+        email: values.email.trim().length <= 0 && e.currentTarget.checkValidity(),
+        message: values.message.trim().length <= 0,
+      });
       return;
     }
     fetch('/', {
@@ -73,11 +77,12 @@ const Contact = () => {
       .catch((err) => console.log('Error :', err));
   };
 
-  const handleEmpty = (type: 'name' | 'email' | 'message') => (e: React.FocusEvent<any>) => {
+  const handleValidation = (e: React.FocusEvent<any>) => {
+    const type: 'name' | 'email' | 'message' = e.currentTarget.parentNode.htmlFor;
     if (!startValidation[type]) {
       return;
     }
-    if (values[type].trim() === '') {
+    if (values[type].trim().length <= 0) {
       setErrors({ ...errors, [type]: true });
     }
     if (type === 'email' && !e.target.checkValidity()) {
@@ -103,12 +108,12 @@ const Contact = () => {
         <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name">
           Name
-          <input type="text" name="name" onChange={handleChange} onBlur={handleEmpty('name')} value={values.name} />
+          <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
           {errors.name && <span className="text-red-100">A name is required.</span>}
         </label>
         <label htmlFor="email">
           Email
-          <input type="email" name="email" onChange={handleChange} onBlur={handleEmpty('email')} value={values.email} />
+          <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
           {errors.email && <span className="text-red-100">A valid email is required.</span>}
         </label>
         <label htmlFor="message">
@@ -118,8 +123,8 @@ const Contact = () => {
             id="message-input"
             className="message-input min-h-[144px]"
             contentEditable
-            onInput={handleChangeMessage}
-            onBlur={handleEmpty('message')}
+            onInput={handleChange}
+            onBlur={handleValidation}
           />
           {errors.message && <span className="text-red-100">A message is required.</span>}
         </label>
