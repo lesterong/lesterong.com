@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Section from '../sections/Section';
 import Bgcolors from '../types/Bgcolors';
+import { FormDataProps } from '../types/Formdata';
 
 const Contact = () => {
   document.title = 'Lester Ong | Contact';
@@ -12,6 +13,26 @@ const Contact = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const encode = (data: FormDataProps) => {
+    return Object.keys(data)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key as keyof typeof data])}`)
+      .join('&');
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...values,
+      }),
+    })
+      .then(() => console.log('success'))
+      .catch((err) => console.log('Error :', err));
   };
 
   return (
@@ -28,7 +49,7 @@ const Contact = () => {
         </a>
         .
       </p>
-      <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post">
+      <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name">
           Name <input type="text" name="name" required onChange={handleChange} value={values.name} />
