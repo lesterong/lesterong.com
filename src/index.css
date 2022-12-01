@@ -52,9 +52,9 @@ ul {
   @apply ml-4 list-disc;
 }
 
-input,
+input:not([type='radio']):not([type='checkbox']),
 .message-input {
-  @apply w-full border-b bg-beige-100 focus:border-b-indigo-200 focus:outline-none;
+  @apply w-full rounded-none border-b bg-beige-100 focus:border-b-indigo-200 focus:outline-none;
 }
 
 .nav-link {
