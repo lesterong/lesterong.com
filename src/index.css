@@ -52,11 +52,11 @@ ul {
   @apply ml-4 list-disc;
 }
 
-.project-link {
-  @apply text-base text-indigo-200 hover:text-indigo-300;
+.nav-link {
+  @apply text-indigo-200 hover:text-indigo-300;
 }
 
-.project-link:hover .move-arrow {
+.nav-link:hover .move-arrow {
   @apply animate-bounce-right motion-reduce:animate-none;
 }
 

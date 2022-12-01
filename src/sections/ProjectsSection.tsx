@@ -13,7 +13,7 @@ const ProjectsSection = () => {
         {featProjects.map((p) => (
           <ProjectCard key={p.title} title={p.title} position={p.position} description={p.description} />
         ))}
-        <Link to="projects" className="project-link mt-6">
+        <Link to="projects" className="nav-link mt-6">
           View All Projects <span className="move-arrow inline-block">&#x2192;</span>
         </Link>
       </div>
