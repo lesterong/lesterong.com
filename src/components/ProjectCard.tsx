@@ -4,7 +4,7 @@ import errorImage from '../assets/images/error.png';
 import Loading from '../assets/Loading';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  const { title, position, description, imageSource, links } = project;
+  const { title, position, description, note, imageSource, links } = project;
   const { loading, error, image } = useImage(imageSource);
   return (
     <div className="my-6 grid min-h-[318px] grid-rows-2 gap-6 rounded-lg bg-white p-4 shadow-sm md:grid-cols-2 md:grid-rows-1 md:p-6">
@@ -21,15 +21,18 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               )
           )}
         </div>
-        <div className="flex flex-row space-x-4 empty:hidden">
-          {Object.entries(links).map((l) => {
-            const [label, link] = l;
-            return (
-              <a key={link} href={link} target="blank" className="nav-link text-base">
-                {label} <span className="right-arrow inline-block">&#x2192;</span>
-              </a>
-            );
-          })}
+        <div>
+          <div className="flex flex-row space-x-4 empty:hidden">
+            {Object.entries(links).map((l) => {
+              const [label, link] = l;
+              return (
+                <a key={link} href={link} target="blank" className="nav-link text-base">
+                  {label} <span className="right-arrow inline-block">&#x2192;</span>
+                </a>
+              );
+            })}
+          </div>
+          {note && <div className="mt-2 text-sm text-gray-100">*{note}</div>}
         </div>
       </div>
       <div className="relative flex max-h-[288px] w-full flex-col items-center justify-center bg-beige-100 p-6">

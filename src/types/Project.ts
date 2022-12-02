@@ -5,4 +5,6 @@ export type ProjectProps = {
   isFeatured: boolean;
   imageSource: string;
   links: Object;
+  date: string;
+  note: string;
 };
