@@ -46,7 +46,8 @@ const projects = [
   {
     title: 'John Chatbot',
     position: 'Developer',
-    description: 'A cross-platform desktop chatbot to help manage tasks, built with Java and JavaFX.',
+    description:
+      'A cross-platform desktop chatbot to help manage tasks, optimised for usage for fast typists. Built with Java and JavaFX.',
     note: '',
     isFeatured: false,
     imageSource: 'johnchatbot',
@@ -55,6 +56,20 @@ const projects = [
       'Source Code': 'https://github.com/lesterong/ip',
     },
     date: '2022-08-14T00:00:00.000Z',
+  },
+  {
+    title: 'NUScheduler',
+    position: 'Developer',
+    description:
+      'NUScheduler is a desktop app for managing contacts, optimised for use via a Command Line Interface with the benefits of a Graphical User Interface',
+    note: 'This project is not affliated with NUS.',
+    isFeatured: false,
+    imageSource: 'nuscheduler',
+    links: {
+      Download: 'https://github.com/AY2223S1-CS2103T-T17-3/tp/releases/tag/v1.4',
+      'Source Code': 'https://github.com/AY2223S1-CS2103T-T17-3/tp',
+    },
+    date: '2022-09-22T00:00:00.000Z',
   },
 ].sort((a, b) => {
   if (a.date < b.date) {
