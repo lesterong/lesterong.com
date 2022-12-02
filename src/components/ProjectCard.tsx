@@ -7,7 +7,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const { title, position, description, note, imageSource, links } = project;
   const { loading, error, image } = useImage(imageSource);
   return (
-    <div className="my-6 flex min-h-[318px] flex-col gap-4 rounded-lg bg-white p-4 shadow-sm md:grid md:grid-cols-2 md:p-6">
+    <div className="my-6 flex min-h-[318px] flex-col gap-4 rounded-lg bg-white p-4 shadow-sm first-of-type:mt-4 md:grid md:grid-cols-2 md:p-6">
       <div className="order-last flex flex-col justify-between space-y-6 md:-order-last md:space-y-0">
         <div>
           <h3>{title}</h3>

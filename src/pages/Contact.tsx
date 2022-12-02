@@ -112,7 +112,7 @@ const Contact = () => {
       />
       <Section color={Bgcolors.Beige}>
         <h1 className="mt-16 text-center">Contact</h1>
-        <h2 className="mt-6">Let&apos;s Chat!</h2>
+        <h2 className="mt-4">Let&apos;s Chat!</h2>
         <p>
           Fill up this form to contact me. Alternatively, drop me an{' '}
           <a
