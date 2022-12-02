@@ -1,11 +1,27 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo';
 
 const Navbar = () => {
   const navLink = 'font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-200';
   const { pathname } = useLocation();
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  );
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.querySelector('#root')?.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.querySelector('#root')?.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  }, [isDarkMode]);
+
   return (
-    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6">
+    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6 text-gray-300">
       <Link to="/">
         <Logo />
       </Link>
@@ -19,6 +35,9 @@ const Navbar = () => {
         <Link to="contact" className={`${navLink} ${pathname === '/contact' ? 'text-indigo-200' : ''}`}>
           Contact
         </Link>
+        <button type="button" onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? 'Dark' : 'Light'}
+        </button>
       </div>
     </nav>
   );
