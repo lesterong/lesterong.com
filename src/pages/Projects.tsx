@@ -48,8 +48,12 @@ const Projects = () => {
                 }}
               >
                 <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-300">
-                  {sorter[variant as keyof typeof sorter]}
-                  <ChevronDown />
+                  {({ open }) => (
+                    <>
+                      {sorter[variant as keyof typeof sorter]}
+                      <ChevronDown isExpanded={open} />
+                    </>
+                  )}
                 </Listbox.Button>
                 <Transition
                   as={Fragment}
