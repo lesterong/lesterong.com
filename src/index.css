@@ -48,7 +48,7 @@ p {
   @apply font-body text-base font-normal sm:text-lg;
 }
 
-ul {
+.work-list {
   @apply ml-4 list-disc;
 }
 

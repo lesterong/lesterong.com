@@ -43,7 +43,7 @@ const Resume = () => {
         <div>
           <p>Dine Inn Pte Ltd</p>
           <h4>UI/UX Intern | March 2021 - July 2021</h4>
-          <ul>
+          <ul className="work-list">
             <li>Redesigned the user interface of Dine Inn&apos;s platform using Figma</li>
             <li>Designed a brand new platform for Dine Inn drivers</li>
           </ul>
