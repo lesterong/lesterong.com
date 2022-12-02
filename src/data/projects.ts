@@ -71,14 +71,6 @@ const projects = [
     },
     date: '2022-09-22T00:00:00.000Z',
   },
-].sort((a, b) => {
-  if (a.date < b.date) {
-    return 1;
-  }
-  if (a.date > b.date) {
-    return -1;
-  }
-  return 0;
-});
+];
 
 export default projects;
