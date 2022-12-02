@@ -62,7 +62,7 @@ const projects = [
     position: 'Developer',
     description:
       'NUScheduler is a desktop app for managing contacts, optimised for use via a Command Line Interface with the benefits of a Graphical User Interface',
-    note: 'This project is not affliated with NUS.',
+    note: 'This project for the CS2103T module in NUS, but is not endorsed by NUS.',
     isFeatured: false,
     imageSource: 'nuscheduler',
     links: {
