@@ -9,7 +9,7 @@ const projects = [
     imageSource: 'taskority',
     links: {
       'Live Site': 'https://taskority.lesterong.com',
-      'Source Code': 'https://www.github.com/lesterong/taskority',
+      'Source Code': 'https://github.com/lesterong/taskority',
     },
     date: '2021-12-15T00:00:00.000Z',
   },
@@ -39,9 +39,22 @@ const projects = [
     imageSource: 'nusfaq',
     links: {
       'Live Site': 'https://nusfaq.netlify.app',
-      'Source Code': 'https://www.github.com/lesterong/nus-faq',
+      'Source Code': 'https://github.com/lesterong/nus-faq',
     },
     date: '2022-05-03T00:00:00.000Z',
+  },
+  {
+    title: 'John Chatbot',
+    position: 'Developer',
+    description: 'A cross-platform desktop chatbot to help manage tasks, built with Java and JavaFX.',
+    note: '',
+    isFeatured: false,
+    imageSource: 'johnchatbot',
+    links: {
+      Download: 'https://github.com/lesterong/ip/releases/tag/A-Release',
+      'Source Code': 'https://github.com/lesterong/ip',
+    },
+    date: '2022-08-14T00:00:00.000Z',
   },
 ].sort((a, b) => {
   if (a.date < b.date) {
