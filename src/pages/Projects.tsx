@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
@@ -11,18 +11,26 @@ const Projects = () => {
   document.title = 'Lester Ong | Projects';
   const variants: { order: Array<'ascending' | 'descending'>; type: Array<'date' | 'alphabetical'> } = {
     order: ['ascending', 'descending'],
-    type: ['date', 'alphabetical'],
+    type: ['alphabetical', 'date'],
   };
-  const [sorter, setSorter] = useState({
-    order: 'descending',
-    type: 'date',
-  });
+
+  const initialSorter = sessionStorage.getItem('sorter')
+    ? JSON.parse(sessionStorage.getItem('sorter') || '')
+    : {
+        order: 'descending',
+        type: 'date',
+      };
+  const [sorter, setSorter] = useState(initialSorter);
 
   let projectsToShow = projects.sort(Sorters[sorter.type as keyof typeof Sorters]);
   const isAscending = sorter.order === 'ascending';
   if (isAscending) {
     projectsToShow = projectsToShow.reverse();
   }
+
+  useEffect(() => {
+    sessionStorage.setItem('sorter', JSON.stringify(sorter));
+  }, [sorter]);
 
   return (
     <Section color={Bgcolors.Beige}>
@@ -35,7 +43,9 @@ const Projects = () => {
             <div key={variant}>
               <Listbox
                 value={sorter[variant as keyof typeof sorter]}
-                onChange={(e: string) => setSorter({ ...sorter, [variant]: e })}
+                onChange={(e: string) => {
+                  setSorter({ ...sorter, [variant]: e });
+                }}
               >
                 <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-300">
                   {sorter[variant as keyof typeof sorter]}
