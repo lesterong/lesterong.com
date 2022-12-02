@@ -4,7 +4,7 @@ import errorImage from '../assets/images/error.png';
 import Loading from '../assets/Loading';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  const { title, position, description, sourceCode, viewProject, imageSource } = project;
+  const { title, position, description, imageSource, links } = project;
   const { loading, error, image } = useImage(imageSource);
   return (
     <div className="my-6 grid min-h-[318px] grid-rows-2 gap-6 rounded-lg bg-white p-4 shadow-sm md:grid-cols-2 md:grid-rows-1 md:p-6">
@@ -22,16 +22,14 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           )}
         </div>
         <div className="flex flex-row space-x-4 empty:hidden">
-          {viewProject && (
-            <a href={viewProject} target="blank" className="nav-link text-base">
-              View Project <span className="right-arrow inline-block">&#x2192;</span>
-            </a>
-          )}
-          {sourceCode && (
-            <a href={sourceCode} target="blank" className="nav-link text-base">
-              Source Code <span className="right-arrow inline-block">&#x2192;</span>
-            </a>
-          )}
+          {Object.entries(links).map((l) => {
+            const [label, link] = l;
+            return (
+              <a key={link} href={link} target="blank" className="nav-link text-base">
+                {label} <span className="right-arrow inline-block">&#x2192;</span>
+              </a>
+            );
+          })}
         </div>
       </div>
       <div className="relative max-h-[288px] w-full bg-beige-100 p-6">
