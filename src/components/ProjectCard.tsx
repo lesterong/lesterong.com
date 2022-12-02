@@ -7,7 +7,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const { title, position, description, note, imageSource, links } = project;
   const { loading, error, image } = useImage(imageSource);
   return (
-    <div className="my-6 grid min-h-[318px] grid-rows-2 gap-6 rounded-lg bg-white p-4 shadow-sm md:grid-cols-2 md:grid-rows-1 md:p-6">
+    <div className="my-6 flex min-h-[318px] flex-col gap-4 rounded-lg bg-white p-4 shadow-sm md:grid md:grid-cols-2 md:p-6">
       <div className="order-last flex flex-col justify-between space-y-6 md:-order-last md:space-y-0">
         <div>
           <h3>{title}</h3>
@@ -35,15 +35,15 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           {note && <div className="mt-2 text-sm text-gray-100">*{note}</div>}
         </div>
       </div>
-      <div className="relative flex max-h-[288px] w-full flex-col items-center justify-center bg-beige-100 p-6">
+      <div className="relative flex h-[288px] w-full flex-col items-center justify-center bg-beige-100 p-6">
         {loading && (
           <>
             <Loading />
             <span className="mt-2">Loading image</span>
           </>
         )}
-        {image && <img className="mx-auto max-h-full" src={image} alt={title} />}
-        {error && <img className="mx-auto max-h-full" src={errorImage} alt="Error loading" />}
+        {image && <img className="max-h-full" src={image} alt={title} />}
+        {error && <img className="max-h-full" src={errorImage} alt="Error loading" />}
       </div>
     </div>
   );
