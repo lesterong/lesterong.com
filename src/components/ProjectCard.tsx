@@ -1,6 +1,7 @@
 import useImage from '../hooks/useImage';
 import { ProjectProps } from '../types/Project';
 import errorImage from '../assets/images/error.png';
+import Loading from '../assets/Loading';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const { title, position, description, sourceCode, viewProject, imageSource } = project;
@@ -33,10 +34,15 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           )}
         </div>
       </div>
-      <div className="max-h-[288px] w-full bg-beige-100 p-6">
-        {loading && <div>Loading...</div>}
+      <div className="relative max-h-[288px] w-full bg-beige-100 p-6">
+        {loading && (
+          <div className="flex h-full flex-col items-center justify-center space-y-2">
+            <Loading />
+            <span>Loading image</span>
+          </div>
+        )}
         {image && <img className="mx-auto max-h-full" src={image} alt={title} />}
-        {error && <img className="mx-auto max-h-full" src={errorImage} alt="error loading" />}
+        {error && <img className="mx-auto max-h-full" src={errorImage} alt="Error loading" />}
       </div>
     </div>
   );

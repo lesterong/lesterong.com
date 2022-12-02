@@ -10,6 +10,7 @@ module.exports = {
       'red-100': 'hsl(0, 74%, 42%)',
       'green-100': 'hsl(142, 76%, 36%)',
       'beige-100': 'hsl(52, 94%, 94%)',
+      'gray-100': 'hsl(0, 0%, 66%)',
       'gray-200': 'hsl(0, 0%, 15%)',
       'gray-300': 'hsl(0, 0%, 10%)',
       'indigo-100': 'hsl(234, 89%, 74%)',
@@ -23,6 +24,7 @@ module.exports = {
         'bounce-right': 'bounce-right 1.2s infinite',
         'bounce-down': 'bounce-down 1.2s infinite',
         'gradient-shift': 'gradient-shift 3s ease infinite',
+        'fade-in': 'fade-in 1s infinite',
       },
       keyframes: {
         'bounce-right': {
@@ -47,6 +49,14 @@ module.exports = {
           },
           '50%': {
             'background-position': '100% 50%',
+          },
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
           },
         },
       },
