@@ -32,12 +32,12 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           })}
         </div>
       </div>
-      <div className="relative max-h-[288px] w-full bg-beige-100 p-6">
+      <div className="relative flex max-h-[288px] w-full flex-col items-center justify-center bg-beige-100 p-6">
         {loading && (
-          <div className="flex h-full flex-col items-center justify-center space-y-2">
+          <>
             <Loading />
-            <span>Loading image</span>
-          </div>
+            <span className="mt-2">Loading image</span>
+          </>
         )}
         {image && <img className="mx-auto max-h-full" src={image} alt={title} />}
         {error && <img className="mx-auto max-h-full" src={errorImage} alt="Error loading" />}
