@@ -34,7 +34,7 @@ const projects = [
     position: 'Developer and Designer',
     description:
       'NUS FAQ was built to serve as a central location to answer the most asked questions about different majors in National University of Singapore (NUS). Built with React and Firebase.',
-    note: 'This project is not affliated with NUS.',
+    note: 'This project is not affiliated with NUS.',
     isFeatured: false,
     imageSource: 'nusfaq',
     links: {
@@ -62,7 +62,7 @@ const projects = [
     position: 'Developer',
     description:
       'NUScheduler is a desktop app for managing contacts, optimised for use via a Command Line Interface with the benefits of a Graphical User Interface',
-    note: 'This project for the CS2103T module in NUS, but is not endorsed by NUS.',
+    note: 'This project is written for the CS2103T module in NUS, but is not endorsed by NUS.',
     isFeatured: false,
     imageSource: 'nuscheduler',
     links: {

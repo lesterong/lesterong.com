@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { Listbox } from '@headlessui/react';
+import { Fragment, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from '../sections/Section';
 import Bgcolors from '../types/Bgcolors';
 import Sorters from '../utils/Sorters';
+import ChevronDown from '../assets/ChevronDown';
 
 const Projects = () => {
   document.title = 'Lester Ong | Projects';
@@ -36,24 +37,35 @@ const Projects = () => {
                 value={sorter[variant as keyof typeof sorter]}
                 onChange={(e: string) => setSorter({ ...sorter, [variant]: e })}
               >
-                <Listbox.Button className="border-b border-b-gray-300">
+                <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-300">
                   {sorter[variant as keyof typeof sorter]}
+                  <ChevronDown />
                 </Listbox.Button>
-                <Listbox.Options className="absolute z-10 mt-1 w-[168px] cursor-pointer overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
-                  {values.map((o) => (
-                    <Listbox.Option value={o} key={o}>
-                      {({ active, selected }) => (
-                        <div
-                          className={`py-1 pl-2 ${selected ? 'font-semibold' : 'font-normal'} ${
-                            active ? 'bg-indigo-100/30' : 'bg-white'
-                          }`}
-                        >
-                          {o}
-                        </div>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
+                <Transition
+                  as={Fragment}
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  enter="transition ease-in-out duration-150"
+                  leave="transition ease-in-out duration-150"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Listbox.Options className="absolute z-10 mt-1 w-[168px] cursor-pointer overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
+                    {values.map((o) => (
+                      <Listbox.Option value={o} key={o}>
+                        {({ active, selected }) => (
+                          <div
+                            className={`py-1 pl-2 ${selected ? 'font-semibold' : 'font-normal'} ${
+                              active ? 'bg-indigo-100/30' : 'bg-white'
+                            }`}
+                          >
+                            {o}
+                          </div>
+                        )}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
+                </Transition>
               </Listbox>
             </div>
           );
