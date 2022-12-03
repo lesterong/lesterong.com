@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type SectionProps = {
-  color: string;
+  color?: string;
   textColor?: string;
   isFillViewport?: boolean;
   isVerticallyCentered?: boolean;

@@ -12,3 +12,15 @@
 .bg-color--primary {
   @apply bg-inherit;
 }
+
+.bg-color--secondary {
+  @apply bg-gray-800;
+}
+
+.text-color--primary {
+  @apply text-inherit;
+}
+
+.text-color--secondary {
+  @apply text-white;
+}

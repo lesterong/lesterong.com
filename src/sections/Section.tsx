@@ -1,8 +1,8 @@
 import { SectionProps } from '../types/Section';
 
 const Section = ({
-  color,
-  textColor = 'text-inherit',
+  color = 'bg-color--primary',
+  textColor = 'text-color--primary',
   isFillViewport = false,
   isVerticallyCentered = false,
   children,
