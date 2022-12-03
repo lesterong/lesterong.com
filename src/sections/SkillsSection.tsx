@@ -3,7 +3,7 @@ import Skills from '../assets/Skills';
 
 const SkillsSection = () => {
   return (
-    <Section color="bg-color--secondary" textColor="text-color--secondary">
+    <Section color="bg-color--tertiary" textColor="text-color--tertiary">
       <div className="home__skills">
         <h2>Skills</h2>
         <div className="content">

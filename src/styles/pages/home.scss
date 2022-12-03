@@ -2,7 +2,7 @@
   @apply max-w-xl;
 
   .text-gradient {
-    @apply bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent;
+    @apply gradient-color bg-gradient-to-r bg-clip-text text-transparent;
   }
 
   .animate-gradient {

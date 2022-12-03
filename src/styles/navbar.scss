@@ -8,11 +8,11 @@
   @apply flex space-x-4;
 
   > a {
-    @apply font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-600;
+    @apply hover:text-color--navbar font-display font-semibold transition duration-300 ease-in-out;
   }
 
   > a.selected {
-    @apply text-indigo-600;
+    @apply text-color--navbar;
   }
 }
 

@@ -6,10 +6,10 @@
   }
 
   input:not([type='radio']):not([type='checkbox']) {
-    @apply w-full rounded-none border-b border-b-gray-800 bg-transparent focus:border-b-indigo-600 focus:outline-none;
+    @apply border-color--form w-full rounded-none border-b bg-transparent focus:outline-none;
   }
 
   #message-input {
-    @apply min-h-[144px] w-full rounded-none border-b border-b-gray-800 bg-transparent focus:border-b-indigo-600 focus:outline-none;
+    @apply border-color--form min-h-[144px] w-full rounded-none border-b bg-transparent focus:outline-none;
   }
 }
