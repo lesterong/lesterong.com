@@ -1,10 +1,9 @@
 import Section from '../sections/Section';
-import BgColor from '../utils/BgColor';
 
 const Resume = () => {
   document.title = 'Lester Ong | Resume';
   return (
-    <Section color={BgColor.Base}>
+    <Section>
       <h1 className="heading--primary">Resume</h1>
       <h2 className="heading--secondary">Lester Ong</h2>
       <p className="mb-10">A software engineer with a passion in design and animation.</p>

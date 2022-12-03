@@ -1,7 +1,7 @@
 import Section from './Section';
 
 const HeroSection = () => (
-  <Section color="bg-color--primary" isVerticallyCentered isFillViewport>
+  <Section isVerticallyCentered isFillViewport>
     <div className="home__hero">
       <h1>
         Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.

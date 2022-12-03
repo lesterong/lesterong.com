@@ -1,12 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import BgColor from '../utils/BgColor';
 import Section from './Section';
 import Contact from '../assets/Contact';
 
 const Footer = () => {
   const { pathname } = useLocation();
   return (
-    <Section color={BgColor.Base}>
+    <Section>
       <hr className="border-gray-800" />
       <h2 className="mt-6">Like what you see?</h2>
       <div className="mt-2 flex flex-col justify-between sm:flex-row">
@@ -41,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="mb-6 text-center text-sm text-gray-400">&copy; Lester Ong, 2022.</p>
+      <p className="text-color--tertiary mb-6 text-center text-sm">&copy; Lester Ong, 2022.</p>
     </Section>
   );
 };

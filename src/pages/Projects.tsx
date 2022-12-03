@@ -4,7 +4,6 @@ import { Flipper, Flipped } from 'react-flip-toolkit';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from '../sections/Section';
-import BgColor from '../utils/BgColor';
 import Sorters from '../utils/Sorters';
 import ChevronDown from '../assets/ChevronDown';
 
@@ -34,7 +33,7 @@ const Projects = () => {
   }, [sorter]);
 
   return (
-    <Section color={BgColor.Base}>
+    <Section>
       <h1 className="heading--primary">Projects</h1>
       <h2 className="heading--secondary">All Projects</h2>
       <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">

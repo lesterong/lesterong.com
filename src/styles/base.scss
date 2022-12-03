@@ -2,8 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .heading--primary {
+    @apply mt-16 text-center;
+  }
+
+  .heading--secondary {
+    @apply mt-4;
+  }
+
+  .bg-color--primary {
+    @apply bg-beige;
+  }
+
+  .bg-color--secondary {
+    @apply bg-gray-800;
+  }
+
+  .text-color--primary {
+    @apply text-gray-900;
+  }
+
+  .text-color--secondary {
+    @apply text-white;
+  }
+
+  .text-color--tertiary {
+    @apply text-gray-400;
+  }
+}
+
 body {
-  @apply bg-beige font-body text-gray-900;
+  @apply bg-color--primary text-color--primary font-body;
   -webkit-tap-highlight-color: transparent;
 }
 

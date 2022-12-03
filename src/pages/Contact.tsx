@@ -109,7 +109,7 @@ const Contact = () => {
         message="Messaged sent successfully."
         isShowing={showSuccess}
       />
-      <Section color="bg-color--primary">
+      <Section>
         <h1 className="heading--primary">Contact</h1>
         <h2 className="heading--secondary">Let&apos;s Chat!</h2>
         <p>

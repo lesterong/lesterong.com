@@ -20,8 +20,9 @@
   > div:first-child {
     @apply flex flex-row space-x-4 empty:hidden;
   }
+
   > aside {
-    @apply mt-2 text-sm text-gray-400;
+    @apply text-color--tertiary mt-2 text-sm;
   }
 }
 
