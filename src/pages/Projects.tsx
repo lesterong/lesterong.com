@@ -36,7 +36,8 @@ const Projects = () => {
   return (
     <Section color={Bgcolors.Beige}>
       <h1 className="mt-16 text-center">Projects</h1>
-      <span className="mt-4 flex space-x-1 text-lg">
+      <h2 className="mt-4">All Projects</h2>
+      <span className="mt-4 flex space-x-1 text-base sm:text-lg">
         <span>Sort by</span>
         {Object.entries(variants).map((v) => {
           const [variant, values] = v;

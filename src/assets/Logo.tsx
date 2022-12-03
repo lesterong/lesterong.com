@@ -6,6 +6,7 @@ const Logo = () => (
       fill="white"
     />
     <path d="M4 7V16.4546H7.29542" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+    <title>Lester Ong</title>
   </svg>
 );
 
