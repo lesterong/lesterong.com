@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
+import { Flipper, Flipped } from 'react-flip-toolkit';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from '../sections/Section';
@@ -85,9 +86,27 @@ const Projects = () => {
           );
         })}
       </span>
-      {projectsToShow.map((p) => (
-        <ProjectCard key={p.title} project={p} />
-      ))}
+      <Flipper
+        flipKey={JSON.stringify(sorter)}
+        staggerConfig={{
+          default: {
+            reverse: true,
+            speed: 1,
+          },
+        }}
+      >
+        {projectsToShow.map((p) =>
+          window.matchMedia('(prefers-reduced-motion)').matches ? (
+            <ProjectCard key={p.title} project={p} />
+          ) : (
+            <Flipped key={p.title} flipId={p.title} stagger>
+              <div>
+                <ProjectCard project={p} />
+              </div>
+            </Flipped>
+          )
+        )}
+      </Flipper>
     </Section>
   );
 };
