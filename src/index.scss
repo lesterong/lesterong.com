@@ -6,6 +6,7 @@
 @use 'styles/pages/contact.scss';
 @use 'styles/pages/home.scss';
 @use 'styles/pages/projects.scss';
+@use 'styles/pages/resume.scss';
 
 /**
  * Font imports
@@ -29,8 +30,4 @@
   src: url(./fonts/SpaceGrotesk-VariableFont_wght.ttf) format('truetype-variations');
   font-weight: 100 900;
   font-display: swap;
-}
-
-.work-list {
-  @apply ml-4 list-disc;
 }
