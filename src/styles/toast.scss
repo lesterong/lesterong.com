@@ -1,0 +1,27 @@
+.toast {
+  @apply fixed bottom-6 z-10 flex w-screen justify-center px-6;
+}
+
+.toast-content {
+  @apply h-fit w-fit rounded-sm border-l-4 bg-white px-4 py-2 shadow-sm transition-all duration-200;
+
+  &.success {
+    @extend .toast-content;
+    @apply border-l-green;
+  }
+
+  &.failure {
+    @extend .toast-content;
+    @apply border-l-red;
+  }
+}
+
+.toast-content-is-open {
+  @extend .toast-content;
+  @apply translate-y-0 motion-reduce:opacity-100;
+}
+
+.toast-content-is-close {
+  @extend .toast-content;
+  @apply translate-y-36 motion-reduce:opacity-0;
+}

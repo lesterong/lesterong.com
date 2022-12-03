@@ -1,13 +1,11 @@
-import BgColor from '../utils/BgColor';
+import { ToastProps } from '../types/Toast';
 
-const Toast = ({ message, isSuccess, handleClose, isShowing }: any) => {
+const Toast = ({ message, isSuccess, handleClose, isShowing }: ToastProps) => {
   return (
-    <div className="fixed bottom-6 z-10 flex w-screen justify-center px-6">
+    <div className="toast">
       <button
-        className={`h-fit w-fit rounded-sm border-l-4 ${isSuccess ? 'border-l-green' : 'border-l-red'} ${
-          BgColor.Toast
-        } px-4 py-2 shadow-sm transition-all duration-200 ${
-          isShowing ? 'translate-y-0 motion-reduce:opacity-100' : 'translate-y-36 motion-reduce:opacity-0'
+        className={`${isSuccess ? 'success' : 'failure'}  ${
+          isShowing ? 'toast-content-is-open' : 'toast-content-is-close'
         }`}
         type="button"
         onClick={handleClose}
