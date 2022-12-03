@@ -76,3 +76,11 @@
     }
   }
 }
+
+.home__projects {
+  @apply mb-6;
+
+  h2 {
+    @apply mt-6;
+  }
+}
