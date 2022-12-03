@@ -101,3 +101,17 @@ input:not([type='radio']):not([type='checkbox']),
     }
   }
 }
+
+.dropdown {
+  @apply absolute z-10 w-auto overflow-auto rounded-md border border-gray-400/30 bg-white text-base shadow-sm;
+}
+
+.navbar__dropdown {
+  @extend .dropdown;
+  @apply flex flex-col;
+}
+
+.sorter__dropdown {
+  @extend .dropdown;
+  @apply mt-1;
+}

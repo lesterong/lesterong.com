@@ -40,16 +40,14 @@ const Navbar = () => {
         </Menu.Button>
         <Transition
           as={Fragment}
-          enterFrom="opacity-0 scale-75 origin-top-right"
+          enterFrom="opacity-0 scale-75"
           enterTo="opacity-100 scale-100 origin-top-right"
           enter="transition ease-in-out duration-150"
           leave="transition ease-in-out duration-150"
-          leaveFrom="opacity-100 scale-100 origin-top-right"
+          leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-75 origin-top-right"
         >
-          <Menu.Items
-            className={`absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-400/30 ${BgColor.DropdownBase} py-2 text-base shadow-sm`}
-          >
+          <Menu.Items className="navbar__dropdown">
             <Menu.Item>
               {({ active }) => (
                 <Link

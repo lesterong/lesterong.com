@@ -42,7 +42,7 @@ const Projects = () => {
         {Object.entries(variants).map((v) => {
           const [variant, values] = v;
           return (
-            <div key={variant}>
+            <div key={variant} className="relative">
               <Listbox
                 value={sorter[variant as keyof typeof sorter]}
                 onChange={(e: string) => {
@@ -59,21 +59,19 @@ const Projects = () => {
                 </Listbox.Button>
                 <Transition
                   as={Fragment}
-                  enterFrom="opacity-0 scale-75 origin-top-left"
-                  enterTo="opacity-100 scale-100 origin-top-left"
+                  enterFrom="opacity-0 scale-75"
+                  enterTo={`opacity-100 scale-100 ${variant === 'type' ? 'origin-top-right' : 'origin-top-left'}`}
                   enter="transition ease-in-out duration-150"
                   leave="transition ease-in-out duration-150"
-                  leaveFrom="opacity-100 scale-100 origin-top-left"
-                  leaveTo="opacity-0 scale-75 origin-top-left"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo={`opacity-0 scale-75 ${variant === 'type' ? 'origin-top-right' : 'origin-top-left'}`}
                 >
-                  <Listbox.Options
-                    className={`absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-400/30 ${BgColor.DropdownBase} py-2 text-base shadow-sm`}
-                  >
+                  <Listbox.Options className={`sorter__dropdown ${variant === 'type' ? 'right-0' : 'left-0'}`}>
                     {values.map((val) => (
                       <Listbox.Option value={val} key={val}>
                         {({ active, selected }) => (
                           <div
-                            className={`py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
+                            className={`cursor-pointer py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
                               active ? BgColor.DropdownActive : ''
                             }`}
                           >
