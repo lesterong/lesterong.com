@@ -18,10 +18,10 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.querySelector('#root')?.classList.add('dark');
+      document.querySelector('html')?.classList.add('dark');
       localStorage.theme = 'dark';
     } else {
-      document.querySelector('#root')?.classList.remove('dark');
+      document.querySelector('html')?.classList.remove('dark');
       localStorage.theme = 'light';
     }
   }, [isDarkMode]);
