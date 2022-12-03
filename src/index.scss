@@ -34,25 +34,3 @@
 .work-list {
   @apply ml-4 list-disc;
 }
-
-.skill-icon {
-  @apply flex w-12 flex-col items-center;
-
-  svg {
-    @apply h-12 w-12 grayscale transition-all duration-300;
-  }
-
-  span {
-    @apply text-center font-body text-xs opacity-0 transition-opacity duration-200;
-  }
-
-  &:hover {
-    svg {
-      @apply grayscale-0;
-    }
-
-    span {
-      @apply opacity-100;
-    }
-  }
-}

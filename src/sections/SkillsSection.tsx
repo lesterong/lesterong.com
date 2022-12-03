@@ -1,16 +1,14 @@
-import BgColor from '../utils/BgColor';
-import TextColor from '../utils/TextColor';
 import Section from './Section';
 import Skills from '../assets/Skills';
 
 const SkillsSection = () => {
   return (
-    <Section color={BgColor.BaseDark} textColor={TextColor.White}>
-      <div className="max-w-xl">
-        <h2 className="mt-6">Skills</h2>
-        <div className="mt-4 mb-6">
+    <Section color="bg-color--secondary" textColor="text-color--secondary">
+      <div className="home__skills">
+        <h2>Skills</h2>
+        <div className="content">
           <p>Familiar with...</p>
-          <div className="grid grid-cols-auto-fill gap-2">
+          <div>
             <Skills.Java />
             <Skills.Javascript />
             <Skills.Typescript />
@@ -23,7 +21,7 @@ const SkillsSection = () => {
           </div>
 
           <p>Experimented with...</p>
-          <div className="grid grid-cols-auto-fill gap-2">
+          <div>
             <Skills.Python />
             <Skills.Numpy />
             <Skills.Firebase />
