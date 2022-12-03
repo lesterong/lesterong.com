@@ -60,13 +60,15 @@ input:not([type='radio']):not([type='checkbox']),
 .nav-link {
   @apply text-indigo-600 transition duration-200 hover:text-indigo-800;
 
-  &:hover .right-arrow {
-    @apply animate-bounce-right motion-reduce:animate-none;
-  }
-}
+  &:hover {
+    .right-arrow {
+      @apply animate-bounce-right motion-reduce:animate-none;
+    }
 
-.nav-link:hover .down-arrow {
-  @apply animate-bounce-down motion-reduce:animate-none;
+    .down-arrow {
+      @apply animate-bounce-down motion-reduce:animate-none;
+    }
+  }
 }
 
 .text-gradient {
@@ -76,4 +78,26 @@ input:not([type='radio']):not([type='checkbox']),
 .animate-gradient {
   @apply animate-gradient-shift;
   background-size: 250% 250%;
+}
+
+.skill-icon {
+  @apply flex w-12 flex-col items-center;
+
+  svg {
+    @apply h-12 w-12 grayscale transition-all duration-300;
+  }
+
+  span {
+    @apply text-center font-body text-xs opacity-0 transition-opacity duration-200;
+  }
+
+  &:hover {
+    svg {
+      @apply grayscale-0;
+    }
+
+    span {
+      @apply opacity-100;
+    }
+  }
 }
