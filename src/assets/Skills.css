@@ -10,10 +10,10 @@
   @apply grayscale-0;
 }
 
-.skill-icon h5 {
-  @apply text-center opacity-0 transition-opacity duration-200;
+.skill-icon span {
+  @apply text-center font-body text-xs opacity-0 transition-opacity duration-200;
 }
 
-.skill-icon:hover h5 {
+.skill-icon:hover span {
   @apply opacity-100;
 }

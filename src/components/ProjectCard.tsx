@@ -42,8 +42,8 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             <span className="mt-2">Loading image</span>
           </>
         )}
-        {image && <img className="max-h-full" src={image} alt={title} />}
-        {error && <img className="max-h-full" src={errorImage} alt="Error loading" />}
+        {image && <img className="h-auto max-h-full w-auto" src={image} alt={title} />}
+        {error && <img className="h-auto max-h-full w-auto" src={errorImage} alt="Error loading" />}
       </div>
     </div>
   );
