@@ -51,7 +51,7 @@ const Navbar = () => {
               {({ active }) => (
                 <Link
                   to="/"
-                  className={`py-1 pl-2 pr-12 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
+                  className={`py-1 pl-2 pr-8 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
                     active ? 'bg-indigo-100/30' : 'bg-white'
                   }`}
                 >
@@ -64,7 +64,7 @@ const Navbar = () => {
                 {({ active }) => (
                   <Link
                     to={page}
-                    className={`py-1 pl-2 pr-12 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
+                    className={`py-1 pl-2 pr-8 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
                       active ? 'bg-indigo-100/30' : 'bg-white'
                     }`}
                   >

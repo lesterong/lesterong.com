@@ -37,7 +37,7 @@ const Projects = () => {
     <Section color={Bgcolors.Beige}>
       <h1 className="mt-16 text-center">Projects</h1>
       <h2 className="mt-4">All Projects</h2>
-      <span className="mt-4 flex space-x-1 text-base sm:text-lg">
+      <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">
         <span>Sort by</span>
         {Object.entries(variants).map((v) => {
           const [variant, values] = v;
@@ -67,15 +67,15 @@ const Projects = () => {
                   leaveTo="opacity-0 scale-75 origin-top-left"
                 >
                   <Listbox.Options className="absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
-                    {values.map((o) => (
-                      <Listbox.Option value={o} key={o}>
+                    {values.map((val) => (
+                      <Listbox.Option value={val} key={val}>
                         {({ active, selected }) => (
                           <div
-                            className={`py-1 pl-2 pr-12 ${selected ? 'font-semibold' : 'font-normal'} ${
+                            className={`py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
                               active ? 'bg-indigo-100/30' : 'bg-white'
                             }`}
                           >
-                            {o}
+                            {val}
                           </div>
                         )}
                       </Listbox.Option>
