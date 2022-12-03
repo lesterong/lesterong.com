@@ -1,13 +1,11 @@
-import Bgcolors from '../types/Bgcolors';
-import Textcolors from '../types/Textcolors';
 import Section from './Section';
 
 const AboutSection = () => (
-  <Section color={Bgcolors.Gray} textColor={Textcolors.White}>
-    <div className="max-w-xl">
-      <h2 className="mt-6">About Me</h2>
-      <p className="mt-6">Hey there, nice to meet you!</p>
-      <p className="mt-2 mb-6">
+  <Section color="bg-color--tertiary" textColor="text-color--tertiary">
+    <div className="home__about">
+      <h2>About Me</h2>
+      <p>Hey there, nice to meet you!</p>
+      <p>
         I am a software engineer, with a dose of designer. I love designing and building fluid software that are
         functional, yet fun to use.
       </p>

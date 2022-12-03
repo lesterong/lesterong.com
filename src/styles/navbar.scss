@@ -1,0 +1,35 @@
+@use 'dropdown.scss';
+
+.navbar {
+  @apply text-color--primary absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6;
+}
+
+.navbar__links {
+  @apply ml-6 flex grow justify-start space-x-6;
+
+  > a {
+    @apply hover:text-color--navbar font-display font-semibold transition duration-300 ease-in-out;
+  }
+
+  > a.selected {
+    @apply text-color--navbar;
+  }
+}
+
+.navbar__dropdown {
+  @extend .dropdown;
+  @apply flex flex-col transition-all duration-200;
+}
+
+.navbar__dropdown__item {
+  @extend .dropdown__item;
+  @apply pr-8 font-display;
+}
+
+.navbar__toggle {
+  @apply bg-color--toggle-bar relative inline-flex h-[16px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out;
+
+  span:nth-child(2) {
+    @apply bg-color--toggle pointer-events-none inline-block h-[12px] w-[12px] transform rounded-full ring-0 transition duration-200 ease-in-out;
+  }
+}

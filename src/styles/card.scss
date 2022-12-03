@@ -1,0 +1,39 @@
+.card {
+  @apply bg-color--secondary my-6 flex min-h-[318px] flex-col-reverse gap-4 rounded-lg p-4 shadow-sm first-of-type:mt-4 md:grid md:grid-cols-2 md:p-6;
+}
+
+.card__content {
+  @apply flex flex-col justify-between space-y-6 md:space-y-0;
+}
+
+.card__content__main {
+  > h4 {
+    @apply mb-4;
+  }
+
+  > p {
+    @apply mt-2;
+  }
+}
+
+.card__content__footer {
+  > div:first-child {
+    @apply flex flex-row space-x-4 empty:hidden;
+  }
+
+  > aside {
+    @apply text-color--secondary mt-2 text-sm;
+  }
+}
+
+.card__image {
+  @apply bg-color--primary relative flex h-[288px] w-full flex-col items-center justify-center p-6;
+
+  > img {
+    @apply h-auto max-h-full w-auto;
+  }
+
+  > span:first-of-type {
+    @apply mt-2;
+  }
+}

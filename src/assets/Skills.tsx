@@ -1,5 +1,3 @@
-import './Skills.css';
-
 const Html = () => (
   <div className="skill-icon">
     <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">

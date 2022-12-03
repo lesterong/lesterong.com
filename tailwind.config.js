@@ -1,23 +1,28 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line import/no-extraneous-dependencies
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       display: ['"Space Grotesk"', 'Helvetica', 'ui-sans-serif'],
       body: ['Figtree', 'system-ui', 'ui-sans-serif'],
     },
     colors: {
-      'red-100': 'hsl(0, 74%, 42%)',
-      'green-100': 'hsl(142, 76%, 36%)',
-      'beige-100': 'hsl(52, 94%, 94%)',
-      'gray-100': 'hsl(0, 0%, 66%)',
-      'gray-200': 'hsl(0, 0%, 15%)',
-      'gray-300': 'hsl(0, 0%, 10%)',
-      'indigo-100': 'hsl(234, 89%, 74%)',
-      'indigo-200': 'hsl(243, 75%, 59%)',
-      'indigo-300': 'hsl(244, 55%, 41%)',
-      white: 'hsl(0, 0%, 100%)',
+      red: colors.red,
+      green: 'hsl(142, 76%, 36%)',
+      beige: 'hsl(52, 94%, 94%)',
       transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.neutral,
+      indigo: colors.indigo,
+      inherit: colors.inherit,
+      'd-primary': '#051923',
+      'd-secondary': '#282A3A',
     },
     extend: {
       animation: {

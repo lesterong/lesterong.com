@@ -1,15 +1,30 @@
-import { Menu, Transition } from '@headlessui/react';
+import { Menu, Transition, Switch } from '@headlessui/react';
 import { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
 
 const Navbar = () => {
-  const MENU_WIDTH: number = 368;
+  const MENU_WIDTH: number = 538;
   const [isButton, setIsButton] = useState(window.innerWidth < MENU_WIDTH);
 
   const pages: Array<'projects' | 'resume' | 'contact'> = ['projects', 'resume', 'contact'];
   const { pathname } = useLocation();
+
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  );
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.querySelector('html')?.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.querySelector('html')?.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  }, [isDarkMode]);
 
   useEffect(
     () => window.addEventListener('resize', () => setIsButton(window.innerWidth < MENU_WIDTH)),
@@ -24,21 +39,19 @@ const Navbar = () => {
         </Menu.Button>
         <Transition
           as={Fragment}
-          enterFrom="opacity-0 scale-75 origin-top-right"
-          enterTo="opacity-100 scale-100 origin-top-right"
-          enter="transition ease-in-out duration-150"
-          leave="transition ease-in-out duration-150"
-          leaveFrom="opacity-100 scale-100 origin-top-right"
-          leaveTo="opacity-0 scale-75 origin-top-right"
+          enterFrom="dropdown-transition-is-close"
+          enterTo="dropdown-transition-is-open origin-top-right"
+          enter="dropdown-transition"
+          leave="dropdown-transition"
+          leaveFrom="dropdown-transition-is-open"
+          leaveTo="dropdown-transition-is-close origin-top-right"
         >
-          <Menu.Items className="absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
+          <Menu.Items className="navbar__dropdown">
             <Menu.Item>
               {({ active }) => (
                 <Link
                   to="/"
-                  className={`py-1 pl-2 pr-8 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
-                    active ? 'bg-indigo-100/30' : 'bg-white'
-                  }`}
+                  className={`navbar__dropdown__item ${pathname === '/' ? 'selected' : ''} ${active ? 'active' : ''}`}
                 >
                   Home
                 </Link>
@@ -49,8 +62,8 @@ const Navbar = () => {
                 {({ active }) => (
                   <Link
                     to={page}
-                    className={`py-1 pl-2 pr-8 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
-                      active ? 'bg-indigo-100/30' : 'bg-white'
+                    className={`navbar__dropdown__item ${pathname === `/${page}` ? 'selected' : ''} ${
+                      active ? 'active' : ''
                     }`}
                   >
                     {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
@@ -58,6 +71,22 @@ const Navbar = () => {
                 )}
               </Menu.Item>
             ))}
+            <button
+              type="button"
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="border-color--dropdown flex items-center justify-start border-t py-2 pl-2"
+            >
+              <Switch
+                checked={isDarkMode}
+                onChange={() => setIsDarkMode(!isDarkMode)}
+                className="navbar__toggle"
+                as="div"
+              >
+                <span className="sr-only">Toggle dark mode</span>
+                <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+              </Switch>
+              <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
+            </button>
           </Menu.Items>
         </Transition>
       </Menu>
@@ -65,23 +94,26 @@ const Navbar = () => {
   );
 
   const navLinks = (
-    <div className="flex space-x-4">
-      {pages.map((page) => (
-        <Link
-          key={page}
-          to={page}
-          className={`font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-200 ${
-            pathname === `/${page}` ? 'text-indigo-200' : ''
-          }`}
-        >
-          {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="navbar__links">
+        {pages.map((page) => (
+          <Link key={page} to={page} className={`${pathname === `/${page}` ? 'selected' : ''}`}>
+            {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center justify-end space-x-2">
+        <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
+        <Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} className="navbar__toggle" as="div">
+          <span className="sr-only">Toggle dark mode</span>
+          <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+        </Switch>
+      </div>
+    </>
   );
 
   return (
-    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6">
+    <nav className="navbar">
       <Link to="/">
         <Logo />
       </Link>

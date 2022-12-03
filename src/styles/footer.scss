@@ -1,0 +1,15 @@
+.footer {
+  @apply mt-2 flex flex-col justify-between sm:flex-row;
+}
+
+.footer__connect {
+  @apply text-left sm:text-right;
+
+  > div {
+    @apply mb-6 mt-2 flex justify-start space-x-4 sm:justify-end;
+
+    > a > svg {
+      @apply stroke-color--link h-6 w-6 fill-none stroke-2 transition duration-300;
+    }
+  }
+}

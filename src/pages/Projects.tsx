@@ -4,7 +4,6 @@ import { Flipper, Flipped } from 'react-flip-toolkit';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from '../sections/Section';
-import Bgcolors from '../types/Bgcolors';
 import Sorters from '../utils/Sorters';
 import ChevronDown from '../assets/ChevronDown';
 
@@ -34,22 +33,22 @@ const Projects = () => {
   }, [sorter]);
 
   return (
-    <Section color={Bgcolors.Beige}>
-      <h1 className="mt-16 text-center">Projects</h1>
-      <h2 className="mt-4">All Projects</h2>
-      <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">
+    <Section>
+      <h1 className="heading--primary">Projects</h1>
+      <h2 className="heading--secondary">All Projects</h2>
+      <span className="sorter">
         <span>Sort by</span>
         {Object.entries(variants).map((v) => {
           const [variant, values] = v;
           return (
-            <div key={variant}>
+            <div key={variant} className="relative">
               <Listbox
                 value={sorter[variant as keyof typeof sorter]}
                 onChange={(e: string) => {
                   setSorter({ ...sorter, [variant]: e });
                 }}
               >
-                <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-300">
+                <Listbox.Button className="sorter__button">
                   {({ open }) => (
                     <>
                       {sorter[variant as keyof typeof sorter]}
@@ -59,21 +58,21 @@ const Projects = () => {
                 </Listbox.Button>
                 <Transition
                   as={Fragment}
-                  enterFrom="opacity-0 scale-75 origin-top-left"
-                  enterTo="opacity-100 scale-100 origin-top-left"
-                  enter="transition ease-in-out duration-150"
-                  leave="transition ease-in-out duration-150"
-                  leaveFrom="opacity-100 scale-100 origin-top-left"
-                  leaveTo="opacity-0 scale-75 origin-top-left"
+                  enterFrom="dropdown-transition-is-close"
+                  enterTo={`dropdown-transition-is-open ${variant === 'type' ? 'origin-top-right' : 'origin-top-left'}`}
+                  enter="dropdown-transition"
+                  leave="dropdown-transition"
+                  leaveFrom="dropdown-transition-is-open"
+                  leaveTo={`dropdown-transition-is-close ${
+                    variant === 'type' ? 'origin-top-right' : 'origin-top-left'
+                  }`}
                 >
-                  <Listbox.Options className="absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
+                  <Listbox.Options className={`sorter__dropdown ${variant === 'type' ? 'right-0' : 'left-0'}`}>
                     {values.map((val) => (
                       <Listbox.Option value={val} key={val}>
                         {({ active, selected }) => (
                           <div
-                            className={`py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
-                              active ? 'bg-indigo-100/30' : 'bg-white'
-                            }`}
+                            className={`sorter__dropdown__item ${selected ? 'selected' : ''} ${active ? 'active' : ''}`}
                           >
                             {val}
                           </div>

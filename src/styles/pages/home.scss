@@ -1,0 +1,86 @@
+.home__hero {
+  @apply max-w-xl;
+
+  .text-gradient {
+    @apply gradient-color bg-gradient-to-r bg-clip-text text-transparent;
+  }
+
+  .animate-gradient {
+    @apply animate-gradient-shift;
+    background-size: 250% 250%;
+  }
+
+  p:first-of-type {
+    @apply mt-4;
+  }
+
+  p:not(p:first-of-type) {
+    @apply mt-1;
+  }
+}
+
+.home__about {
+  @apply max-w-xl;
+
+  h2 {
+    @apply mt-6;
+  }
+
+  p:first-of-type {
+    @apply mt-6;
+  }
+
+  p:not(p:first-of-type) {
+    @apply mt-2;
+  }
+
+  p:last-of-type {
+    @apply mb-6;
+  }
+}
+
+.home__skills {
+  @apply max-w-xl;
+
+  h2 {
+    @apply mt-6;
+  }
+
+  .content {
+    @apply mt-4 mb-6;
+
+    > div {
+      @apply grid grid-cols-auto-fill gap-2;
+    }
+  }
+
+  .skill-icon {
+    @apply flex w-12 flex-col items-center;
+
+    svg {
+      @apply h-12 w-12 grayscale transition-all duration-300;
+    }
+
+    span {
+      @apply text-center font-body text-xs opacity-0 transition-opacity duration-200;
+    }
+
+    &:hover {
+      svg {
+        @apply grayscale-0;
+      }
+
+      span {
+        @apply opacity-100;
+      }
+    }
+  }
+}
+
+.home__projects {
+  @apply mb-6;
+
+  h2 {
+    @apply mt-6;
+  }
+}
