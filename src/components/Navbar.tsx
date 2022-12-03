@@ -47,13 +47,15 @@ const Navbar = () => {
           leaveFrom="opacity-100 scale-100 origin-top-right"
           leaveTo="opacity-0 scale-75 origin-top-right"
         >
-          <Menu.Items className="absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-400/30 bg-white py-2 text-base shadow-sm">
+          <Menu.Items
+            className={`absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-400/30 ${BgColor.DropdownBase} py-2 text-base shadow-sm`}
+          >
             <Menu.Item>
               {({ active }) => (
                 <Link
                   to="/"
                   className={`py-1 pl-2 pr-8 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
-                    active ? BgColor.Dropdown : ''
+                    active ? BgColor.DropdownActive : ''
                   }`}
                 >
                   Home
@@ -66,7 +68,7 @@ const Navbar = () => {
                   <Link
                     to={page}
                     className={`py-1 pl-2 pr-8 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
-                      active ? BgColor.Dropdown : ''
+                      active ? BgColor.DropdownActive : ''
                     }`}
                   >
                     {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Alert from '../components/Alert';
+import Toast from '../components/Toast';
 import Section from '../sections/Section';
 import BgColor from '../utils/BgColor';
 import { FormDataProps } from '../types/Formdata';
@@ -98,13 +98,13 @@ const Contact = () => {
 
   return (
     <>
-      <Alert
+      <Toast
         handleClose={() => setShowError(false)}
         isSuccess={false}
         message="An error occurred. Please try again, or contact me via email."
         isShowing={showError}
       />
-      <Alert
+      <Toast
         handleClose={() => setShowSuccess(false)}
         isSuccess
         message="Messaged sent successfully."

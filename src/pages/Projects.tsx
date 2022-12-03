@@ -66,13 +66,15 @@ const Projects = () => {
                   leaveFrom="opacity-100 scale-100 origin-top-left"
                   leaveTo="opacity-0 scale-75 origin-top-left"
                 >
-                  <Listbox.Options className="absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-400/30 bg-white py-2 text-base shadow-sm">
+                  <Listbox.Options
+                    className={`absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-400/30 ${BgColor.DropdownBase} py-2 text-base shadow-sm`}
+                  >
                     {values.map((val) => (
                       <Listbox.Option value={val} key={val}>
                         {({ active, selected }) => (
                           <div
                             className={`py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
-                              active ? BgColor.Dropdown : ''
+                              active ? BgColor.DropdownActive : ''
                             }`}
                           >
                             {val}
