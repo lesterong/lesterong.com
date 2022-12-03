@@ -19,6 +19,14 @@
     @apply bg-indigo-400/30;
   }
 
+  .bg-color--toggle {
+    @apply bg-gray-200 dark:bg-gray-800;
+  }
+
+  .bg-color--toggle-bar {
+    @apply bg-gray-800 dark:bg-gray-200;
+  }
+
   .text-color--primary {
     @apply text-gray-900 dark:text-gray-200;
   }

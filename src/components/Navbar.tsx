@@ -1,11 +1,11 @@
-import { Menu, Transition } from '@headlessui/react';
+import { Menu, Transition, Switch } from '@headlessui/react';
 import { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
 
 const Navbar = () => {
-  const MENU_WIDTH: number = 368;
+  const MENU_WIDTH: number = 538;
   const [isButton, setIsButton] = useState(window.innerWidth < MENU_WIDTH);
 
   const pages: Array<'projects' | 'resume' | 'contact'> = ['projects', 'resume', 'contact'];
@@ -71,8 +71,21 @@ const Navbar = () => {
                 )}
               </Menu.Item>
             ))}
-            <button type="button" className="border-t pl-2 text-left" onClick={() => setIsDarkMode(!isDarkMode)}>
-              {isDarkMode ? 'Dark' : 'Light'}
+            <button
+              type="button"
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="border-color--dropdown flex items-center justify-start border-t py-1 pl-2"
+            >
+              <Switch
+                checked={isDarkMode}
+                onChange={() => setIsDarkMode(!isDarkMode)}
+                className="navbar__toggle"
+                as="div"
+              >
+                <span className="sr-only">Toggle dark mode</span>
+                <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+              </Switch>
+              <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
             </button>
           </Menu.Items>
         </Transition>
@@ -81,16 +94,22 @@ const Navbar = () => {
   );
 
   const navLinks = (
-    <div className="navbar__links">
-      {pages.map((page) => (
-        <Link key={page} to={page} className={`${pathname === `/${page}` ? 'selected' : ''}`}>
-          {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
-        </Link>
-      ))}
-      <button type="button" onClick={() => setIsDarkMode(!isDarkMode)}>
-        {isDarkMode ? 'Dark' : 'Light'}
-      </button>
-    </div>
+    <>
+      <div className="navbar__links">
+        {pages.map((page) => (
+          <Link key={page} to={page} className={`${pathname === `/${page}` ? 'selected' : ''}`}>
+            {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center justify-end space-x-2">
+        <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
+        <Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} className="navbar__toggle" as="div">
+          <span className="sr-only">Toggle dark mode</span>
+          <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+        </Switch>
+      </div>
+    </>
   );
 
   return (
