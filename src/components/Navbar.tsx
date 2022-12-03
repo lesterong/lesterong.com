@@ -3,7 +3,6 @@ import { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
-import BgColor from '../utils/BgColor';
 
 const Navbar = () => {
   const MENU_WIDTH: number = 368;
@@ -40,21 +39,19 @@ const Navbar = () => {
         </Menu.Button>
         <Transition
           as={Fragment}
-          enterFrom="opacity-0 scale-75"
-          enterTo="opacity-100 scale-100 origin-top-right"
-          enter="transition ease-in-out duration-150"
-          leave="transition ease-in-out duration-150"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-75 origin-top-right"
+          enterFrom="dropdown-transition-is-close"
+          enterTo="dropdown-transition-is-open origin-top-right"
+          enter="dropdown-transition"
+          leave="dropdown-transition"
+          leaveFrom="dropdown-transition-is-open"
+          leaveTo="dropdown-transition-is-close origin-top-right"
         >
           <Menu.Items className="navbar__dropdown">
             <Menu.Item>
               {({ active }) => (
                 <Link
                   to="/"
-                  className={`py-1 pl-2 pr-8 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
-                    active ? BgColor.DropdownActive : ''
-                  }`}
+                  className={`navbar__dropdown__item ${pathname === '/' ? 'selected' : ''} ${active ? 'active' : ''}`}
                 >
                   Home
                 </Link>
@@ -65,8 +62,8 @@ const Navbar = () => {
                 {({ active }) => (
                   <Link
                     to={page}
-                    className={`py-1 pl-2 pr-8 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
-                      active ? BgColor.DropdownActive : ''
+                    className={`navbar__dropdown__item ${pathname === `/${page}` ? 'selected' : ''} ${
+                      active ? 'active' : ''
                     }`}
                   >
                     {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
