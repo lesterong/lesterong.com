@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
+import BgColor from '../utils/BgColor';
 
 const Navbar = () => {
   const MENU_WIDTH: number = 368;
@@ -46,13 +47,13 @@ const Navbar = () => {
           leaveFrom="opacity-100 scale-100 origin-top-right"
           leaveTo="opacity-0 scale-75 origin-top-right"
         >
-          <Menu.Items className="absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
+          <Menu.Items className="absolute z-10 mt-1 flex w-auto cursor-pointer flex-col overflow-auto rounded-md border border-gray-400/30 bg-white py-2 text-base shadow-sm">
             <Menu.Item>
               {({ active }) => (
                 <Link
                   to="/"
                   className={`py-1 pl-2 pr-8 font-display ${pathname === '/' ? 'font-semibold' : ''} ${
-                    active ? 'bg-indigo-100/30' : 'bg-white'
+                    active ? BgColor.Dropdown : ''
                   }`}
                 >
                   Home
@@ -65,7 +66,7 @@ const Navbar = () => {
                   <Link
                     to={page}
                     className={`py-1 pl-2 pr-8 font-display ${pathname === `/${page}` ? 'font-semibold' : ''} ${
-                      active ? 'bg-indigo-100/30' : 'bg-white'
+                      active ? BgColor.Dropdown : ''
                     }`}
                   >
                     {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
@@ -88,8 +89,8 @@ const Navbar = () => {
         <Link
           key={page}
           to={page}
-          className={`font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-200 ${
-            pathname === `/${page}` ? 'text-indigo-200' : ''
+          className={`font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-600 ${
+            pathname === `/${page}` ? 'text-indigo-600' : ''
           }`}
         >
           {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
@@ -102,7 +103,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6 text-gray-300">
+    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6 text-gray-900">
       <Link to="/">
         <Logo />
       </Link>

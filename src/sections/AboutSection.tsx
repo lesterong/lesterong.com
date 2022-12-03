@@ -1,9 +1,9 @@
-import Bgcolors from '../types/Bgcolors';
-import Textcolors from '../types/Textcolors';
+import BgColor from '../utils/BgColor';
+import TextColor from '../utils/TextColor';
 import Section from './Section';
 
 const AboutSection = () => (
-  <Section color={Bgcolors.Gray} textColor={Textcolors.White}>
+  <Section color={BgColor.BaseDark} textColor={TextColor.White}>
     <div className="max-w-xl">
       <h2 className="mt-6">About Me</h2>
       <p className="mt-6">Hey there, nice to meet you!</p>

@@ -1,9 +1,9 @@
 import { SectionProps } from '../types/Section';
-import Textcolors from '../types/Textcolors';
+import TextColor from '../utils/TextColor';
 
 const Section = ({
   color,
-  textColor = Textcolors.Gray,
+  textColor = TextColor.Gray,
   isFillViewport = false,
   isVerticallyCentered = false,
   children,

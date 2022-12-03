@@ -11,27 +11,15 @@ module.exports = {
       body: ['Figtree', 'system-ui', 'ui-sans-serif'],
     },
     colors: {
-      'red-100': 'hsl(0, 74%, 42%)',
-      'green-100': 'hsl(142, 76%, 36%)',
-      'beige-100': 'hsl(52, 94%, 94%)',
+      red: 'hsl(0, 74%, 42%)',
+      green: 'hsl(142, 76%, 36%)',
+      beige: 'hsl(52, 94%, 94%)',
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-      gray: {
-        ...colors.gray,
-        100: 'hsl(0, 0%, 66%)',
-        200: 'hsl(0, 0%, 15%)',
-        300: 'hsl(0, 0%, 10%)',
-      },
-      emerald: colors.emerald,
-      indigo: {
-        ...colors.indigo,
-        100: 'hsl(234, 89%, 74%)',
-        200: 'hsl(243, 75%, 59%)',
-        300: 'hsl(244, 55%, 41%)',
-      },
-      yellow: colors.yellow,
+      gray: colors.neutral,
+      indigo: colors.indigo,
     },
     extend: {
       animation: {

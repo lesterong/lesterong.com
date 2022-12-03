@@ -1,10 +1,10 @@
 import Section from '../sections/Section';
-import Bgcolors from '../types/Bgcolors';
+import BgColor from '../utils/BgColor';
 
 const Resume = () => {
   document.title = 'Lester Ong | Resume';
   return (
-    <Section color={Bgcolors.Beige}>
+    <Section color={BgColor.Base}>
       <h1 className="mt-16 text-center">Resume</h1>
       <h2 className="mt-4">Lester Ong</h2>
       <p className="mb-10">A software engineer with a passion in design and animation.</p>
@@ -51,7 +51,7 @@ const Resume = () => {
       </section>
 
       <a
-        className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2 text-indigo-200 transition duration-300 hover:text-indigo-300"
+        className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2 text-indigo-600 transition duration-300 hover:text-indigo-800"
         href="../files/Lester_Ong_CV"
         download
       >

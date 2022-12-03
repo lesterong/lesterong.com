@@ -1,7 +1,7 @@
 const ChevronDown = ({ isExpanded }: { isExpanded: boolean }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className={`h-4 w-4 fill-none stroke-gray-300 stroke-2 transition-all duration-300 ease-in-out ${
+    className={`h-4 w-4 fill-none stroke-gray-900 stroke-2 transition-all duration-300 ease-in-out ${
       isExpanded ? '-rotate-180' : 'rotate-0'
     } motion-reduce:transition-none`}
     viewBox="0 0 24 24"

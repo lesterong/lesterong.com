@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Alert from '../components/Alert';
 import Section from '../sections/Section';
-import Bgcolors from '../types/Bgcolors';
+import BgColor from '../utils/BgColor';
 import { FormDataProps } from '../types/Formdata';
 
 const Contact = () => {
@@ -110,13 +110,13 @@ const Contact = () => {
         message="Messaged sent successfully."
         isShowing={showSuccess}
       />
-      <Section color={Bgcolors.Beige}>
+      <Section color={BgColor.Base}>
         <h1 className="mt-16 text-center">Contact</h1>
         <h2 className="mt-4">Let&apos;s Chat!</h2>
         <p>
           Fill up this form to contact me. Alternatively, drop me an{' '}
           <a
-            className="text-indigo-200 transition duration-200 hover:text-indigo-300"
+            className="text-indigo-600 transition duration-200 hover:text-indigo-800"
             href="mailto:lesterong776@gmail.com"
           >
             email
@@ -128,12 +128,12 @@ const Contact = () => {
           <label htmlFor="name">
             Name
             <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
-            {errors.name && <span className="text-red-100">A name is required.</span>}
+            {errors.name && <span className="text-red">A name is required.</span>}
           </label>
           <label htmlFor="email">
             Email
             <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
-            {errors.email && <span className="text-red-100">A valid email is required.</span>}
+            {errors.email && <span className="text-red">A valid email is required.</span>}
           </label>
           <label htmlFor="message">
             Message
@@ -145,7 +145,7 @@ const Contact = () => {
               onInput={handleChange}
               onBlur={handleValidation}
             />
-            {errors.message && <span className="text-red-100">A message is required.</span>}
+            {errors.message && <span className="text-red">A message is required.</span>}
           </label>
           <p>
             <button className="nav-link w-max" type="submit">

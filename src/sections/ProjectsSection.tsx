@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
-import Bgcolors from '../types/Bgcolors';
+import BgColor from '../utils/BgColor';
 import Section from './Section';
 
 const ProjectsSection = () => {
   const featProjects = projects.filter((p) => p.isFeatured);
   return (
-    <Section color={Bgcolors.Beige}>
+    <Section color={BgColor.Base}>
       <div className="mb-6">
         <h2 className="mt-6">Featured Projects</h2>
         {featProjects.map((p) => (

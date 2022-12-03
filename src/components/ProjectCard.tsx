@@ -2,6 +2,7 @@ import useImage from '../hooks/useImage';
 import { ProjectProps } from '../types/Project';
 import errorImage from '../assets/images/error.png';
 import Loading from '../assets/Loading';
+import BgColor from '../utils/BgColor';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   const { title, position, description, note, imageSource, links } = project;
@@ -32,10 +33,10 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               );
             })}
           </div>
-          {note && <div className="mt-2 text-sm text-gray-100">*{note}</div>}
+          {note && <div className="mt-2 text-sm text-gray-400">*{note}</div>}
         </div>
       </div>
-      <div className="relative flex h-[288px] w-full flex-col items-center justify-center bg-beige-100 p-6">
+      <div className={`relative flex h-[288px] w-full flex-col items-center justify-center ${BgColor.Base} p-6`}>
         {loading && (
           <>
             <Loading />

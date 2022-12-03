@@ -1,8 +1,8 @@
 import Section from './Section';
-import Bgcolors from '../types/Bgcolors';
+import BgColor from '../utils/BgColor';
 
 const HeroSection = () => (
-  <Section color={Bgcolors.Beige} isVerticallyCentered isFillViewport>
+  <Section color={BgColor.Base} isVerticallyCentered isFillViewport>
     <div className="max-w-xl">
       <h1>
         Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.

@@ -4,7 +4,7 @@ import { Flipper, Flipped } from 'react-flip-toolkit';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from '../sections/Section';
-import Bgcolors from '../types/Bgcolors';
+import BgColor from '../utils/BgColor';
 import Sorters from '../utils/Sorters';
 import ChevronDown from '../assets/ChevronDown';
 
@@ -34,7 +34,7 @@ const Projects = () => {
   }, [sorter]);
 
   return (
-    <Section color={Bgcolors.Beige}>
+    <Section color={BgColor.Base}>
       <h1 className="mt-16 text-center">Projects</h1>
       <h2 className="mt-4">All Projects</h2>
       <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">
@@ -49,7 +49,7 @@ const Projects = () => {
                   setSorter({ ...sorter, [variant]: e });
                 }}
               >
-                <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-300">
+                <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-900">
                   {({ open }) => (
                     <>
                       {sorter[variant as keyof typeof sorter]}
@@ -66,13 +66,13 @@ const Projects = () => {
                   leaveFrom="opacity-100 scale-100 origin-top-left"
                   leaveTo="opacity-0 scale-75 origin-top-left"
                 >
-                  <Listbox.Options className="absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-100/30 bg-white py-2 text-base shadow-sm">
+                  <Listbox.Options className="absolute z-10 mt-1 cursor-pointer overflow-auto rounded-md border border-gray-400/30 bg-white py-2 text-base shadow-sm">
                     {values.map((val) => (
                       <Listbox.Option value={val} key={val}>
                         {({ active, selected }) => (
                           <div
                             className={`py-1 pl-2 pr-6 ${selected ? 'font-semibold' : 'font-normal'} ${
-                              active ? 'bg-indigo-100/30' : 'bg-white'
+                              active ? BgColor.Dropdown : ''
                             }`}
                           >
                             {val}
