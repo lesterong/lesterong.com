@@ -74,7 +74,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="border-color--dropdown flex items-center justify-start border-t py-1 pl-2"
+              className="border-color--dropdown flex items-center justify-start border-t py-2 pl-2"
             >
               <Switch
                 checked={isDarkMode}
