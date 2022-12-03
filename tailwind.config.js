@@ -21,6 +21,8 @@ module.exports = {
       gray: colors.neutral,
       indigo: colors.indigo,
       inherit: colors.inherit,
+      'd-primary': '#051923',
+      'd-secondary': '#282A3A',
     },
     extend: {
       animation: {

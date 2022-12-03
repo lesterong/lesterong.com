@@ -96,7 +96,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <Section>
       <Toast
         handleClose={() => setShowError(false)}
         isSuccess={false}
@@ -109,42 +109,40 @@ const Contact = () => {
         message="Messaged sent successfully."
         isShowing={showSuccess}
       />
-      <Section>
-        <h1 className="heading--primary">Contact</h1>
-        <h2 className="heading--secondary">Let&apos;s Chat!</h2>
+      <h1 className="heading--primary">Contact</h1>
+      <h2 className="heading--secondary">Let&apos;s Chat!</h2>
+      <p>
+        Fill up this form to contact me. Alternatively, drop me an{' '}
+        <a className="nav-link" href="mailto:lesterong776@gmail.com">
+          email
+        </a>
+        .
+      </p>
+      <form className="contact-form" method="post" onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="contact" />
+        <label htmlFor="name">
+          Name
+          <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
+          {errors.name && <span className="error">A name is required.</span>}
+        </label>
+        <label htmlFor="email">
+          Email
+          <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
+          {errors.email && <span className="error">A valid email is required.</span>}
+        </label>
+        <label htmlFor="message">
+          Message
+          <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
+          <div id="message-input" contentEditable onInput={handleChange} onBlur={handleValidation} />
+          {errors.message && <span className="error">A message is required.</span>}
+        </label>
         <p>
-          Fill up this form to contact me. Alternatively, drop me an{' '}
-          <a className="nav-link" href="mailto:lesterong776@gmail.com">
-            email
-          </a>
-          .
+          <button className="nav-link" type="submit">
+            Send message <span className="right-arrow">&#x2192;</span>
+          </button>
         </p>
-        <form className="contact-form" method="post" onSubmit={handleSubmit}>
-          <input type="hidden" name="form-name" value="contact" />
-          <label htmlFor="name">
-            Name
-            <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
-            {errors.name && <span className="error">A name is required.</span>}
-          </label>
-          <label htmlFor="email">
-            Email
-            <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
-            {errors.email && <span className="error">A valid email is required.</span>}
-          </label>
-          <label htmlFor="message">
-            Message
-            <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
-            <div id="message-input" contentEditable onInput={handleChange} onBlur={handleValidation} />
-            {errors.message && <span className="error">A message is required.</span>}
-          </label>
-          <p>
-            <button className="nav-link" type="submit">
-              Send message <span className="right-arrow">&#x2192;</span>
-            </button>
-          </p>
-        </form>
-      </Section>
-    </>
+      </form>
+    </Section>
   );
 };
 
