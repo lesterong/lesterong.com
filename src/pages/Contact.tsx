@@ -142,7 +142,7 @@ const Contact = () => {
         handleClose={() => setShowSuccess(false)}
         isSuccess
         message="Message sent successfully."
-        isShowing={!showSuccess}
+        isShowing={showSuccess}
       />
     </>
   );
