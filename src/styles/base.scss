@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Base styles used across different pages
- */
 body {
   @apply bg-beige font-body text-gray-900;
   -webkit-tap-highlight-color: transparent;
