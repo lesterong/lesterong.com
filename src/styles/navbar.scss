@@ -18,7 +18,7 @@
 
 .navbar__dropdown {
   @extend .dropdown;
-  @apply flex flex-col;
+  @apply flex flex-col transition-all duration-200;
 }
 
 .navbar__dropdown__item {
