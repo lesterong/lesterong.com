@@ -2,11 +2,6 @@
   @apply absolute z-10 w-auto overflow-auto rounded-md border border-gray-400/30 bg-white text-base shadow-sm;
 }
 
-.sorter__dropdown {
-  @extend .dropdown;
-  @apply mt-1;
-}
-
 .dropdown-transition {
   @apply transition duration-150 ease-in-out;
 }
@@ -29,9 +24,4 @@
   &.selected {
     @apply font-semibold;
   }
-}
-
-.sorter__dropdown__item {
-  @extend .dropdown__item;
-  @apply pr-6;
 }

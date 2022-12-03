@@ -1,0 +1,19 @@
+@use '../dropdown.scss';
+
+.sorter {
+  @apply mt-4 flex flex-wrap gap-1 text-base sm:text-lg;
+}
+
+.sorter__dropdown {
+  @extend .dropdown;
+  @apply mt-1;
+}
+
+.sorter__dropdown__item {
+  @extend .dropdown__item;
+  @apply pr-6;
+}
+
+.sorter__button {
+  @apply border-color--primary flex flex-row items-center gap-1 border-b;
+}

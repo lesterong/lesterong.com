@@ -36,7 +36,7 @@ const Projects = () => {
     <Section>
       <h1 className="heading--primary">Projects</h1>
       <h2 className="heading--secondary">All Projects</h2>
-      <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">
+      <span className="sorter">
         <span>Sort by</span>
         {Object.entries(variants).map((v) => {
           const [variant, values] = v;
@@ -48,7 +48,7 @@ const Projects = () => {
                   setSorter({ ...sorter, [variant]: e });
                 }}
               >
-                <Listbox.Button className="flex flex-row items-center gap-1 border-b border-b-gray-900">
+                <Listbox.Button className="sorter__button">
                   {({ open }) => (
                     <>
                       {sorter[variant as keyof typeof sorter]}

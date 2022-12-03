@@ -30,6 +30,10 @@
   .text-color--tertiary {
     @apply text-gray-400;
   }
+
+  .border-color--primary {
+    @apply border-gray-800;
+  }
 }
 
 body {
