@@ -51,7 +51,7 @@ const Resume = () => {
       </section>
 
       <a
-        className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2 text-indigo-600 transition duration-300 hover:text-indigo-800"
+        className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2"
         href="../files/Lester_Ong_CV"
         download
       >

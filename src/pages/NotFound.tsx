@@ -9,7 +9,7 @@ const NotFound = () => {
       <h1> Page not found.</h1>
       <p className="pt-6">
         Back to{' '}
-        <Link className="text-indigo-600 hover:text-indigo-800" to="/">
+        <Link className="nav-link" to="/">
           homepage
         </Link>
         .

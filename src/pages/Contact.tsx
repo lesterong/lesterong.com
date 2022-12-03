@@ -115,10 +115,7 @@ const Contact = () => {
         <h2 className="mt-4">Let&apos;s Chat!</h2>
         <p>
           Fill up this form to contact me. Alternatively, drop me an{' '}
-          <a
-            className="text-indigo-600 transition duration-200 hover:text-indigo-800"
-            href="mailto:lesterong776@gmail.com"
-          >
+          <a className="nav-link" href="mailto:lesterong776@gmail.com">
             email
           </a>
           .

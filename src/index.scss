@@ -58,11 +58,11 @@ input:not([type='radio']):not([type='checkbox']),
 }
 
 .nav-link {
-  @apply text-indigo-600 hover:text-indigo-800;
-}
+  @apply text-indigo-600 transition duration-200 hover:text-indigo-800;
 
-.nav-link:hover .right-arrow {
-  @apply animate-bounce-right motion-reduce:animate-none;
+  &:hover .right-arrow {
+    @apply animate-bounce-right motion-reduce:animate-none;
+  }
 }
 
 .nav-link:hover .down-arrow {
