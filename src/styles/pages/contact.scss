@@ -2,7 +2,7 @@
   @apply mt-2 mb-8 flex max-w-xl flex-col space-y-2;
 
   .error {
-    @apply text-red;
+    @apply text-color--error;
   }
 
   input:not([type='radio']):not([type='checkbox']) {
