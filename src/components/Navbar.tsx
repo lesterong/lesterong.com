@@ -81,15 +81,9 @@ const Navbar = () => {
   );
 
   const navLinks = (
-    <div className="flex space-x-4">
+    <div className="navbar__links">
       {pages.map((page) => (
-        <Link
-          key={page}
-          to={page}
-          className={`font-display font-semibold transition duration-300 ease-in-out hover:text-indigo-600 ${
-            pathname === `/${page}` ? 'text-indigo-600' : ''
-          }`}
-        >
+        <Link key={page} to={page} className={`${pathname === `/${page}` ? 'selected' : ''}`}>
           {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
         </Link>
       ))}
@@ -100,7 +94,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6 text-gray-900">
+    <nav className="navbar">
       <Link to="/">
         <Logo />
       </Link>

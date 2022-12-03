@@ -20,6 +20,7 @@ module.exports = {
       white: colors.white,
       gray: colors.neutral,
       indigo: colors.indigo,
+      inherit: colors.inherit,
     },
     extend: {
       animation: {

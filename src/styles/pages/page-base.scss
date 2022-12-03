@@ -1,0 +1,14 @@
+/**
+ * Base styles used across pages
+ */
+.heading--primary {
+  @apply mt-16 text-center;
+}
+
+.heading--secondary {
+  @apply mt-4;
+}
+
+.bg-color--primary {
+  @apply bg-inherit;
+}

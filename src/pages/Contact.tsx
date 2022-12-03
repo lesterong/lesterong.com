@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Toast from '../components/Toast';
 import Section from '../sections/Section';
-import BgColor from '../utils/BgColor';
 import { FormDataProps } from '../types/Formdata';
 
 const Contact = () => {
@@ -110,9 +109,9 @@ const Contact = () => {
         message="Messaged sent successfully."
         isShowing={showSuccess}
       />
-      <Section color={BgColor.Base}>
-        <h1 className="mt-16 text-center">Contact</h1>
-        <h2 className="mt-4">Let&apos;s Chat!</h2>
+      <Section color="bg-color--primary">
+        <h1 className="heading--primary">Contact</h1>
+        <h2 className="heading--secondary">Let&apos;s Chat!</h2>
         <p>
           Fill up this form to contact me. Alternatively, drop me an{' '}
           <a className="nav-link" href="mailto:lesterong776@gmail.com">
@@ -120,33 +119,27 @@ const Contact = () => {
           </a>
           .
         </p>
-        <form className="mt-2 mb-8 flex max-w-xl flex-col space-y-2" method="post" onSubmit={handleSubmit}>
+        <form className="contact-form" method="post" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
           <label htmlFor="name">
             Name
             <input type="text" name="name" onChange={handleChange} onBlur={handleValidation} value={values.name} />
-            {errors.name && <span className="text-red">A name is required.</span>}
+            {errors.name && <span className="error">A name is required.</span>}
           </label>
           <label htmlFor="email">
             Email
             <input type="email" name="email" onChange={handleChange} onBlur={handleValidation} value={values.email} />
-            {errors.email && <span className="text-red">A valid email is required.</span>}
+            {errors.email && <span className="error">A valid email is required.</span>}
           </label>
           <label htmlFor="message">
             Message
             <textarea className="hidden" name="message" onChange={handleChange} value={values.message} />
-            <div
-              id="message-input"
-              className="message-input min-h-[144px]"
-              contentEditable
-              onInput={handleChange}
-              onBlur={handleValidation}
-            />
-            {errors.message && <span className="text-red">A message is required.</span>}
+            <div id="message-input" contentEditable onInput={handleChange} onBlur={handleValidation} />
+            {errors.message && <span className="error">A message is required.</span>}
           </label>
           <p>
-            <button className="nav-link w-max" type="submit">
-              Send message <span className="right-arrow inline-block">&#x2192;</span>
+            <button className="nav-link" type="submit">
+              Send message <span className="right-arrow">&#x2192;</span>
             </button>
           </p>
         </form>

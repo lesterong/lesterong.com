@@ -15,13 +15,13 @@ const Footer = () => {
           {pathname === '/contact' ? (
             <a href="#top" className="nav-link w-fit">
               <p className="mb-6 inline-block">
-                Come say hello! <span className="right-arrow inline-block">&#x2192;</span>
+                Come say hello! <span className="right-arrow">&#x2192;</span>
               </p>
             </a>
           ) : (
             <Link to="contact" className="nav-link w-fit">
               <p className="mb-6 inline-block">
-                Come say hello! <span className="right-arrow inline-block">&#x2192;</span>
+                Come say hello! <span className="right-arrow">&#x2192;</span>
               </p>
             </Link>
           )}

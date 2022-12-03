@@ -5,8 +5,8 @@ const Resume = () => {
   document.title = 'Lester Ong | Resume';
   return (
     <Section color={BgColor.Base}>
-      <h1 className="mt-16 text-center">Resume</h1>
-      <h2 className="mt-4">Lester Ong</h2>
+      <h1 className="heading--primary">Resume</h1>
+      <h2 className="heading--secondary">Lester Ong</h2>
       <p className="mb-10">A software engineer with a passion in design and animation.</p>
 
       <h3>Skills</h3>

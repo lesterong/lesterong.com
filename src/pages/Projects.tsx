@@ -35,8 +35,8 @@ const Projects = () => {
 
   return (
     <Section color={BgColor.Base}>
-      <h1 className="mt-16 text-center">Projects</h1>
-      <h2 className="mt-4">All Projects</h2>
+      <h1 className="heading--primary">Projects</h1>
+      <h2 className="heading--secondary">All Projects</h2>
       <span className="mt-4 flex flex-wrap gap-1 text-base sm:text-lg">
         <span>Sort by</span>
         {Object.entries(variants).map((v) => {
