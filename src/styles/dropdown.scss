@@ -1,0 +1,47 @@
+.dropdown {
+  @apply absolute z-10 w-auto overflow-auto rounded-md border border-gray-400/30 bg-white text-base shadow-sm;
+}
+
+.navbar__dropdown {
+  @extend .dropdown;
+  @apply flex flex-col;
+}
+
+.sorter__dropdown {
+  @extend .dropdown;
+  @apply mt-1;
+}
+
+.dropdown-transition {
+  @apply transition duration-150 ease-in-out;
+}
+
+.dropdown-transition-is-close {
+  @apply scale-75 opacity-0;
+}
+
+.dropdown-transition-is-open {
+  @apply scale-100 opacity-100;
+}
+
+.dropdown__item {
+  @apply cursor-pointer py-1 pl-2 pr-8;
+
+  &.active {
+    @apply bg-indigo-400/30;
+  }
+
+  &.selected {
+    @apply font-semibold;
+  }
+}
+
+.navbar__dropdown__item {
+  @extend .dropdown__item;
+  @apply pr-8 font-display;
+}
+
+.sorter__dropdown__item {
+  @extend .dropdown__item;
+  @apply pr-6;
+}
