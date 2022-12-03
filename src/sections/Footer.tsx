@@ -6,9 +6,9 @@ const Footer = () => {
   const { pathname } = useLocation();
   return (
     <Section>
-      <hr className="border-gray-800" />
+      <hr className="border-color--primary" />
       <h2 className="mt-6">Like what you see?</h2>
-      <div className="mt-2 flex flex-col justify-between sm:flex-row">
+      <div className="footer">
         <div>
           <p>I&apos;d love to work with you.</p>
           {pathname === '/contact' ? (
@@ -25,9 +25,9 @@ const Footer = () => {
             </Link>
           )}
         </div>
-        <div className="text-left sm:text-right">
+        <div className="footer__connect">
           <p>Let&apos;s connect!</p>
-          <div className="mb-6 mt-2 flex justify-start space-x-4 sm:justify-end">
+          <div>
             <a href="https://www.github.com/lesterong/" target="_blank" rel="noopener noreferrer">
               <Contact.Github />
             </a>

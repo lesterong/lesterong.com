@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .heading--primary {
-    @apply mt-16 text-center;
-  }
-
-  .heading--secondary {
-    @apply mt-4;
-  }
-
   .bg-color--primary {
     @apply bg-beige;
   }
@@ -33,6 +25,10 @@
 
   .border-color--primary {
     @apply border-gray-800;
+  }
+
+  .stroke-link--primary {
+    @apply stroke-gray-900 hover:stroke-indigo-600;
   }
 }
 
@@ -78,4 +74,12 @@ p {
       @apply animate-bounce-down motion-reduce:animate-none;
     }
   }
+}
+
+.heading--primary {
+  @apply mt-16 text-center;
+}
+
+.heading--secondary {
+  @apply mt-4;
 }
