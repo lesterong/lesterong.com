@@ -24,11 +24,11 @@
   }
 
   .bg-color--toggle-bar {
-    @apply bg-gray-800 dark:bg-gray-200;
+    @apply bg-gray-800 dark:bg-gray-100;
   }
 
   .text-color--primary {
-    @apply text-gray-900 dark:text-gray-200;
+    @apply text-gray-900 dark:text-gray-100;
   }
 
   .text-color--secondary {
@@ -36,7 +36,7 @@
   }
 
   .text-color--tertiary {
-    @apply text-white dark:text-gray-200;
+    @apply text-white dark:text-gray-100;
   }
 
   .text-color--navbar {
