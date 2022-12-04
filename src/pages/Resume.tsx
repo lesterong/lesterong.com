@@ -1,4 +1,5 @@
 import Section from '../sections/Section';
+import cv from '../files/Lester_Ong_CV.pdf';
 
 const Resume = () => {
   document.title = 'Lester Ong | Resume';
@@ -50,11 +51,7 @@ const Resume = () => {
           </div>
         </section>
 
-        <a
-          className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2"
-          href="../files/Lester_Ong_CV"
-          download
-        >
+        <a className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2" href={cv} download>
           <span className="text-center">Download PDF Resume</span>
           <span className="down-arrow">&#x2913;</span>
         </a>
