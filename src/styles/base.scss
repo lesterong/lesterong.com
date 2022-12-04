@@ -84,6 +84,10 @@
   }
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-color--primary text-color--primary font-body transition-all duration-200;
   -webkit-tap-highlight-color: transparent;
