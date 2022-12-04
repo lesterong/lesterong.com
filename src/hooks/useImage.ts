@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 const useImage = (fileName: string) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState({ png: null, webp: null });
 
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await import(`../assets/images/${fileName}.png`);
-        setImage(response.default);
+        const responsePng = await import(`../assets/images/${fileName}.png`);
+        const responseWebp = await import(`../assets/images/${fileName}.webp`);
+        setImage({ png: responsePng.default, webp: responseWebp.default });
       } catch (err: any) {
         setError(err);
       } finally {

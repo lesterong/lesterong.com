@@ -1,6 +1,7 @@
 import useImage from '../hooks/useImage';
 import { ProjectProps } from '../types/Project';
-import errorImage from '../assets/images/error.png';
+import errorPng from '../assets/images/error.png';
+import errorWebp from '../assets/images/error.webp';
 import Loading from '../assets/Loading';
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
@@ -35,8 +36,20 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             <span>Loading image</span>
           </>
         )}
-        {image && <img src={image} alt={title} />}
-        {error && <img src={errorImage} alt="Error loading" />}
+        {image.png && image.webp && (
+          <picture>
+            <source type="image/webp" srcSet={image.webp} />
+            <source type="image/png" srcSet={image.png} />
+            <img src={image.png} alt={title} />
+          </picture>
+        )}
+        {error && (
+          <picture>
+            <source type="image/webp" srcSet={errorWebp} />
+            <source type="image/png" srcSet={errorPng} />
+            <img src={errorPng} alt={title} />
+          </picture>
+        )}
       </div>
     </div>
   );

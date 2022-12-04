@@ -29,8 +29,12 @@
 .card__image {
   @apply bg-color--primary relative flex h-[288px] w-full flex-col items-center justify-center p-6;
 
-  > img {
-    @apply h-auto max-h-full w-auto;
+  picture {
+    @apply max-h-full;
+  }
+
+  picture > img {
+    @apply mx-auto h-auto max-h-full w-auto;
   }
 
   > span:first-of-type {
