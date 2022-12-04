@@ -23,8 +23,14 @@ const HeroSection = () => {
             <h1>
               Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.
             </h1>
-            <p>I am a software engineer with a passion in design and animation.</p>
-            <p>Currently an undergraduate at the National University of Singapore, majoring in Computer Science.</p>
+            <p>
+              I&apos;m a software engineer with a passion in design and animation. Currently, I&apos;m a Computer
+              Science undergraduate at{' '}
+              <a className="nav-link" href="https://nus.edu.sg" target="blank" rel="noopener noreferrer">
+                NUS
+              </a>
+              .
+            </p>
           </div>
           <div>
             <HeroAnimation />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Section from './Section';
 
 const AboutSection = () => (
@@ -6,8 +7,23 @@ const AboutSection = () => (
       <h2 id="about-section">About Me</h2>
       <p>Hey there, nice to meet you!</p>
       <p>
-        I am a software engineer, with a dose of designer. I love designing and building fluid software that are
-        functional, yet fun to use.
+        I&apos;m a front-end software engineer based in Singapore. I love designing and building fluid software that are
+        functional and fun to use.
+      </p>
+      <p>
+        I first began my software development journey 3 years ago when I picked up web development, and learnt about
+        HTML and CSS.
+      </p>
+      <p>
+        Since then, I have picked up various other languages and frameworks, built a couple of{' '}
+        <Link to="projects" className="nav-link secondary">
+          projects
+        </Link>
+        , and also dabbled in design work during{' '}
+        <Link to="resume" className="nav-link secondary">
+          my time at Dine Inn
+        </Link>
+        .
       </p>
     </div>
   </Section>

@@ -134,6 +134,10 @@ p {
       @apply animate-bounce-down motion-reduce:animate-none;
     }
   }
+
+  &.secondary {
+    @apply text-indigo-300 hover:text-indigo-400;
+  }
 }
 
 .heading--primary {
