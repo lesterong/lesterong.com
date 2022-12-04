@@ -30,11 +30,11 @@
   @apply bg-color--primary relative flex h-[288px] w-full flex-col items-center justify-center p-6;
 
   picture {
-    @apply max-h-full;
+    @apply flex h-[240px] max-h-full items-center; // fixed height as older browsers are unable to calculate the width
   }
 
   picture > img {
-    @apply mx-auto h-auto max-h-full w-auto;
+    @apply mx-auto max-h-full w-auto;
   }
 
   > span:first-of-type {
