@@ -85,7 +85,7 @@
 }
 
 html {
-  @apply scroll-smooth;
+  @apply scroll-smooth motion-reduce:scroll-auto;
 }
 
 body {
