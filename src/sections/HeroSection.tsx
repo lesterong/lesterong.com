@@ -1,19 +1,36 @@
+import { useLottie } from 'lottie-react';
 import Section from './Section';
+import hero from '../assets/lottie/hero.json';
+
+const HeroAnimation = () => {
+  const options = {
+    animationData: hero,
+    autoplay: true,
+    speed: 2,
+  };
+
+  const { View } = useLottie(options);
+
+  return View;
+};
 
 const HeroSection = () => {
   return (
-    <Section isFillViewport>
-      <div className="h-full pt-16">
-        <div className="home__hero flex">
-          <div className="home__hero__content">
+    <Section>
+      <div className="home__hero min-h-full md:min-h-[448px]">
+        <div className="home__hero__content">
+          <div>
             <h1>
               Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.
             </h1>
             <p>I am a software engineer with a passion in design and animation.</p>
             <p>Currently an undergraduate at the National University of Singapore, majoring in Computer Science.</p>
           </div>
+          <div>
+            <HeroAnimation />
+          </div>
         </div>
-        <a href="#about-section" className="nav-link relative bottom-12">
+        <a href="#about-section" className="home__hero__link nav-link">
           Scroll Down <span className="inline-block animate-bounce-down">&#8595;</span>
         </a>
       </div>
