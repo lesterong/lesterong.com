@@ -37,7 +37,7 @@ const HeroSection = () => {
           </div>
         </div>
         <a href="#about-section" className="home__hero__link nav-link">
-          Scroll Down <span className="inline-block animate-bounce-down">&#8595;</span>
+          Scroll Down <span className="inline-block animate-bounce-down motion-reduce:animate-none">&#8595;</span>
         </a>
       </div>
     </Section>
