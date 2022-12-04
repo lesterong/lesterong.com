@@ -9,22 +9,26 @@ const Footer = () => {
       <hr className="border-color--primary" />
       <h2 className="mt-6">Like what you see?</h2>
       <div className="footer">
-        <div>
-          <p>I&apos;d love to work with you.</p>
-          {pathname === '/contact' ? (
-            <a href="#top" className="nav-link w-fit">
-              <p className="mb-6 inline-block">
-                Come say hello! <span className="right-arrow">&#x2192;</span>
-              </p>
-            </a>
-          ) : (
+        {pathname !== '/contact' && (
+          <div>
+            <p>I&apos;d love to work with you!</p>
             <Link to="contact" className="nav-link w-fit">
               <p className="mb-6 inline-block">
                 Come say hello! <span className="right-arrow">&#x2192;</span>
               </p>
             </Link>
-          )}
-        </div>
+          </div>
+        )}
+        {pathname !== '/resume' && (
+          <div>
+            <p>Need more details?</p>
+            <Link to="resume" className="nav-link w-fit">
+              <p className="mb-6 inline-block">
+                View my resume <span className="right-arrow">&#x2192;</span>
+              </p>
+            </Link>
+          </div>
+        )}
         <div className="footer__connect">
           <p>Let&apos;s connect!</p>
           <div>

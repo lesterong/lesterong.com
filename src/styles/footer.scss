@@ -1,12 +1,14 @@
 .footer {
-  @apply mt-2 flex flex-col justify-between sm:flex-row;
+  @apply mt-2 grid grid-cols-1 sm:grid-cols-2;
+
+  > div {
+    @apply flex flex-col odd:items-start even:items-start sm:even:items-end;
+  }
 }
 
 .footer__connect {
-  @apply text-left sm:text-right;
-
   > div {
-    @apply mb-6 mt-2 flex justify-start space-x-4 sm:justify-end;
+    @apply mb-6 mt-2 flex space-x-4;
 
     > a > svg {
       @apply stroke-color--link h-6 w-6 fill-none stroke-2 transition duration-300;
