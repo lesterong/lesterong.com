@@ -8,9 +8,7 @@ const Section = ({
   children,
 }: SectionProps) => {
   return (
-    <div
-      className={`section ${isFillViewport ? 'webkit-viewport h-screen min-h-[448px]' : ''} ${color} ${textColor} flex`}
-    >
+    <div className={`section ${isFillViewport ? 'h-screen min-h-[448px]' : ''} ${color} ${textColor} flex`}>
       <div className={`mx-auto ${isVerticallyCentered ? 'my-auto' : ''} w-full max-w-6xl px-6`}>{children}</div>
     </div>
   );

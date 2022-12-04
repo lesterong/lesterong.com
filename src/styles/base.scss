@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .webkit-viewport {
-    max-height: -webkit-fill-available;
-  }
-
   .bg-color--primary {
     @apply bg-beige dark:bg-d-primary;
   }
