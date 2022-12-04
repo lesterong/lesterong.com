@@ -69,6 +69,9 @@ module.exports = {
       gridTemplateColumns: {
         'auto-fill': 'repeat(auto-fill, 3rem)',
       },
+      screens: {
+        xs: '568px',
+      },
     },
   },
   plugins: [],

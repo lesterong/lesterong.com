@@ -5,7 +5,7 @@
 }
 
 .navbar__links {
-  @apply ml-6 flex grow justify-start space-x-6;
+  @apply ml-6 hidden grow justify-start space-x-6 xs:flex;
 
   > a {
     @apply hover:text-color--navbar font-display font-semibold transition duration-300 ease-in-out;
@@ -23,7 +23,7 @@
 
 .navbar__dropdown__item {
   @extend .dropdown__item;
-  @apply pr-8 font-display;
+  @apply pr-8 font-display text-lg;
 }
 
 .navbar__toggle {

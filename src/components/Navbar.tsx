@@ -5,9 +5,6 @@ import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
 
 const Navbar = () => {
-  const MENU_WIDTH: number = 538;
-  const [isButton, setIsButton] = useState(window.innerWidth < MENU_WIDTH);
-
   const pages: Array<'projects' | 'resume' | 'contact'> = ['projects', 'resume', 'contact'];
   const { pathname } = useLocation();
 
@@ -26,13 +23,8 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
-  useEffect(
-    () => window.addEventListener('resize', () => setIsButton(window.innerWidth < MENU_WIDTH)),
-    [window.innerWidth]
-  );
-
   const navButton = (
-    <div className="flex justify-end">
+    <div className="flex justify-end xs:hidden">
       <Menu>
         <Menu.Button>
           <MenuButton />
@@ -102,7 +94,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="flex items-center justify-end space-x-2">
+      <div className="hidden items-center justify-end space-x-2 xs:flex">
         <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
         <Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} className="navbar__toggle" as="div">
           <span className="sr-only">Toggle dark mode</span>
@@ -117,7 +109,9 @@ const Navbar = () => {
       <Link to="/">
         <Logo />
       </Link>
-      {isButton ? navButton : navLinks}
+      {navButton}
+      {navLinks}
+      {/* {isButton ? navButton : navLinks} */}
     </nav>
   );
 };
