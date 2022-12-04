@@ -27,9 +27,9 @@
 }
 
 .navbar__toggle {
-  @apply bg-color--toggle-bar relative inline-flex h-[16px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out;
+  @apply bg-color--toggle-bar relative inline-flex h-[16px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out motion-reduce:transition-none;
 
   span:nth-child(2) {
-    @apply bg-color--toggle pointer-events-none inline-block h-[12px] w-[12px] transform rounded-full ring-0 transition duration-200 ease-in-out;
+    @apply bg-color--toggle pointer-events-none inline-block h-[12px] w-[12px] transform rounded-full ring-0 transition duration-200 ease-in-out motion-reduce:transition-none;
   }
 }
