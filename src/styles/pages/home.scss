@@ -1,4 +1,8 @@
 .home__hero {
+  @apply h-full max-w-full items-center;
+}
+
+.home__hero__content {
   @apply max-w-xl;
 
   .text-gradient {
