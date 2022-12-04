@@ -23,6 +23,7 @@ module.exports = {
       inherit: colors.inherit,
       'd-primary': '#051923',
       'd-secondary': '#282A3A',
+      'd-tertiary': '#07192C',
     },
     extend: {
       animation: {
