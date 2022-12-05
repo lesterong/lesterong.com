@@ -23,12 +23,12 @@
 
 .navbar__dropdown__item {
   @extend .dropdown__item;
-  @apply pr-8 font-display text-lg;
+  @apply pr-8 text-lg;
 }
 
 .navbar__dropdown__toggle {
   @extend .dropdown__item;
-  @apply border-color--dropdown flex items-center justify-start border-t font-display text-lg;
+  @apply border-color--dropdown flex items-center justify-start border-t text-lg;
 }
 
 .navbar__toggle {

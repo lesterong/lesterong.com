@@ -117,6 +117,10 @@ p {
   @apply font-body text-base font-normal sm:text-lg;
 }
 
+kbd {
+  @apply text-color--primary border-color--dropdown rounded border p-1;
+}
+
 .nav-link {
   @apply text-indigo-600 transition duration-200 hover:text-indigo-800 dark:text-indigo-300 dark:hover:text-indigo-400;
 

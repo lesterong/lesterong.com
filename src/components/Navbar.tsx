@@ -4,6 +4,8 @@ import { useHotkeys } from 'react-hotkeys-hook';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
+import SettingButton from '../assets/SettingButton';
+import SettingsModal from './SettingsModal';
 
 const Navbar = () => {
   const pages: Array<'projects' | 'resume' | 'contact'> = ['projects', 'resume', 'contact'];
@@ -25,7 +27,8 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
-  const [enabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
+  const [isOpenSettings, setIsOpenSettings] = useState(false);
   useHotkeys('x', () => setIsDarkMode(!isDarkMode), [isDarkMode], { enabled });
   useHotkeys('p', () => navigate('projects'), { enabled });
   useHotkeys('r', () => navigate('resume'), { enabled });
@@ -72,8 +75,19 @@ const Navbar = () => {
                 )}
               </Menu.Item>
             ))}
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  onClick={() => setIsOpenSettings(true)}
+                  type="button"
+                  className={`navbar__dropdown__toggle ${active ? 'active' : ''}`}
+                >
+                  Settings
+                </button>
+              )}
+            </Menu.Item>
             <Menu.Item
-              as="button"
+              as="div"
               onClick={(e: any) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -119,6 +133,9 @@ const Navbar = () => {
           <span className="sr-only">Toggle dark mode</span>
           <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
         </Switch>
+        <button type="button" onClick={() => setIsOpenSettings(true)}>
+          <SettingButton />
+        </button>
       </div>
     </>
   );
@@ -130,6 +147,12 @@ const Navbar = () => {
       </Link>
       {navButton}
       {navLinks}
+      <SettingsModal
+        isEnabled={enabled}
+        toggleEnabled={() => setEnabled(!enabled)}
+        isOpen={isOpenSettings}
+        closeModal={() => setIsOpenSettings(false)}
+      />
     </nav>
   );
 };
