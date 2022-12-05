@@ -2,19 +2,16 @@ import { useLottie } from 'lottie-react';
 import Section from './Section';
 import hero from '../assets/lottie/hero.json';
 
-const HeroAnimation = () => {
+const HeroSection = () => {
   const options = {
     animationData: hero,
     autoplay: true,
     speed: 2,
   };
-
-  const { View } = useLottie(options);
-
-  return View;
-};
-
-const HeroSection = () => {
+  const HeroAnimation = useLottie(options);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    HeroAnimation.goToAndStop(110, true);
+  }
   return (
     <Section>
       <div className="home__hero min-h-full md:min-h-[448px]">
@@ -32,9 +29,7 @@ const HeroSection = () => {
               .
             </p>
           </div>
-          <div>
-            <HeroAnimation />
-          </div>
+          <div>{HeroAnimation.View}</div>
         </div>
         <button
           type="button"
