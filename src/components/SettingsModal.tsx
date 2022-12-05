@@ -69,6 +69,10 @@ const SettingsModal = ({
                     <span>Navigate to contact page</span>
                   </li>
                   <li>
+                    <kbd>h</kbd>
+                    <span>Navigate to home page</span>
+                  </li>
+                  <li>
                     <kbd>p</kbd>
                     <span>Navigate to projects page</span>
                   </li>
