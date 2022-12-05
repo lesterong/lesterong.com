@@ -69,6 +69,10 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     <span>Navigate to resume page</span>
                   </li>
                   <li>
+                    <kbd>s</kbd>
+                    <span>Open / close settings</span>
+                  </li>
+                  <li>
                     <kbd>x</kbd>
                     <span>Toggle dark mode</span>
                   </li>

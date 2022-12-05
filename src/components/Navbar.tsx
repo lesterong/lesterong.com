@@ -30,10 +30,11 @@ const Navbar = () => {
   const [enabled, setEnabled] = useState(localStorage.shortcut === 'enabled' || !('shortcut' in localStorage));
   const [isOpenSettings, setIsOpenSettings] = useState(false);
   useHotkeys('x', () => setIsDarkMode(!isDarkMode), [isDarkMode], { enabled });
-  useHotkeys('p', () => navigate('projects'), [enabled], { enabled });
-  useHotkeys('r', () => navigate('resume'), [enabled], { enabled });
-  useHotkeys('c', () => navigate('contact'), [enabled], { enabled });
-  useHotkeys('h', () => navigate('/'), [enabled], { enabled });
+  useHotkeys('p', () => navigate('projects'), { enabled });
+  useHotkeys('r', () => navigate('resume'), { enabled });
+  useHotkeys('s', () => setIsOpenSettings(!isOpenSettings), [isOpenSettings], { enabled });
+  useHotkeys('c', () => navigate('contact'), { enabled });
+  useHotkeys('h', () => navigate('/'), { enabled });
 
   useEffect(() => {
     if (enabled) {
@@ -110,7 +111,7 @@ const Navbar = () => {
                   <Switch
                     checked={isDarkMode}
                     onChange={() => setIsDarkMode(!isDarkMode)}
-                    className="navbar__toggle"
+                    className={`settings__toggle ${enabled ? 'bg-green' : 'bg-color--toggle-bar'}`}
                     as="div"
                   >
                     <span className="sr-only">Toggle dark mode</span>
