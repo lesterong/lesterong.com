@@ -27,13 +27,21 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(localStorage.shortcut === 'enabled' || !('shortcut' in localStorage));
   const [isOpenSettings, setIsOpenSettings] = useState(false);
   useHotkeys('x', () => setIsDarkMode(!isDarkMode), [isDarkMode], { enabled });
-  useHotkeys('p', () => navigate('projects'), { enabled });
-  useHotkeys('r', () => navigate('resume'), { enabled });
-  useHotkeys('c', () => navigate('contact'), { enabled });
-  useHotkeys('h', () => navigate('/'), { enabled });
+  useHotkeys('p', () => navigate('projects'), [enabled], { enabled });
+  useHotkeys('r', () => navigate('resume'), [enabled], { enabled });
+  useHotkeys('c', () => navigate('contact'), [enabled], { enabled });
+  useHotkeys('h', () => navigate('/'), [enabled], { enabled });
+
+  useEffect(() => {
+    if (enabled) {
+      localStorage.shortcut = 'enabled';
+    } else {
+      localStorage.shortcut = 'disabled';
+    }
+  }, [enabled]);
 
   const navButton = (
     <div className="flex justify-end xs:hidden">
