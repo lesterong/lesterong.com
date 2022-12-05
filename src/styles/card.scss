@@ -1,5 +1,5 @@
 .card {
-  @apply bg-color--secondary my-6 flex min-h-[318px] flex-col-reverse gap-4 rounded-lg p-4 shadow-sm first-of-type:mt-4 md:grid md:grid-cols-2 md:p-6;
+  @apply bg-color--secondary my-6 flex min-h-[318px] flex-col-reverse gap-4 rounded-lg p-4 shadow-sm transition-colors duration-200 first-of-type:mt-4 md:grid md:grid-cols-2 md:p-6;
 }
 
 .card__content {
@@ -27,7 +27,7 @@
 }
 
 .card__image {
-  @apply bg-color--primary relative flex h-[288px] w-full flex-col items-center justify-center p-6;
+  @apply bg-color--primary relative flex h-[288px] w-full flex-col items-center justify-center p-6 transition-colors duration-200;
 
   picture {
     @apply flex h-[240px] max-h-full items-center; // fixed height as older browsers are unable to calculate the width
