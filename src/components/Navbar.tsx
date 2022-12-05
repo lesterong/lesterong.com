@@ -1,12 +1,14 @@
 import { Menu, Transition, Switch } from '@headlessui/react';
-import { Fragment, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { Fragment, useEffect, useState } from 'react';
+import { useHotkeys } from 'react-hotkeys-hook';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
 
 const Navbar = () => {
   const pages: Array<'projects' | 'resume' | 'contact'> = ['projects', 'resume', 'contact'];
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.theme === 'dark' ||
@@ -22,6 +24,13 @@ const Navbar = () => {
       localStorage.theme = 'light';
     }
   }, [isDarkMode]);
+
+  const [enabled] = useState(false);
+  useHotkeys('x', () => setIsDarkMode(!isDarkMode), [isDarkMode], { enabled });
+  useHotkeys('p', () => navigate('projects'), { enabled });
+  useHotkeys('r', () => navigate('resume'), { enabled });
+  useHotkeys('c', () => navigate('contact'), { enabled });
+  useHotkeys('h', () => navigate('/'), { enabled });
 
   const navButton = (
     <div className="flex justify-end xs:hidden">
@@ -63,22 +72,32 @@ const Navbar = () => {
                 )}
               </Menu.Item>
             ))}
-            <button
-              type="button"
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="border-color--dropdown flex items-center justify-start border-t py-2 pl-2"
+            <Menu.Item
+              as="button"
+              onClick={(e: any) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
             >
-              <Switch
-                checked={isDarkMode}
-                onChange={() => setIsDarkMode(!isDarkMode)}
-                className="navbar__toggle"
-                as="div"
-              >
-                <span className="sr-only">Toggle dark mode</span>
-                <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
-              </Switch>
-              <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
-            </button>
+              {({ active }) => (
+                <button
+                  type="button"
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className={`navbar__dropdown__toggle ${active ? 'active' : ''} w-full`}
+                >
+                  <Switch
+                    checked={isDarkMode}
+                    onChange={() => setIsDarkMode(!isDarkMode)}
+                    className="navbar__toggle"
+                    as="div"
+                  >
+                    <span className="sr-only">Toggle dark mode</span>
+                    <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+                  </Switch>
+                  <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
+                </button>
+              )}
+            </Menu.Item>
           </Menu.Items>
         </Transition>
       </Menu>
@@ -111,7 +130,6 @@ const Navbar = () => {
       </Link>
       {navButton}
       {navLinks}
-      {/* {isButton ? navButton : navLinks} */}
     </nav>
   );
 };

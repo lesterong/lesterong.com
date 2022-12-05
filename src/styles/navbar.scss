@@ -26,6 +26,11 @@
   @apply pr-8 font-display text-lg;
 }
 
+.navbar__dropdown__toggle {
+  @extend .dropdown__item;
+  @apply border-color--dropdown flex items-center justify-start border-t font-display text-lg;
+}
+
 .navbar__toggle {
   @apply bg-color--toggle-bar relative inline-flex h-[16px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out motion-reduce:transition-none;
 

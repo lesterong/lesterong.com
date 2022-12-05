@@ -15,7 +15,7 @@
 }
 
 .dropdown__item {
-  @apply cursor-pointer py-2 pl-2 pr-8;
+  @apply cursor-pointer py-2 pl-2;
 
   &.active {
     @apply bg-color--dropdown;
