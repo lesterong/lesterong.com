@@ -88,10 +88,6 @@
   }
 }
 
-html {
-  @apply scroll-smooth motion-reduce:scroll-auto;
-}
-
 body {
   @apply bg-color--primary text-color--primary font-body transition-all duration-200;
   -webkit-tap-highlight-color: transparent;

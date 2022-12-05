@@ -36,9 +36,18 @@ const HeroSection = () => {
             <HeroAnimation />
           </div>
         </div>
-        <a href="#about-section" className="home__hero__link nav-link">
+        <button
+          type="button"
+          onClick={() =>
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            })
+          }
+          className="home__hero__link nav-link"
+        >
           Scroll Down <span className="inline-block animate-bounce-down motion-reduce:animate-none">&#8595;</span>
-        </a>
+        </button>
       </div>
     </Section>
   );
