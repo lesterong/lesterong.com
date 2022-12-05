@@ -29,9 +29,14 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isOpen, closeModal }: any) =>
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="bg-color--secondary w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title as="h3">Keyboard shortcuts</Dialog.Title>
+                <Dialog.Title as="h3">Settings</Dialog.Title>
                 <div className="mt-2 flex items-center space-x-2">
-                  <Switch checked={isEnabled} onChange={toggleEnabled} className="navbar__toggle" as="div">
+                  <Switch
+                    checked={isEnabled}
+                    onChange={toggleEnabled}
+                    className={`settings__toggle ${isEnabled ? 'bg-green' : 'bg-color--toggle-bar'}`}
+                    as="div"
+                  >
                     <span className="sr-only">Toggle keyboard shortcuts</span>
                     <span aria-hidden="true" className={`${isEnabled ? 'translate-x-5' : 'translate-x-0'} `} />
                   </Switch>
