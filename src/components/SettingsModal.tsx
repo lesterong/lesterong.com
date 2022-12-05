@@ -38,7 +38,7 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     as="div"
                   >
                     <span className="sr-only">Toggle dark mode</span>
-                    <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+                    <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'}`} />
                   </Switch>
                   <span>Enable dark mode</span>
                 </div>
@@ -51,7 +51,7 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     as="div"
                   >
                     <span className="sr-only">Toggle keyboard shortcuts</span>
-                    <span aria-hidden="true" className={`${isEnabled ? 'translate-x-5' : 'translate-x-0'} `} />
+                    <span aria-hidden="true" className={`${isEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
                   </Switch>
                   <span>Enable keyboard shortcuts</span>
                 </div>
@@ -77,6 +77,19 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     <span>Toggle dark mode</span>
                   </li>
                 </ul>
+                <hr className="border-color--dropdown" />
+                <div className="text-color--secondary mt-2 text-sm">
+                  The source code for this website can be found on{' '}
+                  <a
+                    className="nav-link"
+                    target="blank"
+                    href="https://github.com/lesterong/lesterong.com"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  .
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
