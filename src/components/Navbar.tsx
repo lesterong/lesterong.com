@@ -128,11 +128,6 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden items-center justify-end space-x-2 xs:flex">
-        <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
-        <Switch checked={isDarkMode} onChange={() => setIsDarkMode(!isDarkMode)} className="navbar__toggle" as="div">
-          <span className="sr-only">Toggle dark mode</span>
-          <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
-        </Switch>
         <button type="button" onClick={() => setIsOpenSettings(true)}>
           <SettingButton />
         </button>
@@ -150,6 +145,8 @@ const Navbar = () => {
       <SettingsModal
         isEnabled={enabled}
         toggleEnabled={() => setEnabled(!enabled)}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={() => setIsDarkMode(!isDarkMode)}
         isOpen={isOpenSettings}
         closeModal={() => setIsOpenSettings(false)}
       />

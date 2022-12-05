@@ -1,7 +1,19 @@
+.settings__item {
+  @apply my-2 flex items-center space-x-2;
+}
+
 .settings__toggle {
   @apply relative inline-flex h-[16px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out motion-reduce:transition-none;
 
   span:nth-child(2) {
     @apply bg-color--toggle pointer-events-none inline-block h-[12px] w-[12px] transform rounded-full ring-0 transition duration-200 ease-in-out motion-reduce:transition-none;
+  }
+}
+
+.shortcuts-list {
+  @apply mt-4 space-y-3 text-sm;
+
+  > li {
+    @apply space-x-2;
   }
 }

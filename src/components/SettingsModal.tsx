@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Transition, Dialog, Switch } from '@headlessui/react';
 
-const SettingsModal = ({ isEnabled, toggleEnabled, isOpen, closeModal }: any) => {
+const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, isOpen, closeModal }: any) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -30,7 +30,20 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isOpen, closeModal }: any) =>
             >
               <Dialog.Panel className="bg-color--secondary w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title as="h3">Settings</Dialog.Title>
-                <div className="mt-2 flex items-center space-x-2">
+                <div className="settings__item">
+                  <Switch
+                    checked={isDarkMode}
+                    onChange={() => setIsDarkMode(!isDarkMode)}
+                    className={`settings__toggle ${isDarkMode ? 'bg-green' : 'bg-color--toggle-bar'}`}
+                    as="div"
+                  >
+                    <span className="sr-only">Toggle dark mode</span>
+                    <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'} `} />
+                  </Switch>
+                  <span>Enable dark mode</span>
+                </div>
+                <hr className="border-color--dropdown" />
+                <div className="settings__item">
                   <Switch
                     checked={isEnabled}
                     onChange={toggleEnabled}
@@ -42,20 +55,20 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isOpen, closeModal }: any) =>
                   </Switch>
                   <span>Enable keyboard shortcuts</span>
                 </div>
-                <ul className="mt-4 space-y-3 text-sm">
-                  <li className="space-x-2">
+                <ul className="shortcuts-list">
+                  <li>
                     <kbd>c</kbd>
                     <span>Navigate to contact page</span>
                   </li>
-                  <li className="space-x-2">
+                  <li>
                     <kbd>p</kbd>
                     <span>Navigate to projects page</span>
                   </li>
-                  <li className="space-x-2">
+                  <li>
                     <kbd>r</kbd>
                     <span>Navigate to resume page</span>
                   </li>
-                  <li className="space-x-2">
+                  <li>
                     <kbd>x</kbd>
                     <span>Toggle dark mode</span>
                   </li>
