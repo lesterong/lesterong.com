@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Transition, Dialog, Switch } from '@headlessui/react';
 
-const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, isOpen, closeModal }: any) => {
+const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, toggleDarkMode, isOpen, closeModal }: any) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -30,10 +30,10 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
             >
               <Dialog.Panel className="bg-color--secondary w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title as="h3">Settings</Dialog.Title>
-                <div className="settings__item">
+                <button type="button" onClick={toggleDarkMode} className="settings__item">
                   <Switch
                     checked={isDarkMode}
-                    onChange={() => setIsDarkMode(!isDarkMode)}
+                    onChange={toggleDarkMode}
                     className={`settings__toggle ${isDarkMode ? 'bg-green' : 'bg-color--toggle-bar'}`}
                     as="div"
                   >
@@ -41,9 +41,9 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     <span aria-hidden="true" className={`${isDarkMode ? 'translate-x-5' : 'translate-x-0'}`} />
                   </Switch>
                   <span>Enable dark mode</span>
-                </div>
+                </button>
                 <hr className="border-color--dropdown" />
-                <div className="settings__item">
+                <button type="button" onClick={toggleEnabled} className="settings__item">
                   <Switch
                     checked={isEnabled}
                     onChange={toggleEnabled}
@@ -54,7 +54,7 @@ const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, setIsDarkMode, is
                     <span aria-hidden="true" className={`${isEnabled ? 'translate-x-5' : 'translate-x-0'}`} />
                   </Switch>
                   <span>Enable keyboard shortcuts</span>
-                </div>
+                </button>
                 <ul className="shortcuts-list">
                   <li>
                     <kbd>c</kbd>

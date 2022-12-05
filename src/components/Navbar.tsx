@@ -155,7 +155,7 @@ const Navbar = () => {
         isEnabled={enabled}
         toggleEnabled={() => setEnabled(!enabled)}
         isDarkMode={isDarkMode}
-        setIsDarkMode={() => setIsDarkMode(!isDarkMode)}
+        toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
         isOpen={isOpenSettings}
         closeModal={() => setIsOpenSettings(false)}
       />
