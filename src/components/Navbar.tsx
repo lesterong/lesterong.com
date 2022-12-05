@@ -111,7 +111,7 @@ const Navbar = () => {
                   <Switch
                     checked={isDarkMode}
                     onChange={() => setIsDarkMode(!isDarkMode)}
-                    className={`settings__toggle ${enabled ? 'bg-green' : 'bg-color--toggle-bar'}`}
+                    className={`settings__toggle ${isDarkMode ? 'bg-green' : 'bg-color--toggle-bar'}`}
                     as="div"
                   >
                     <span className="sr-only">Toggle dark mode</span>
