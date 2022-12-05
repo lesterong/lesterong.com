@@ -52,11 +52,11 @@ const Navbar = () => {
         </Menu.Button>
         <Transition
           as={Fragment}
-          enterFrom="dropdown-transition-is-close"
+          enterFrom="dropdown-transition-is-close origin-top-right"
           enterTo="dropdown-transition-is-open origin-top-right"
           enter="dropdown-transition"
           leave="dropdown-transition"
-          leaveFrom="dropdown-transition-is-open"
+          leaveFrom="dropdown-transition-is-open origin-top-right"
           leaveTo="dropdown-transition-is-close origin-top-right"
         >
           <Menu.Items className="navbar__dropdown">
