@@ -18,7 +18,6 @@ const useImage = (fileName: string) => {
         setLoading(false);
       }
     };
-
     fetchImage();
   }, [fileName]);
 

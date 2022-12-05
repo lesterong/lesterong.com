@@ -97,7 +97,7 @@ const Navbar = () => {
             </Menu.Item>
             <Menu.Item
               as="div"
-              onClick={(e: any) => {
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.preventDefault();
                 e.stopPropagation();
               }}

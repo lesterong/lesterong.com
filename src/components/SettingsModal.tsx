@@ -1,7 +1,15 @@
 import { Fragment } from 'react';
 import { Transition, Dialog, Switch } from '@headlessui/react';
+import { SettingsModalProps } from '../types/SettingsModal';
 
-const SettingsModal = ({ isEnabled, toggleEnabled, isDarkMode, toggleDarkMode, isOpen, closeModal }: any) => {
+const SettingsModal = ({
+  isEnabled,
+  toggleEnabled,
+  isDarkMode,
+  toggleDarkMode,
+  isOpen,
+  closeModal,
+}: SettingsModalProps) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
