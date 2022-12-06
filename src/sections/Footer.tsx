@@ -12,21 +12,21 @@ const Footer = () => {
         {pathname !== '/contact' && (
           <div>
             <p>I&apos;d love to work with you!</p>
-            <Link to="contact" className="nav-link w-fit">
-              <p className="mb-6 inline-block">
+            <p className="mb-6">
+              <Link to="contact" className="nav-link">
                 Come say hello! <span className="right-arrow">&#x2192;</span>
-              </p>
-            </Link>
+              </Link>
+            </p>
           </div>
         )}
         {pathname !== '/resume' && (
           <div>
             <p>Need more details?</p>
-            <Link to="resume" className="nav-link w-fit">
-              <p className="mb-6 inline-block">
+            <p className="mb-6">
+              <Link to="resume" className="nav-link">
                 View my resume <span className="right-arrow">&#x2192;</span>
-              </p>
-            </Link>
+              </Link>
+            </p>
           </div>
         )}
         <div className="footer__connect">

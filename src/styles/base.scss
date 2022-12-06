@@ -129,7 +129,8 @@ kbd {
     @apply inline-block;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .right-arrow {
       @apply animate-bounce-right motion-reduce:animate-none;
     }
