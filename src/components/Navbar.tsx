@@ -100,6 +100,7 @@ const Navbar = () => {
               onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.preventDefault();
                 e.stopPropagation();
+                setIsDarkMode(!isDarkMode);
               }}
             >
               {({ active }) => (
