@@ -25,6 +25,27 @@ const AboutSection = () => (
         </Link>
         .
       </p>
+      <p>
+        You can also find me on{' '}
+        <a
+          href="https://www.github.com/lesterong/"
+          target="blank"
+          rel="noopener noreferrer"
+          className="nav-link secondary"
+        >
+          GitHub
+        </a>
+        &nbsp;and{' '}
+        <a
+          href="https://www.linkedin.com/in/lesterongpc/"
+          target="blank"
+          rel="noopener noreferrer"
+          className="nav-link secondary"
+        >
+          LinkedIn
+        </a>
+        .
+      </p>
     </div>
   </Section>
 );
