@@ -35,7 +35,7 @@ const Resume = () => {
         <section>
           <div>
             <p>National University of Singapore, B.Comp</p>
-            <h4>August 2019 - Present</h4>
+            <h4>August 2021 - Present</h4>
           </div>
         </section>
 
