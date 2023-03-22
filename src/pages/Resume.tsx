@@ -34,7 +34,7 @@ const Resume = () => {
         <section>
           <div>
             <p>National University of Singapore, B.Comp</p>
-            <h4>August 2021 - Present</h4>
+            <h4>August 2021 - May 2025</h4>
           </div>
         </section>
 
@@ -43,9 +43,13 @@ const Resume = () => {
           <div>
             <p>Dine Inn Pte Ltd</p>
             <h4>UI/UX Intern | March 2021 - July 2021</h4>
-            <ul>
-              <li>Redesigned the user interface of Dine Inn&apos;s platform using Figma</li>
-              <li>Designed a brand new platform for Dine Inn drivers</li>
+            <ul className="mt-2">
+              <li>
+                Led redesign of Dine Inn&apos;s e-commerce platform to improve user experience and increase conversion
+                rates.
+              </li>
+              <li>Designed high-fidelity mock ups on Figma for Dine Inn Driver&apos;s platform.</li>
+              <li>Collaborated closely with development team to ensure a smooth hand-off process.</li>
             </ul>
           </div>
         </section>
