@@ -24,6 +24,7 @@ const SkillsSection = () => {
           <div>
             <Skills.Python />
             <Skills.Numpy />
+            <Skills.Sass />
             <Skills.Firebase />
             <Skills.PgSql />
             <Skills.Ruby />
