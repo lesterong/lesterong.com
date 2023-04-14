@@ -29,6 +29,11 @@ const SkillsSection = () => {
             <Skills.Ruby />
             <Skills.RubyOnRails />
           </div>
+
+          <p>Currently playing around with...</p>
+          <div>
+            <Skills.Nextjs />
+          </div>
         </div>
       </div>
     </Section>
