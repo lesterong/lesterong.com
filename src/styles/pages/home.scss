@@ -74,7 +74,7 @@
     }
 
     span {
-      @apply text-center font-body text-xs opacity-0 transition-opacity duration-200;
+      @apply translate-y-1 text-center font-body text-xs opacity-0 transition-all duration-200 motion-reduce:translate-y-0;
     }
 
     &:hover {
@@ -83,7 +83,7 @@
       }
 
       span {
-        @apply opacity-100;
+        @apply translate-y-0 opacity-100;
       }
     }
   }
