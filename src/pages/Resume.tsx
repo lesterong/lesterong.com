@@ -56,7 +56,7 @@ const Resume = () => {
 
         <a
           className="nav-link mx-auto mb-6 mt-8 flex w-max flex-row items-center space-x-2"
-          href={`${process.env.PUBLIC_URL}/files/Lester_Ong_CV.pdf`}
+          href="/files/Lester_Ong_CV.pdf"
           target="_blank"
           rel="noreferrer"
         >
