@@ -2,24 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Lester Ong's Portfolio Website" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
     <link
       rel="preload"
       as="font"
       crossorigin="anonymous"
-      href="/static/media/space-grotesk-latin-variable-wghtOnly-normal.28337638d11938e35866.woff2"
+      href="/node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-variable-wghtOnly-normal.woff2"
       type="font/woff2"
     />
     <link
       rel="preload"
       as="font"
       crossorigin="anonymous"
-      href="/static/media/figtree-latin-variable-wghtOnly-normal.6cccb38459900e259b85.woff2"
+      href="/node_modules/@fontsource/figtree/files/figtree-latin-variable-wghtOnly-normal.woff2"
       type="font/woff2"
     />
     <title>Lester Ong</title>
@@ -41,8 +41,9 @@
       <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
-        <textarea name="message" />
+        <textarea name="message"></textarea>
       </form>
     </div>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
