@@ -61,6 +61,10 @@
   .content {
     @apply mt-2 mb-6;
 
+    > p {
+      @apply mb-0.5;
+    }
+
     > div {
       @apply grid grid-cols-auto-fill gap-2;
     }

@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  ignorePatterns: ['build'],
   extends: [
     'plugin:react/recommended',
     'airbnb',

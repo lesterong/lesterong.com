@@ -86,6 +86,18 @@ const Navbar = () => {
             ))}
             <Menu.Item>
               {({ active }) => (
+                <a
+                  href="https://blog.lesterong.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`navbar__dropdown__toggle ${active ? 'active' : ''}`}
+                >
+                  Blog
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
                 <button
                   onClick={() => setIsOpenSettings(true)}
                   type="button"
@@ -136,6 +148,9 @@ const Navbar = () => {
             {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
           </Link>
         ))}
+        <a href="https://blog.lesterong.com" target="_blank" rel="noreferrer">
+          Blog
+        </a>
       </div>
       <div className="hidden items-center justify-end space-x-2 xs:flex">
         <button type="button" onClick={() => setIsOpenSettings(true)}>
