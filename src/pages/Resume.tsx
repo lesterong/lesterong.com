@@ -39,7 +39,11 @@ const Resume = () => {
         </section>
 
         <h3>Work Experience</h3>
-        <section>
+        <section className="resume__experience">
+          <div>
+            <p>Keysight Technologies</p>
+            <h4>Software Engineer Intern | May 2023 - Present</h4>
+          </div>
           <div>
             <p>Dine Inn Pte Ltd</p>
             <h4>UI/UX Intern | March 2021 - July 2021</h4>
