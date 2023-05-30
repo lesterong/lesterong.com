@@ -18,11 +18,11 @@ const SkillsSection = () => {
             <Skills.Git />
             <Skills.Tailwind />
             <Skills.Figma />
+            <Skills.Python />
           </div>
 
           <p>Experimented with...</p>
           <div>
-            <Skills.Python />
             <Skills.Numpy />
             <Skills.Sass />
             <Skills.Firebase />
@@ -34,6 +34,7 @@ const SkillsSection = () => {
           <p>Currently playing around with...</p>
           <div>
             <Skills.Nextjs />
+            <Skills.Django />
           </div>
         </div>
       </div>

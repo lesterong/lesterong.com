@@ -17,11 +17,13 @@ const Resume = () => {
             <p>CSS</p>
             <p>JavaScript / TypeScript</p>
             <p>Java</p>
+            <p>Python</p>
           </div>
           <div>
             <h4>Frameworks and Libraries</h4>
             <p>ReactJS</p>
             <p>TailwindCSS</p>
+            <p>Django</p>
             <p>Git</p>
           </div>
           <div>
@@ -43,6 +45,12 @@ const Resume = () => {
           <div>
             <p>Keysight Technologies</p>
             <h4>Software Engineer Intern | May 2023 - Present</h4>
+            <ul className="mt-2">
+              <li>
+                Worked as part of the Product Security Team to implement new features in the Vulnerability Management
+                Tool using Python and Django.
+              </li>
+            </ul>
           </div>
           <div>
             <p>Dine Inn Pte Ltd</p>

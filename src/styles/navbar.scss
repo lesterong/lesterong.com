@@ -1,7 +1,7 @@
 @use 'dropdown.scss';
 
 .navbar {
-  @apply text-color--primary absolute top-0 left-0 right-0 mx-auto flex w-screen max-w-6xl items-center justify-between py-4 px-6;
+  @apply text-color--primary absolute left-0 right-0 top-0 mx-auto flex w-screen max-w-6xl items-center justify-between px-6 py-4;
 }
 
 .navbar__links {

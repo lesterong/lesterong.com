@@ -2,7 +2,7 @@
   @apply h-auto md:h-screen;
 
   .home__hero__content {
-    @apply flex h-full flex-col-reverse justify-center pt-16 pb-6 md:flex-row md:items-center;
+    @apply flex h-full flex-col-reverse justify-center pb-6 pt-16 md:flex-row md:items-center;
 
     .text-gradient {
       @apply gradient-color bg-gradient-to-r bg-clip-text text-transparent;
@@ -59,7 +59,7 @@
   }
 
   .content {
-    @apply mt-2 mb-6;
+    @apply mb-6 mt-2;
 
     > p {
       @apply mb-0.5;
