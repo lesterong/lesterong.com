@@ -35,6 +35,7 @@ const SkillsSection = () => {
           <div>
             <Skills.Nextjs />
             <Skills.Django />
+            <Skills.Docker />
           </div>
         </div>
       </div>
