@@ -25,6 +25,7 @@ const Resume = () => {
             <p>TailwindCSS</p>
             <p>Django</p>
             <p>Git</p>
+            <p>Docker</p>
           </div>
           <div>
             <h4>Software</h4>
