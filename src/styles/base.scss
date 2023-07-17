@@ -93,12 +93,12 @@ html {
 }
 
 body {
-  @apply bg-color--primary text-color--primary font-body transition-all duration-200;
+  @apply bg-color--primary text-color--primary font-body transition-[background-color] duration-200;
   -webkit-tap-highlight-color: transparent;
 }
 
 .section {
-  @apply transition-all duration-200;
+  @apply transition-[background-color] duration-200;
 }
 
 h1 {
