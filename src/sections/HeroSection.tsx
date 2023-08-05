@@ -21,15 +21,12 @@ const HeroSection = () => {
               Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.
             </h1>
             <p>
-              I&apos;m a penultimate Computer Science undergraduate at&nbsp;
+              A student, a software engineer, and a designer. Currently, I&apos;m a penultimate Computer Science
+              undergraduate at the&nbsp;
               <a className="nav-link" href="https://nus.edu.sg" target="blank" rel="noopener noreferrer">
-                NUS
+                National University of Singapore
               </a>
-              . Currently, I am a software engineer intern at&nbsp;
-              <a className="nav-link" href="https://www.keysight.com" target="blank" rel="noopener noreferrer">
-                Keysight Technologies
-              </a>
-              , working in the Product Security Team.
+              .
             </p>
           </div>
           <div>{HeroAnimation.View}</div>

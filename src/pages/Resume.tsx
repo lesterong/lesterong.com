@@ -22,10 +22,10 @@ const Resume = () => {
           <div>
             <h4>Frameworks and Libraries</h4>
             <p>ReactJS</p>
-            <p>TailwindCSS</p>
             <p>Django</p>
             <p>Git</p>
             <p>Docker</p>
+            <p>TailwindCSS</p>
           </div>
           <div>
             <h4>Software</h4>
@@ -45,11 +45,15 @@ const Resume = () => {
         <section className="resume__experience">
           <div>
             <p>Keysight Technologies</p>
-            <h4>Software Engineer Intern | May 2023 - Present</h4>
+            <h4>Software Engineer Intern | May 2023 - Aug 2023</h4>
             <ul className="mt-2">
               <li>
                 Worked as part of the Product Security Team to implement new features in the Vulnerability Management
                 Tool using Python and Django.
+              </li>
+              <li>Containerised the Vulnerability Management Tool using Docker.</li>
+              <li>
+                Improved developer documentation for the Vulnerability Management Tool to speed up the setup process.
               </li>
             </ul>
           </div>

@@ -19,10 +19,11 @@ const AboutSection = () => (
         <Link to="projects" className="nav-link secondary">
           projects
         </Link>
-        , interned at Keysight Technologies, and also dabbled in design work during my time at Dine Inn.
+        , interned in the Product Security Team at Keysight Technologies, and also dabbled in design work during my time
+        at Dine Inn.
       </p>
       <p>
-        You can also find me on{' '}
+        Find me on&nbsp;
         <a
           href="https://www.github.com/lesterong/"
           target="blank"
@@ -31,7 +32,7 @@ const AboutSection = () => (
         >
           GitHub
         </a>
-        &nbsp;and{' '}
+        &nbsp;and&nbsp;
         <a
           href="https://www.linkedin.com/in/lesterongpc/"
           target="blank"
@@ -40,7 +41,7 @@ const AboutSection = () => (
         >
           LinkedIn
         </a>
-        .
+        !
       </p>
     </div>
   </Section>
