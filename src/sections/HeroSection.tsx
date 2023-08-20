@@ -17,11 +17,13 @@ const HeroSection = () => {
       <div className="home__hero min-h-full md:min-h-[448px]">
         <div className="home__hero__content">
           <div>
+            <h3>Hello, I&apos;m Lester!</h3>
             <h1>
-              Hello, I&apos;m <span className="text-gradient animate-gradient">Lester</span>.
+              I design and build digital experiences like&nbsp;
+              <span className="text-gradient animate-gradient">no other</span>.
             </h1>
             <p>
-              A student, a software engineer, and a designer. Currently, I&apos;m a penultimate Computer Science
+              A software engineer, a designer, and a student. Currently, I&apos;m a penultimate Computer Science
               undergraduate at the&nbsp;
               <a className="nav-link" href="https://nus.edu.sg" target="blank" rel="noopener noreferrer">
                 National University of Singapore

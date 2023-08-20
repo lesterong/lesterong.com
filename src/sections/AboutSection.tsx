@@ -7,7 +7,7 @@ const AboutSection = () => (
       <h2>About Me</h2>
       <p>Hey there, nice to meet you!</p>
       <p>
-        I&apos;m a front-end software engineer based in Singapore. I love designing and building fluid software that are
+        I&apos;m Lester, a software engineer based in Singapore. I love designing and building fluid software that are
         functional and fun to use.
       </p>
       <p>
