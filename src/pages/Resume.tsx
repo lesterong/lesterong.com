@@ -16,6 +16,7 @@ const Resume = () => {
             <p>HTML</p>
             <p>CSS</p>
             <p>JavaScript / TypeScript</p>
+            <p>SQL</p>
             <p>Java</p>
             <p>Python</p>
           </div>
@@ -36,13 +37,20 @@ const Resume = () => {
         <h3>Education</h3>
         <section>
           <div>
-            <p>National University of Singapore, B.Comp</p>
-            <h4>August 2021 - May 2025</h4>
+            <p>National University of Singapore</p>
+            <h4>Bachelor of Computing in Computer Science | August 2021 - May 2025</h4>
           </div>
         </section>
 
         <h3>Work Experience</h3>
         <section className="resume__experience">
+          <div>
+            <p>Success IT Consultancy</p>
+            <h4>Software Engineer Intern | Sep 2023 - Present</h4>
+            <ul className="mt-2">
+              <li>Implemented new features in the Hire Purchase web application using Angular and C#.</li>
+            </ul>
+          </div>
           <div>
             <p>Keysight Technologies</p>
             <h4>Software Engineer Intern | May 2023 - Aug 2023</h4>

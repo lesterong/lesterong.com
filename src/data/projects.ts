@@ -34,7 +34,7 @@ const projects = [
     position: 'Developer and Designer',
     description:
       'NUS FAQ was built to serve as a central location to answer the most asked questions about different majors in National University of Singapore (NUS). Built with React and Firebase.',
-    note: 'This project is not affiliated with NUS.',
+    note: '',
     isFeatured: false,
     imageSource: 'nusfaq',
     links: {
@@ -62,7 +62,7 @@ const projects = [
     position: 'Developer',
     description:
       'NUScheduler is a desktop app for managing contacts, optimised for use via a Command Line Interface with the benefits of a Graphical User Interface',
-    note: 'This project is written for the CS2103T module in NUS, but is not endorsed by NUS.',
+    note: '',
     isFeatured: false,
     imageSource: 'nuscheduler',
     links: {
@@ -70,6 +70,18 @@ const projects = [
       'Source Code': 'https://github.com/AY2223S1-CS2103T-T17-3/tp',
     },
     date: '2022-09-22T00:00:00.000Z',
+  },
+  {
+    title: 'bayuhao.org',
+    position: 'Developer and Designer',
+    description:
+      'A portfolio website designed for Assistant Professor Ba Yuhao of Lee Kuan Yew School of Public Policy at the National University of Singapore. Built with Astro and TailwindCSS.',
+    imageSource: 'bayuhao',
+    links: {
+      'Live Site': 'https://bayuhao.org',
+      'Source Code': 'https://github.com/alcba/alcba.github.io',
+    },
+    date: '2023-10-01T00:00:00.000Z',
   },
 ];
 
