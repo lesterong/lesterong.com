@@ -23,6 +23,7 @@ const Resume = () => {
           <div>
             <h4>Frameworks and Libraries</h4>
             <p>ReactJS</p>
+            <p>Angular</p>
             <p>Django</p>
             <p>Git</p>
             <p>Docker</p>
@@ -48,7 +49,14 @@ const Resume = () => {
             <p>Success IT Consultancy</p>
             <h4>Software Engineer Intern | Sep 2023 - Present</h4>
             <ul className="mt-2">
-              <li>Implemented new features in the Hire Purchase web application using Angular and C#.</li>
+              <li>
+                Worked with product managers and engineers to enhance Auto Hire Purchase System, a cloud-based web
+                application utilised by over 20 companies in the automotive industry.
+              </li>
+              <li>
+                Integrated features in the application with Angular and TypeScript for the front-end and C# for the
+                back-end.
+              </li>
             </ul>
           </div>
           <div>
