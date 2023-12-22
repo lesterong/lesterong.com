@@ -75,13 +75,24 @@ const projects = [
     title: 'bayuhao.org',
     position: 'Developer and Designer',
     description:
-      'A portfolio website designed for Assistant Professor Ba Yuhao of Lee Kuan Yew School of Public Policy at the National University of Singapore. Built with Astro and TailwindCSS.',
+      'A portfolio website designed for Assistant Professor Ba Yuhao of Lee Kuan Yew School of Public Policy at the National University of Singapore. Built on Astro and TailwindCSS.',
     imageSource: 'bayuhao',
     links: {
       'Live Site': 'https://bayuhao.org',
       'Source Code': 'https://github.com/alcba/alcba.github.io',
     },
     date: '2023-10-01T00:00:00.000Z',
+  },
+  {
+    title: 'seaclimatenpos.org',
+    position: 'Frontend Developer',
+    description:
+      'A collection of non-profit organisations in Southeast Asia dedicated to address climate change. Developed with JavaScript Web Components and Bootstrap.',
+    imageSource: 'seaclimatenpos',
+    links: {
+      'Live Site': 'https://www.seaclimatenpos.org',
+    },
+    date: '2023-12-23T00:00:00.000Z',
   },
 ];
 
