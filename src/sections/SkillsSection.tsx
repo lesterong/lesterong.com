@@ -31,11 +31,13 @@ const SkillsSection = () => {
             <Skills.PgSql />
             <Skills.Ruby />
             <Skills.RubyOnRails />
+            <Skills.Nextjs />
+            <Skills.Bootstrap />
           </div>
 
           <p>Currently playing around with...</p>
           <div>
-            <Skills.Nextjs />
+            <Skills.Astro />
           </div>
         </div>
       </div>

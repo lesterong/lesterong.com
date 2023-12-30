@@ -43,7 +43,7 @@
   @apply max-w-xl;
 
   h2 {
-    @apply mt-6;
+    @apply mb-4 mt-6;
   }
 
   p {
@@ -59,26 +59,26 @@
   @apply max-w-xl;
 
   h2 {
-    @apply mt-6;
+    @apply mb-4 mt-6;
   }
 
   .content {
     @apply mb-6 mt-2;
 
     > p {
-      @apply mb-0.5;
+      @apply mb-1;
     }
 
     > div {
-      @apply grid grid-cols-auto-fill gap-2;
+      @apply grid grid-cols-auto-fill gap-0.5;
     }
   }
 
   .skill-icon {
-    @apply flex w-12 flex-col items-center;
+    @apply flex w-11 flex-col items-center;
 
     svg {
-      @apply h-12 w-12 grayscale transition-all duration-300;
+      @apply h-11 w-11 grayscale transition-all duration-300;
     }
 
     span {
@@ -101,6 +101,6 @@
   @apply mb-6;
 
   h2 {
-    @apply mt-6;
+    @apply mb-4 mt-6;
   }
 }

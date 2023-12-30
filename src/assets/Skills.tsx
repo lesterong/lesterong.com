@@ -725,6 +725,87 @@ const Docker = () => {
   );
 };
 
+const Astro = () => {
+  return (
+    <div className="skill-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="256" height="366" viewBox="0 0 256 366">
+        <path
+          fill="#F5F5F5"
+          d="M182.022 9.147c2.982 3.702 4.502 8.697 7.543 18.687L256 246.074a276.467 276.467 0 0 0-79.426-26.891L133.318 73.008a5.63 5.63 0 0 0-10.802.017L79.784 219.11A276.453 276.453 0 0 0 0 246.04L66.76 27.783c3.051-9.972 4.577-14.959 7.559-18.654a24.541 24.541 0 0 1 9.946-7.358C88.67 0 93.885 0 104.314 0h47.683c10.443 0 15.664 0 20.074 1.774a24.545 24.545 0 0 1 9.95 7.373"
+        />
+        <path
+          fill="#FF5D01"
+          d="M189.972 256.46c-10.952 9.364-32.812 15.751-57.992 15.751c-30.904 0-56.807-9.621-63.68-22.56c-2.458 7.415-3.009 15.903-3.009 21.324c0 0-1.619 26.623 16.898 45.14c0-9.615 7.795-17.41 17.41-17.41c16.48 0 16.46 14.378 16.446 26.043l-.001 1.041c0 17.705 10.82 32.883 26.21 39.28a35.685 35.685 0 0 1-3.588-15.647c0-16.886 9.913-23.173 21.435-30.48c9.167-5.814 19.353-12.274 26.372-25.232a47.588 47.588 0 0 0 5.742-22.735c0-5.06-.786-9.938-2.243-14.516"
+        />
+      </svg>
+      <span>Astro</span>
+    </div>
+  );
+};
+
+const Bootstrap = () => {
+  return (
+    <div className="skill-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+        <defs>
+          <linearGradient
+            id="deviconBootstrap0"
+            x1="76.079"
+            x2="523.48"
+            y1="10.798"
+            y2="365.95"
+            gradientTransform="translate(1.11 14.613)scale(.24566)"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#9013fe" />
+            <stop offset="1" stopColor="#6610f2" />
+          </linearGradient>
+          <linearGradient
+            id="deviconBootstrap1"
+            x1="193.51"
+            x2="293.51"
+            y1="109.74"
+            y2="278.87"
+            gradientTransform="translate(0 52)"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stopColor="#fff" />
+            <stop offset="1" stopColor="#f1e5fc" />
+          </linearGradient>
+          <filter
+            id="deviconBootstrap2"
+            width="197"
+            height="249"
+            x="161.9"
+            y="135.46"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="8" />
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+            <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+          </filter>
+        </defs>
+        <path
+          fill="url(#deviconBootstrap0)"
+          d="M14.985 27.712c-.237-6.815 5.072-13.099 12.249-13.099h73.54c7.177 0 12.486 6.284 12.249 13.099c-.228 6.546.068 15.026 2.202 21.94c2.141 6.936 5.751 11.319 11.664 11.883v6.387c-5.913.564-9.523 4.947-11.664 11.883c-2.134 6.914-2.43 15.394-2.202 21.94c.237 6.815-5.072 13.098-12.249 13.098h-73.54c-7.177 0-12.486-6.284-12.249-13.098c.228-6.546-.068-15.026-2.203-21.94c-2.14-6.935-5.76-11.319-11.673-11.883v-6.387c5.913-.563 9.533-4.947 11.673-11.883c2.135-6.914 2.43-15.394 2.203-21.94"
+        />
+        <path
+          fill="url(#deviconBootstrap1)"
+          d="M267.1 364.46c47.297 0 75.798-23.158 75.798-61.355c0-28.873-20.336-49.776-50.532-53.085v-1.203c22.185-3.609 39.594-24.211 39.594-47.219c0-32.783-25.882-54.138-65.322-54.138h-88.74v217zm-54.692-189.48h45.911c24.958 0 39.131 11.128 39.131 31.279c0 21.505-16.484 33.535-46.372 33.535h-38.67zm0 161.96v-71.431h45.602c32.661 0 49.608 12.03 49.608 35.49c0 23.459-16.484 35.941-47.605 35.941z"
+          filter="url(#deviconBootstrap2)"
+          transform="translate(1.494 2.203)scale(.24566)"
+        />
+      </svg>
+      <span>Bootstrap</span>
+    </div>
+  );
+};
+
 export default {
   Html,
   Css,
@@ -745,4 +826,6 @@ export default {
   Sass,
   Django,
   Docker,
+  Astro,
+  Bootstrap,
 };
