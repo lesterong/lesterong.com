@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-color--footer mb-6 text-center text-sm">&copy; Lester Ong, 2023.</p>
+      <p className="text-color--footer mb-6 text-center text-sm">&copy; Lester Ong, 2022 - 2024.</p>
     </Section>
   );
 };
