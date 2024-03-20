@@ -47,7 +47,7 @@ const Resume = () => {
         <section className="resume__experience">
           <div>
             <p>Success IT Consultancy</p>
-            <h4>Software Engineer Intern | Sep 2023 - Present</h4>
+            <h4>Software Engineer Intern | Sep 2023 - Mar 2023</h4>
             <ul className="mt-2">
               <li>
                 Worked with product managers and engineers to enhance Auto Hire Purchase System, a cloud-based web
