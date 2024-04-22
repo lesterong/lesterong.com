@@ -94,6 +94,19 @@ const projects = [
     },
     date: '2023-12-23T00:00:00.000Z',
   },
+  {
+    title: 'civictechlab.org',
+    position: 'Developer',
+    description:
+      'A static website leveraging Astro, TypeScript and Bootstrap, integrated with TinaCMS for intuitive content\n' +
+      'updates for non-technical users.',
+    imageSource: 'civictechlab',
+    links: {
+      'Live Site': 'https://civictechlab.org',
+      'Source Code': 'https://github.com/CivicTechLab/civictechlab.github.io',
+    },
+    date: '2024-3-23T00:00:00.000Z',
+  },
 ];
 
 export default projects;
