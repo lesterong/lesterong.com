@@ -23,7 +23,7 @@ const HeroSection = () => {
               <span className="text-gradient animate-gradient">no other</span>.
             </h1>
             <p>
-              A software engineer, a designer, and a student. Currently, I&apos;m a penultimate Computer Science
+              A software engineer, a UI/UX designer, and a student. Currently, I&apos;m a penultimate Computer Science
               undergraduate at the&nbsp;
               <a className="nav-link" href="https://nus.edu.sg" target="blank" rel="noopener noreferrer">
                 National University of Singapore
