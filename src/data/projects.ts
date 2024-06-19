@@ -107,6 +107,19 @@ const projects = [
     },
     date: '2024-3-23T00:00:00.000Z',
   },
+  {
+    title: 'NUS Digital Twin',
+    position: 'Developer and Designer',
+    description:
+      'Developed a 3D interactive map of the National University of Singapore campus using CesiumJS, showcasing key\n' +
+      'buildings with detailed models.',
+    links: {
+      'Live Site': 'https://www.nus-digital-twin.com',
+    },
+    imageSource: 'nusdigitaltwin',
+    date: '2024-4-22T00:00:00.000Z',
+    isFeatured: true,
+  },
 ];
 
 export default projects;
