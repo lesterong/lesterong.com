@@ -11,11 +11,11 @@ const AboutSection = () => (
         functional and fun to use.
       </p>
       <p>
-        I first began my software development journey 4 years ago when I picked up web development, and learnt about
-        HTML and CSS.
+        I first began my software development journey {new Date().getFullYear() - 2019} years ago when I picked up web
+        development, and learnt about HTML and CSS.
       </p>
       <p>
-        Since then, I have picked up various other languages and frameworks, built a couple of&nbsp;
+        Since then, I have picked up various other languages and frameworks, built and designed a couple of&nbsp;
         <Link to="projects" className="nav-link secondary">
           projects
         </Link>
