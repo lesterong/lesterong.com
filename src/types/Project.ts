@@ -2,9 +2,9 @@ export type ProjectProps = {
   title: string;
   position: string;
   description: string;
-  isFeatured: boolean;
+  isFeatured?: boolean;
   imageSource: string;
-  links: Object;
+  links: Record<string, string>;
   date: string;
-  note: string;
+  note?: string;
 };

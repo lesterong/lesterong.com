@@ -1,4 +1,6 @@
-const projects = [
+import { ProjectProps } from '../types/Project';
+
+const projects: ProjectProps[] = [
   {
     title: 'Taskority',
     position: 'Developer and Designer',
