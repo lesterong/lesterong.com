@@ -1,7 +1,7 @@
 import { Menu, Transition, Switch } from '@headlessui/react';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router';
 import Logo from '../assets/Logo';
 import MenuButton from '../assets/MenuButton';
 import SettingButton from '../assets/SettingButton';

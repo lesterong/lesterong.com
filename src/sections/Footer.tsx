@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import Section from './Section';
 import Contact from '../assets/Contact';
 

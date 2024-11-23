@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
 import Section from './Section';
