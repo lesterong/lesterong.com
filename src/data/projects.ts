@@ -120,6 +120,7 @@ const projects: ProjectProps[] = [
     },
     imageSource: 'nusdigitaltwin',
     date: '2024-10-22T00:00:00.000Z',
+    note: 'In collaboration with City Syntax Lab',
     isFeatured: true,
   },
   {

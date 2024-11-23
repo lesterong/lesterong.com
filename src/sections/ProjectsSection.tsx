@@ -10,6 +10,7 @@ const ProjectsSection = () => {
     <Section>
       <div className="home__projects">
         <h2>Featured Projects</h2>
+        <p>Here&apos;s some of my favourite projects that I helped build.</p>
         {featProjects.map((p) => (
           <ProjectCard key={p.title} project={p} />
         ))}
