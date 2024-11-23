@@ -7,8 +7,8 @@ module.exports = {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      display: ['"Space GroteskVariable"', 'Helvetica', 'ui-sans-serif'],
-      body: ['FigtreeVariable', 'system-ui', 'ui-sans-serif'],
+      display: ['"Space Grotesk Variable"', 'Helvetica', 'ui-sans-serif'],
+      body: ['Figtree Variable', 'system-ui', 'ui-sans-serif'],
     },
     colors: {
       red: colors.red,
