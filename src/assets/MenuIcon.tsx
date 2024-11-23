@@ -1,4 +1,4 @@
-const MenuButton = () => (
+const MenuIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="stroke-color--link h-6 w-6 fill-none stroke-2 transition-all duration-200"
@@ -13,4 +13,4 @@ const MenuButton = () => (
   </svg>
 );
 
-export default MenuButton;
+export default MenuIcon;

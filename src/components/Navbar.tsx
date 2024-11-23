@@ -1,9 +1,9 @@
-import { Menu, Transition, Switch } from '@headlessui/react';
+import { Menu, MenuButton, MenuItem, MenuItems, Transition, Switch } from '@headlessui/react';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { Link, useLocation, useNavigate } from 'react-router';
 import Logo from '../assets/Logo';
-import MenuButton from '../assets/MenuButton';
+import MenuIcon from '../assets/MenuIcon';
 import SettingButton from '../assets/SettingButton';
 import SettingsModal from './SettingsModal';
 
@@ -47,9 +47,9 @@ const Navbar = () => {
   const navButton = (
     <div className="flex justify-end xs:hidden">
       <Menu>
-        <Menu.Button>
-          <MenuButton />
-        </Menu.Button>
+        <MenuButton>
+          <MenuIcon />
+        </MenuButton>
         <Transition
           as={Fragment}
           enterFrom="dropdown-transition-is-close origin-top-right"
@@ -59,55 +59,55 @@ const Navbar = () => {
           leaveFrom="dropdown-transition-is-open origin-top-right"
           leaveTo="dropdown-transition-is-close origin-top-right"
         >
-          <Menu.Items className="navbar__dropdown">
-            <Menu.Item>
-              {({ active }) => (
+          <MenuItems className="navbar__dropdown">
+            <MenuItem>
+              {({ focus }) => (
                 <Link
                   to="/"
-                  className={`navbar__dropdown__item ${pathname === '/' ? 'selected' : ''} ${active ? 'active' : ''}`}
+                  className={`navbar__dropdown__item ${pathname === '/' ? 'selected' : ''} ${focus ? 'active' : ''}`}
                 >
                   Home
                 </Link>
               )}
-            </Menu.Item>
+            </MenuItem>
             {pages.map((page) => (
-              <Menu.Item key={page}>
-                {({ active }) => (
+              <MenuItem key={page}>
+                {({ focus }) => (
                   <Link
                     to={page}
                     className={`navbar__dropdown__item ${pathname === `/${page}` ? 'selected' : ''} ${
-                      active ? 'active' : ''
+                      focus ? 'active' : ''
                     }`}
                   >
                     {page.substring(0, 1).toUpperCase() + page.substring(1).toLowerCase()}
                   </Link>
                 )}
-              </Menu.Item>
+              </MenuItem>
             ))}
-            <Menu.Item>
-              {({ active }) => (
+            <MenuItem>
+              {({ focus }) => (
                 <a
                   href="https://blog.lesterong.com"
                   target="_blank"
                   rel="noreferrer"
-                  className={`navbar__dropdown__toggle ${active ? 'active' : ''}`}
+                  className={`navbar__dropdown__toggle ${focus ? 'active' : ''}`}
                 >
                   Blog
                 </a>
               )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
+            </MenuItem>
+            <MenuItem>
+              {({ focus }) => (
                 <button
                   onClick={() => setIsOpenSettings(true)}
                   type="button"
-                  className={`navbar__dropdown__toggle ${active ? 'active' : ''}`}
+                  className={`navbar__dropdown__toggle ${focus ? 'active' : ''}`}
                 >
                   Settings
                 </button>
               )}
-            </Menu.Item>
-            <Menu.Item
+            </MenuItem>
+            <MenuItem
               as="div"
               onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.preventDefault();
@@ -115,11 +115,11 @@ const Navbar = () => {
                 setIsDarkMode(!isDarkMode);
               }}
             >
-              {({ active }) => (
+              {({ focus }) => (
                 <button
                   type="button"
                   onClick={() => setIsDarkMode(!isDarkMode)}
-                  className={`navbar__dropdown__toggle ${active ? 'active' : ''} w-full`}
+                  className={`navbar__dropdown__toggle ${focus ? 'active' : ''} w-full`}
                 >
                   <Switch
                     checked={isDarkMode}
@@ -133,8 +133,8 @@ const Navbar = () => {
                   <span className="ml-2">{isDarkMode ? 'Dark' : 'Light'}</span>
                 </button>
               )}
-            </Menu.Item>
-          </Menu.Items>
+            </MenuItem>
+          </MenuItems>
         </Transition>
       </Menu>
     </div>

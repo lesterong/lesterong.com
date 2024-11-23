@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import ProjectCard from '../components/ProjectCard';
 import projects from '../data/projects';
@@ -48,14 +48,14 @@ const Projects = () => {
                   setSorter({ ...sorter, [variant]: e });
                 }}
               >
-                <Listbox.Button className="sorter__button">
+                <ListboxButton className="sorter__button">
                   {({ open }) => (
                     <>
                       {sorter[variant as keyof typeof sorter]}
                       <ChevronDown isExpanded={open} />
                     </>
                   )}
-                </Listbox.Button>
+                </ListboxButton>
                 <Transition
                   as={Fragment}
                   enterFrom="dropdown-transition-is-close"
@@ -67,19 +67,19 @@ const Projects = () => {
                     variant === 'type' ? 'origin-top-right' : 'origin-top-left'
                   }`}
                 >
-                  <Listbox.Options className={`sorter__dropdown ${variant === 'type' ? 'right-0' : 'left-0'}`}>
+                  <ListboxOptions className={`sorter__dropdown ${variant === 'type' ? 'right-0' : 'left-0'}`}>
                     {values.map((val) => (
-                      <Listbox.Option value={val} key={val}>
-                        {({ active, selected }) => (
+                      <ListboxOption value={val} key={val}>
+                        {({ focus, selected }) => (
                           <div
-                            className={`sorter__dropdown__item ${selected ? 'selected' : ''} ${active ? 'active' : ''}`}
+                            className={`sorter__dropdown__item ${selected ? 'selected' : ''} ${focus ? 'active' : ''}`}
                           >
                             {val}
                           </div>
                         )}
-                      </Listbox.Option>
+                      </ListboxOption>
                     ))}
-                  </Listbox.Options>
+                  </ListboxOptions>
                 </Transition>
               </Listbox>
             </div>
