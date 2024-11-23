@@ -20,7 +20,7 @@
     "react-flip-toolkit": "^7.2.4",
     "react-hotkeys-hook": "^4.6.1",
     "react-router": "^7.0.1",
-    "sass": "^1.56.1",
+    "sass": "^1.81.0",
     "typescript": "^5.6.3",
     "web-vitals": "^4.2.4"
   },
