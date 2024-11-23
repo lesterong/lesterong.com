@@ -107,7 +107,7 @@ const projects: ProjectProps[] = [
       'Live Site': 'https://civictechlab.org',
       'Source Code': 'https://github.com/CivicTechLab/civictechlab.github.io',
     },
-    date: '2024-3-23T00:00:00.000Z',
+    date: '2024-03-23T00:00:00.000Z',
   },
   {
     title: 'NUS Digital Twin',
@@ -119,7 +119,29 @@ const projects: ProjectProps[] = [
       'Live Site': 'https://www.nus-digital-twin.com',
     },
     imageSource: 'nusdigitaltwin',
-    date: '2024-4-22T00:00:00.000Z',
+    date: '2024-10-22T00:00:00.000Z',
+    isFeatured: true,
+  },
+  {
+    title: 'GoodBI',
+    position: 'Frontend Developer and Designer',
+    description:
+      'A generative AI application to convert text to visualisations on CSV data built on Nextjs and FastAPI.',
+    links: {
+      'Live Site': 'https://good-bi.vercel.app',
+    },
+    imageSource: 'goodbi',
+    date: '2024-08-22T00:00:00.000Z',
+  },
+  {
+    title: 'OmniCAT',
+    position: 'Frontend Developer and Designer',
+    description: 'A multi-stage 3D collaborative annotation tool made with Nextjs, threejs and Django.',
+    links: {
+      'Live Site': 'https://omnic.at',
+    },
+    imageSource: 'omnicat',
+    date: '2024-09-22T00:00:00.000Z',
     isFeatured: true,
   },
 ];
