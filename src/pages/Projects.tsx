@@ -104,7 +104,7 @@ const Projects = () => {
                 <ProjectCard project={p} />
               </div>
             </Flipped>
-          )
+          ),
         )}
       </Flipper>
     </Section>

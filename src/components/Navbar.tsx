@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
   );
 
   useEffect(() => {

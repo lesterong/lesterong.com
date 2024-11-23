@@ -4,7 +4,7 @@ const Toast = ({ message, isSuccess, handleClose, isShowing }: ToastProps) => {
   return (
     <div className="toast">
       <button
-        className={`${isSuccess ? 'success' : 'failure'}  ${
+        className={`${isSuccess ? 'success' : 'failure'} ${
           isShowing ? 'toast-content-is-open' : 'toast-content-is-close hidden'
         }`}
         type="button"
