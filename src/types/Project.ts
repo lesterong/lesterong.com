@@ -4,7 +4,7 @@ export type ProjectProps = {
   description: string;
   isFeatured?: boolean;
   imageSource: string;
-  links: Record<string, string>;
+  links?: Record<string, string>;
   date: string;
   note?: string;
 };

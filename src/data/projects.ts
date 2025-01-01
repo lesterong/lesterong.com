@@ -138,9 +138,6 @@ const projects: ProjectProps[] = [
     title: 'OmniCAT',
     position: 'Frontend Developer and Designer',
     description: 'A multi-stage 3D collaborative annotation tool made with Nextjs, threejs and Django.',
-    links: {
-      'Live Site': 'https://omnic.at',
-    },
     imageSource: 'omnicat',
     date: '2024-09-22T00:00:00.000Z',
     isFeatured: true,

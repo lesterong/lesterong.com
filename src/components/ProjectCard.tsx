@@ -17,14 +17,15 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
         </div>
         <div className="card__content__footer">
           <div>
-            {Object.entries(links).map((l) => {
-              const [label, link] = l;
-              return (
-                <a key={link} href={link} target="blank" className="nav-link text-base" rel="noopener noreferrer">
-                  {label} <span className="right-arrow">&#x2192;</span>
-                </a>
-              );
-            })}
+            {links &&
+              Object.entries(links).map((l) => {
+                const [label, link] = l;
+                return (
+                  <a key={link} href={link} target="blank" className="nav-link text-base" rel="noopener noreferrer">
+                    {label} <span className="right-arrow">&#x2192;</span>
+                  </a>
+                );
+              })}
           </div>
           {note && <aside>*{note}</aside>}
         </div>
