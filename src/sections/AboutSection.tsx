@@ -19,9 +19,9 @@ const AboutSection = () => (
         <Link to="projects" className="nav-link secondary">
           projects
         </Link>
-        , interned in the Product Security Team at Keysight Technologies, and also dabbled in design work during my time
-        at Dine Inn.
+        &nbsp;and interned in a few companies.
       </p>
+      <p>Right now, I&apos;m working with City Syntax Lab to build a crowd-sourced campus digital twin of NUS.</p>
       <p>
         Find me on&nbsp;
         <a

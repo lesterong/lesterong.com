@@ -9,10 +9,11 @@ const SkillsSection = () => {
         <div className="content">
           <p>Familiar with...</p>
           <div>
-            <Skills.Java />
+            <Skills.Astro />
             <Skills.Javascript />
             <Skills.Typescript />
             <Skills.React />
+            <Skills.Java />
             <Skills.Html />
             <Skills.Css />
             <Skills.Git />
@@ -37,7 +38,7 @@ const SkillsSection = () => {
 
           <p>Currently playing around with...</p>
           <div>
-            <Skills.Astro />
+            <Skills.Swift />
           </div>
         </div>
       </div>
