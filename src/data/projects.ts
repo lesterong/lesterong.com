@@ -142,6 +142,24 @@ const projects: ProjectProps[] = [
     date: '2024-09-22T00:00:00.000Z',
     isFeatured: true,
   },
+  {
+    title: 'Peggle',
+    position: 'Developer',
+    description: 'A iPad clone of the peggle game built in Swift and SwiftUI.',
+    imageSource: 'peggle',
+    date: '2025-02-01T00:00:00.000Z',
+  },
+  {
+    title: "Ah Leong's Farm",
+    position: 'Developer',
+    description:
+      "Ah Leong's Farm is a turn-based iOS farming simulation game where players manage their own farm made with Swift and UIKit.",
+    imageSource: 'ahleongsfarm',
+    date: '2025-04-01T00:00:00.000Z',
+    links: {
+      'Source Code': 'https://github.com/cs3217-2425/group-project-ah-leong-s-farm',
+    },
+  },
 ];
 
 export default projects;
