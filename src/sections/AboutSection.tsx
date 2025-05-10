@@ -21,12 +21,18 @@ const AboutSection = () => (
         </Link>
         &nbsp;and interned in a few companies.
       </p>
-      <p>Right now, I&apos;m working with City Syntax Lab to build a crowd-sourced campus digital twin of NUS.</p>
       <p>
-        Find me on&nbsp;
+        Right now, I&apos;m working with City Syntax Lab to build a crowd-sourced campus digital twin of&nbsp;
+        <a className="nav-link" href="https://nus.edu.sg" target="_blank" rel="noreferrer">
+          NUS
+        </a>
+        .
+      </p>
+      <p>
+        I&apos;m always on the look out for new opportunities! Find me on&nbsp;
         <a
           href="https://www.github.com/lesterong/"
-          target="blank"
+          target="_blank"
           rel="noopener noreferrer"
           className="nav-link secondary"
         >
@@ -35,7 +41,7 @@ const AboutSection = () => (
         &nbsp;and&nbsp;
         <a
           href="https://www.linkedin.com/in/lesterongpc/"
-          target="blank"
+          target="_blank"
           rel="noopener noreferrer"
           className="nav-link secondary"
         >

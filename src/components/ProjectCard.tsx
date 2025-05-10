@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               Object.entries(links).map((l) => {
                 const [label, link] = l;
                 return (
-                  <a key={link} href={link} target="blank" className="nav-link text-base" rel="noopener noreferrer">
+                  <a key={link} href={link} target="_blank" className="nav-link text-base" rel="noopener noreferrer">
                     {label} <span className="right-arrow">&#x2192;</span>
                   </a>
                 );

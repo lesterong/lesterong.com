@@ -23,10 +23,13 @@ const HeroSection = () => {
               <span className="text-gradient animate-gradient">no other</span>.
             </h1>
             <p>
-              A software engineer that speaks design. Currently, I&apos;m a final year Computer Science undergraduate at
-              the&nbsp;
-              <a className="nav-link" href="https://nus.edu.sg" target="blank" rel="noopener noreferrer">
-                National University of Singapore
+              I&apos;m a software engineer that speaks and loves design. Currently, I&apos;m building&nbsp;
+              <a className="nav-link" href="https://www.nus-digital-twin.com" target="_blank" rel="noreferrer">
+                NUS Digital Twin
+              </a>
+              &nbsp;over at&nbsp;
+              <a className="nav-link" href="https://www.citysyntax.io" target="_blank" rel="noopener noreferrer">
+                City Syntax Lab
               </a>
               .
             </p>

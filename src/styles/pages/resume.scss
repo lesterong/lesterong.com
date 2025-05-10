@@ -10,10 +10,4 @@
   ul {
     @apply ml-4 list-disc;
   }
-
-  .resume__experience {
-    > div {
-      @apply mb-4;
-    }
-  }
 }

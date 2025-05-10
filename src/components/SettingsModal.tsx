@@ -94,7 +94,7 @@ const SettingsModal = ({
                   The source code for this website can be found on{' '}
                   <a
                     className="nav-link"
-                    target="blank"
+                    target="_blank"
                     href="https://github.com/lesterong/lesterong.com"
                     rel="noopener noreferrer"
                   >
