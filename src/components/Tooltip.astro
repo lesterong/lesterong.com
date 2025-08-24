@@ -1,0 +1,18 @@
+---
+type Props = {
+  triggerText: string;
+  tooltipText: string;
+};
+
+const { triggerText, tooltipText } = Astro.props;
+---
+
+<div class="tooltip group relative inline-block">
+  (<span class="underline decoration-dotted underline-offset-1"
+    >{triggerText}</span
+  >)
+  <span
+    class="bg-muted/80 text-foreground invisible absolute -top-8 left-1/2 w-max -translate-x-1/2 translate-y-0 rounded-sm px-2.5 py-1 text-sm shadow backdrop-blur-md group-hover:visible sm:top-1/2 sm:left-full sm:translate-x-1.5 sm:-translate-y-1/2"
+    >{tooltipText}</span
+  >
+</div>

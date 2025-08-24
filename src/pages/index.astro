@@ -1,4 +1,5 @@
 ---
+import Tooltip from '../components/Tooltip.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -64,41 +65,61 @@ import Layout from '../layouts/Layout.astro';
     <section class="mt-32">
       <h2 class="text-3xl font-medium">Projects</h2>
       <div class="text-muted-foreground">
-        Things I've crafted over the years...
+        Things I've crafted over the years...(⭐ = favourite)
       </div>
       <ul class="mt-4 list-disc pl-4">
         <li>
-          <a href="https://nus-digital-twin.com" target="_blank" rel="noopener"
-            >NUS Digital Twin</a
-          > (Web)
+          ⭐ <a
+            href="https://nus-digital-twin.com"
+            target="_blank"
+            rel="noopener">NUS Digital Twin</a
+          >
+          <Tooltip triggerText="Web" tooltipText="Astro, React, CesiumJS" />
         </li>
         <li>
-          <a href="https://yonsei-campus.com" target="_blank" rel="noopener"
+          ⭐ <a href="https://yonsei-campus.com" target="_blank" rel="noopener"
             >Yonsei Digital Twin</a
-          > (Web)
+          >
+          <Tooltip triggerText="Web" tooltipText="Astro, React, MapboxGLJS" />
         </li>
         <li>
-          <a
+          ⭐ <a
             href="https://github.com/cs3217-2425/group-project-ah-leong-s-farm"
             target="_blank"
             rel="noopener">Ah Leong's Farm</a
-          > (iOS)
+          >
+          <Tooltip
+            triggerText="iOS"
+            tooltipText="Swift, UIKit, SpriteKit, CoreData"
+          />
         </li>
         <li>
-          <a href="https://squares.lesterong.com" target="_blank">squares</a> (Web)
+          <a href="https://squares.lesterong.com" target="_blank">squares</a>
+          <Tooltip triggerText="Web" tooltipText="NextJS, React" />
         </li>
-        <li>Peggle Clone (iOS)</li>
-        <li>OmniCAT (Web)</li>
+        <li>
+          Peggle Clone <Tooltip
+            triggerText="iOS"
+            tooltipText="Swift, SwiftUI, SwiftData"
+          />
+        </li>
+        <li>
+          OmniCAT <Tooltip
+            triggerText="Web"
+            tooltipText="NextJS, React, ThreeJS, Django"
+          />
+        </li>
         <li>
           <a href="https://good-bi.vercel.app/" target="_blank" rel="noopener"
             >GoodBI</a
-          > (Web)
+          >
+          <Tooltip triggerText="Web" tooltipText="NextJS, React, FastAPI" />
         </li>
         <li>
           <a href="https://seaclimatenpos.org/" target="_blank" rel="noopener"
             >seaclimatenpos.org</a
           >
-          (Web)
+          <Tooltip triggerText="Web" tooltipText="JS Web Components" />
         </li>
         <li>
           <a
@@ -106,27 +127,56 @@ import Layout from '../layouts/Layout.astro';
             target="_blank"
             rel="noopener">capitalsofthefuture.org</a
           >
-          (Web)
+          <Tooltip triggerText="Web" tooltipText="Astro, React, TinaCMS" />
         </li>
         <li>
           <a href="https://civictechlab.org" target="_blank" rel="noopener"
             >civictechlab.org</a
           >
-          (Web)
+          <Tooltip
+            triggerText="Web"
+            tooltipText="Astro, React, Bootstrap, TinaCMS"
+          />
         </li>
-        <li>Taskority (Web)</li>
-        <li>NUS FAQ (Web)</li>
-        <li>bayuhao.org (Web)</li>
-        <li>NUScheduler (Desktop)</li>
-        <li>John Chatbot (Desktop)</li>
+        <li>
+          Taskority <Tooltip
+            triggerText="Web"
+            tooltipText="React, Ruby on Rails"
+          />
+        </li>
+        <li>
+          NUS FAQ <Tooltip
+            triggerText="Web"
+            tooltipText="React, Firebase RT DB"
+          />
+        </li>
+        <li>
+          bayuhao.org <Tooltip triggerText="Web" tooltipText="Astro" />
+        </li>
+        <li>
+          NUScheduler <Tooltip
+            triggerText="Desktop"
+            tooltipText="Java, JavaFX"
+          />
+        </li>
+        <li>
+          John Chatbot <Tooltip
+            triggerText="Desktop"
+            tooltipText="Java, JavaFX"
+          />
+        </li>
       </ul>
 
       <div class="text-muted-foreground mt-12">
         ...and the ones I only worked on design.
       </div>
       <ul class="mt-4 list-disc pl-4">
-        <li>InternTwine</li>
-        <li>Dine Inn</li>
+        <li>
+          InternTwine <Tooltip triggerText="Desktop" tooltipText="Figma" />
+        </li>
+        <li>
+          Dine Inn <Tooltip triggerText="Mobile, Desktop" tooltipText="Figma" />
+        </li>
       </ul>
     </section>
 
