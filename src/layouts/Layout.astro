@@ -1,0 +1,31 @@
+---
+import { Font } from "astro:assets";
+
+import "../styles/global.css";
+
+const description = "Lester Ong - Software Engineer and Designer";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logo512.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Lester Ong" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo512.png" />
+    <title>Lester Ong</title>
+  </head>
+  <Font cssVariable="--font-figtree" preload />
+  <Font cssVariable="--font-playfair-display" preload />
+  <Font cssVariable="--font-jetbrains-mono" preload />
+  <body class="text-foreground bg-background">
+    <slot />
+  </body>
+</html>

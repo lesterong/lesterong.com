@@ -1,196 +1,127 @@
 ---
-import { Font } from "astro:assets";
-
-const description = "Lester Ong - Software Engineer and Designer";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/logo512.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Lester Ong" />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/logo512.png" />
-    <title>Lester Ong</title>
-  </head>
-  <Font cssVariable="--font-figtree" preload />
-  <style>
-    :root {
-      --background: #f5f5f5;
-      --foreground: #212121;
-      --link: #0066ff;
-    }
+<Layout>
+  <main class="px-6 sm:px-12 py-8 max-w-3xl">
+    <section>
+      <h1 class="font-semibold text-xl">lesterong</h1>
+      <div class="text-muted-foreground -mt-0.5">/ design + engineering</div>
+    </section>
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #090909;
-        --foreground: #dddddd;
-        --link: #458fff;
-      }
-    }
+    <section
+      class="text-5xl sm:text-6xl max-w-xl h-[calc(100dvh-50px-32px)] flex items-center"
+    >
+      <div>
+        I
+        <span class="text-[#0097AB] italic font-serif">design</span>
+        and
+        <span class="text-[#4447FF] font-mono">develop</span>
+        digital experiences you'll love.
+        <span class="text-lg">(well, hopefully)</span>
+      </div>
+    </section>
 
-    body {
-      font-family: var(--font-figtree);
-      display: grid;
-      place-content: center;
-      height: 100svh;
-      text-align: center;
-      background-color: var(--background);
-      color: var(--foreground);
-      max-width: 628px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
+    <section class="max-w-lg text-lg mt-12">
+      <h2 class="sr-only">About Me</h2>
+      <div>
+        I'm Lester, a software engineer based in Singapore. My main interests
+        encompasses front-end software engineering, animations and
+        human-computer interaction. I find joy in crafting delightful user
+        interfaces that users love.
+      </div>
+      <div class="mt-6">
+        I first picked up web development in 2020 when I discovered 
+        <a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a>.
+        Since then, I've worked on many projects spanning multiple
+        domains, including architecture and e-commerce. In 2025, I earned my
+        B.Comp in Computer Science from the National University of Singapore.
+      </div>
+      <div class="mt-6">
+        You can more of my work below or on my 
+        <a href="https://github.com/lesterong" target="_blank" rel="noopener">GitHub</a>. You can also reach me on
+        <a href="https://linkedin.com/in/lesterongpc" target="_blank" rel="noopener">LinkedIn</a> or via
+        <a href="mailto:lesterong776@gmail.com">email</a>.
+      </div>
+    </section>
 
-    h1 {
-      font-size: 1.75rem;
-      font-weight: 600;
-    }
+    <section class="mt-32">
+      <h2 class="font-medium text-3xl">Projects</h2>
+      <div class="text-muted-foreground">Things I've crafted over the years...</div>
+      <ul class="list-disc pl-4 mt-4">
+        <li>
+          <a href="https://nus-digital-twin.com" target="_blank" rel="noopener">NUS Digital Twin</a> (Web)
+        </li>
+        <li>
+          <a href="https://yonsei-campus.com" target="_blank" rel="noopener">Yonsei Digital Twin</a> (Web)
+        </li>
+        <li>
+          <a href="https://github.com/cs3217-2425/group-project-ah-leong-s-farm" target="_blank" rel="noopener">Ah Leong's Farm</a> (iOS)
+        </li>
+        <li>
+          <a href="https://squares.lesterong.com" target="_blank">squares</a> (Web)
+        </li>
+        <li>
+          Peggle Clone (iOS)
+        </li>
+        <li>
+          OmniCAT (Web)
+        </li>
+        <li>
+          <a href="https://good-bi.vercel.app/" target="_blank" rel="noopener">GoodBI</a> (Web)
+        </li>
+        <li>
+          <a href="https://seaclimatenpos.org/" target="_blank" rel="noopener">seaclimatenpos.org</a> (Web)
+        </li>
+        <li>
+          <a href="https://capitalsofthefuture.org" target="_blank" rel="noopener">
+            capitalsofthefuture.org
+          </a> (Web)
+        </li>
+        <li>
+          <a href="https://civictechlab.org" target="_blank" rel="noopener">
+            civictechlab.org
+          </a> (Web)
+        </li>
+        <li>
+          Taskority (Web)
+        </li>
+        <li>
+          NUS FAQ (Web)
+        </li>
+        <li>
+          bayuhao.org (Web)
+        </li>
+        <li>
+          NUScheduler (Desktop)
+        </li>
+        <li>
+          John Chatbot (Desktop)
+        </li>
+      </ul>
 
-    h2 {
-      font-size: 1.375rem;
-    }
+       <div class="text-muted-foreground mt-12">...and the ones I only worked on design.</div>
+       <ul class="list-disc pl-4 mt-4">
+        <li>InternTwine</li>
+        <li>Dine Inn</li>
+       </ul>
+    </section>
 
-    h2:not(:first-of-type) {
-      margin-top: 2.25rem;
-    }
+    <section class="mt-32">
+      <h2 class="font-medium text-3xl">Tools</h2>
+      <div class="text-muted-foreground">The tools I love and use daily.</div>
+      <ul class="list-disc pl-4 mt-4">
+        <li>Notion <span class="text-muted-foreground">(to-do lists and note-taking)</span></li>
+        <li>Jetbrains IDEs <span class="text-muted-foreground">(any, really)</span></li>
+        <li>Figma <span class="text-muted-foreground">(design work)</span></li>
+        <li>Arc Browser <span class="text-muted-foreground">(RIP, my browser of choice)</span></li>
+        <li>Macbook Air M1, 2020</li>
+        <li>MX Anywhere 3S <span class="text-muted-foreground">(when the trackpad hurts my fingers)</span></li>
+      </ul>
+    </section>
 
-    .link-container {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: var(--link);
-    }
-
-    a:hover {
-      opacity: 0.8;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.875rem;
-      opacity: 0.5;
-      margin-bottom: 1rem;
-    }
-  </style>
-  <body>
-    <h1>
-      lesterong <span style="opacity: 0.3;">/</span> design + engineering
-    </h1>
-    <h2>About</h2>
-    <div>
-      I’m Lester, a software engineer based in Singapore. My main interests
-      encompasses front-end software engineering, animations and human-computer
-      interaction. I find joy in crafting delightful user interfaces that users
-      love.
-    </div>
-    <div>
-      I first picked up web development in 2020 when I discovered The Odin
-      Project. Since then, I’ve worked on many projects spanning multiple
-      domains, including architecture and e-commerce. In 2025, I earned my
-      B.Comp in Computer Science from the National University of Singapore.
-    </div>
-    <h2>Work</h2>
-    <div class="link-container">
-      <a target="_blank" href="https://yonsei-campus.com" rel="noreferrer">
-        Yonsei Digital Twin
-      </a>
-      <a
-        target="_blank"
-        href="https://www.nus-digital-twin.com"
-        rel="noreferrer"
-      >
-        NUS Digital Twin
-      </a>
-      <a
-        target="_blank"
-        href="https://github.com/cs3217-2425/group-project-ah-leong-s-farm"
-        rel="noreferrer"
-      >
-        Ah Leong's Farm
-      </a>
-      <a target="_blank" href="https://squares.lesterong.com" rel="noreferrer">
-        squares
-      </a>
-      <span>Peggle</span>
-      <span>OmniCAT</span>
-      <a target="_blank" href="https://good-bi.vercel.app" rel="noreferrer">
-        GoodBI
-      </a>
-      <span>InternTwine</span>
-      <a target="_blank" href="https://civictechlab.org" rel="noreferrer">
-        civictechlab.org
-      </a>
-      <a target="_blank" href="https://seaclimatenpos.org" rel="noreferrer">
-        seaclimatenpos.org
-      </a>
-      <a
-        target="_blank"
-        href="https://capitalsofthefuture.org"
-        rel="noreferrer"
-      >
-        capitalsofthefuture.org
-      </a>
-      <a target="_blank" href="https://bayuhao.org" rel="noreferrer">
-        bayuhao.org
-      </a>
-      <a
-        target="_blank"
-        href="https://github.com/AY2223S1-CS2103T-T17-3/tp"
-        rel="noreferrer"
-      >
-        NUScheduler
-      </a>
-      <a
-        target="_blank"
-        href="https://github.com/lesterong/ip"
-        rel="noreferrer"
-      >
-        John Chatbot
-      </a>
-      <a target="_blank" href="https://nusfaq.netlify.app" rel="noreferrer">
-        NUS FAQ
-      </a>
-      <a
-        target="_blank"
-        href="https://github.com/lesterong/taskority"
-        rel="noreferrer"
-      >
-        Taskority
-      </a>
-    </div>
-    <h2>Connect</h2>
-    <div class="link-container">
-      <a target="_blank" href="https://github.com/lesterong" rel="noreferrer">
-        GitHub
-      </a>
-      <a
-        target="_blank"
-        href="https://linkedin.com/in/lesterongpc"
-        rel="noreferrer"
-      >
-        LinkedIn
-      </a>
-      <a target="_blank" href="mailto:lesterong776@gmail.com"> Email </a>
-    </div>
-    <footer>&copy; lesterong.com, {new Date().getFullYear()}.</footer>
-  </body>
-</html>
+    <footer class="text-sm text-muted-foreground mt-32">
+      &copy; lesterong.com, 2019 - {new Date().getFullYear()} 
+    </footer>
+  </main>
+</Layout>
