@@ -1,7 +1,7 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders } from 'astro/config';
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,21 +9,21 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.fontsource(),
-        name: "Figtree",
-        cssVariable: "--font-figtree",
-        weights: ["100 900"],
+        name: 'Figtree',
+        cssVariable: '--font-figtree',
+        weights: ['100 900'],
       },
       {
         provider: fontProviders.fontsource(),
-        name: "JetBrains Mono",
-        cssVariable: "--font-jetbrains-mono",
-        weights: ["100 900"],
+        name: 'JetBrains Mono',
+        cssVariable: '--font-jetbrains-mono',
+        weights: ['100 900'],
       },
       {
         provider: fontProviders.fontsource(),
-        name: "Playfair Display",
-        cssVariable: "--font-playfair-display",
-        weights: ["100 900"],
+        name: 'Playfair Display',
+        cssVariable: '--font-playfair-display',
+        weights: ['100 900'],
       },
     ],
   },
