@@ -63,5 +63,5 @@
 }
 
 a {
-  @apply underline underline-offset-2 hover:text-muted-foreground;
+  @apply hover:text-muted-foreground underline underline-offset-2;
 }

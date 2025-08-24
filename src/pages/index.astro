@@ -4,26 +4,26 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <div
-    class="absolute top-0 -z-10 h-screen w-screen bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    class="bg-background absolute top-0 -z-10 h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
   >
   </div>
-  <main class="px-6 sm:px-12 py-8 max-w-3xl">
+  <main class="max-w-3xl px-6 py-8 sm:px-12">
     <section>
-      <h1 class="font-semibold text-xl">lesterong</h1>
+      <h1 class="text-xl font-semibold">lesterong</h1>
       <div class="text-muted-foreground -mt-0.5">/ design + engineering</div>
     </section>
 
     <section
-      class="text-5xl sm:text-6xl max-w-xl h-[calc(100dvh-50px-32px)] flex items-center"
+      class="flex h-[calc(100dvh-50px-32px)] max-w-xl items-center text-5xl sm:text-6xl"
     >
       <div>
         I
-        <span class="text-[#0097AB] dark:text-[#00C6E0] italic font-serif"
+        <span class="font-serif text-[#0097AB] italic dark:text-[#00C6E0]"
           >design</span
         >
         and
         <span
-          class="text-[#4447FF] dark:text-[#8082FF] tracking-tighter font-mono"
+          class="font-mono tracking-tighter text-[#4447FF] dark:text-[#8082FF]"
           >develop</span
         >
         digital experiences you'll love.
@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <section class="max-w-lg text-lg mt-12 leading-relaxed">
+    <section class="mt-12 max-w-lg text-lg leading-relaxed">
       <h2 class="sr-only">About Me</h2>
       <div>
         I'm Lester, a software engineer based in Singapore. My main interests
@@ -62,11 +62,11 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section class="mt-32">
-      <h2 class="font-medium text-3xl">Projects</h2>
+      <h2 class="text-3xl font-medium">Projects</h2>
       <div class="text-muted-foreground">
         Things I've crafted over the years...
       </div>
-      <ul class="list-disc pl-4 mt-4">
+      <ul class="mt-4 list-disc pl-4">
         <li>
           <a href="https://nus-digital-twin.com" target="_blank" rel="noopener"
             >NUS Digital Twin</a
@@ -126,16 +126,16 @@ import Layout from '../layouts/Layout.astro';
       <div class="text-muted-foreground mt-12">
         ...and the ones I only worked on design.
       </div>
-      <ul class="list-disc pl-4 mt-4">
+      <ul class="mt-4 list-disc pl-4">
         <li>InternTwine</li>
         <li>Dine Inn</li>
       </ul>
     </section>
 
     <section class="mt-32">
-      <h2 class="font-medium text-3xl">Tools</h2>
+      <h2 class="text-3xl font-medium">Tools</h2>
       <div class="text-muted-foreground">The tools I love and use daily.</div>
-      <ul class="list-disc pl-4 mt-4">
+      <ul class="mt-4 list-disc pl-4">
         <li>
           Notion <span class="text-muted-foreground"
             >(to-do lists and note-taking)</span
@@ -160,7 +160,7 @@ import Layout from '../layouts/Layout.astro';
       </ul>
     </section>
 
-    <footer class="text-sm text-muted-foreground mt-32">
+    <footer class="text-muted-foreground mt-32 text-sm">
       &copy; lesterong.com, 2019 - {new Date().getFullYear()}
     </footer>
   </main>
