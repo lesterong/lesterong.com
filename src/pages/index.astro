@@ -1,12 +1,16 @@
 ---
 import Tooltip from '../components/Tooltip.astro';
 import Layout from '../layouts/Layout.astro';
+
+const EMAIL = 'lesterong776@gmail.com';
 ---
 
 <Layout>
-  <div
-    class="bg-background absolute top-0 -z-10 h-screen w-svw bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-  >
+  <div class="bg-background absolute top-0 -z-10 h-full w-full max-w-xl">
+    <div
+      class="absolute top-0 size-102 -translate-x-1/2 translate-y-[30%] rounded-full bg-[#0066ff]/30 opacity-50 blur-3xl dark:bg-[#0066ff]/15"
+    >
+    </div>
   </div>
   <main class="max-w-3xl px-6 py-8 sm:px-12">
     <section>
@@ -15,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section
-      class="flex h-[calc(100dvh-50px-32px)] max-w-xl items-center text-5xl sm:text-6xl"
+      class="flex h-[calc(100dvh-50px-32px)] min-h-96 max-w-xl items-center text-5xl sm:text-6xl"
     >
       <div>
         I
@@ -58,7 +62,7 @@ import Layout from '../layouts/Layout.astro';
           target="_blank"
           rel="noopener">LinkedIn</a
         > or via
-        <a href="mailto:lesterong776@gmail.com">email</a>.
+        <a href=`mailto:${EMAIL}`>email</a>.
       </div>
     </section>
 
@@ -209,7 +213,25 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <footer class="text-muted-foreground mt-32 text-sm">
-      &copy; lesterong.com, 2019 - {new Date().getFullYear()}
+      <div>
+        <a
+          href="https://github.com/lesterong"
+          rel="noopener"
+          target="_blank"
+          class="hover:text-foreground no-underline">github</a
+        > /
+        <a
+          href="https://linkedin.com/in/lesterongpc"
+          rel="noopener"
+          target="_blank"
+          class="hover:text-foreground no-underline">linkedin</a
+        > / <a href=`mailto:${EMAIL}` class="hover:text-foreground no-underline"
+          >email</a
+        >
+      </div>
+      <div class="mt-1.5">
+        &copy; lesterong.com, 2019 - {new Date().getFullYear()}
+      </div>
     </footer>
   </main>
 </Layout>

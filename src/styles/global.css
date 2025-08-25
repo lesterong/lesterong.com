@@ -62,6 +62,8 @@
   }
 }
 
-a {
-  @apply hover:text-muted-foreground underline underline-offset-2;
+@layer components {
+  a {
+    @apply hover:text-muted-foreground underline underline-offset-2;
+  }
 }
