@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Yonsei Digital Twin",
+    "link": "https://yonsei-campus.com",
+    "type": "Web",
+    "tech": ["Astro", "React", "MapboxGLJS"],
+    "isFavourite": true
+  },
+  {
+    "name": "NUS Digital Twin",
+    "link": "https://nus-digital-twin.com",
+    "type": "Web",
+    "tech": ["Astro", "React", "CesiumJS"],
+    "isFavourite": true
+  },
+  {
+    "name": "Ah Leong's Farm",
+    "link": "https://github.com/cs3217-2425/group-project-ah-leong-s-farm",
+    "type": "iOS",
+    "tech": ["Swift", "UIKit", "SpriteKit", "CoreData"],
+    "isFavourite": true
+  },
+  {
+    "name": "OmniCAT",
+    "type": "Web",
+    "tech": ["NextJS", "React", "ThreeJS", "Django"],
+    "isFavourite": true
+  },
+  {
+    "name": "Peggle Clone",
+    "type": "iOS",
+    "tech": ["Swift", "SwiftUI", "SwiftData"]
+  },
+  {
+    "name": "Hypercube",
+    "tech": ["React", "FastAPI", "Docker"],
+    "type": "Web"
+  },
+  {
+    "name": "GoodBI",
+    "link": "https://good-bi.vercel.app/",
+    "type": "Web",
+    "tech": ["NextJS", "React", "FastAPI"]
+  },
+  {
+    "name": "squares",
+    "link": "https://squares.lesterong.com",
+    "type": "Web",
+    "tech": ["NextJS", "React"]
+  },
+  {
+    "name": "civictechlab.org",
+    "link": "https://civictechlab.org",
+    "type": "Web",
+    "tech": ["Astro", "React", "Bootstrap", "TinaCMS"]
+  },
+  {
+    "name": "capitalsofthefuture.org",
+    "link": "https://capitalsofthefuture.org",
+    "type": "Web",
+    "tech": ["Astro", "React", "TinaCMS"]
+  },
+  {
+    "name": "Taskority",
+    "type": "Web",
+    "tech": ["React", "Ruby on Rails"]
+  },
+  {
+    "name": "seaclimatenpos.org",
+    "link": "https://seaclimatenpos.org",
+    "type": "Web",
+    "tech": ["JavaScript", "Bootstrap"]
+  },
+  {
+    "name": "NUS FAQ",
+    "type": "Web",
+    "tech": ["React", "Firebase RT DB"]
+  },
+  {
+    "name": "bayuhao.org",
+    "link": "https://bayuhao.org",
+    "type": "Web",
+    "tech": ["Astro"]
+  },
+  {
+    "name": "NUScheduler",
+    "type": "Desktop",
+    "tech": ["Java", "JavaFX"]
+  },
+  {
+    "name": "John Chatbot",
+    "type": "Desktop",
+    "tech": ["Java", "JavaFX"]
+  }
+]

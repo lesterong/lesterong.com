@@ -1,0 +1,22 @@
+---
+import Tooltip from './Tooltip.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'projects'>['data'][number];
+
+const { isFavourite, link, name, type, tech } = Astro.props;
+---
+
+<li>
+  {isFavourite && '⭐'}
+  {
+    link ? (
+      <a href={link} target="_blank" rel="noopener">
+        {name}
+      </a>
+    ) : (
+      <>{name}</>
+    )
+  }
+  <Tooltip triggerText={type} tooltipText={tech.join(', ')} />
+</li>

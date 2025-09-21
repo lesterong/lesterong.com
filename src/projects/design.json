@@ -1,0 +1,12 @@
+[
+  {
+    "name": "InternTwine",
+    "type": "Desktop",
+    "tech": ["Figma"]
+  },
+  {
+    "name": "Dine Inn",
+    "type": "Mobile, Desktop",
+    "tech": ["Figma"]
+  }
+]
