@@ -11,6 +11,7 @@ const { isFavourite, link, name, type, tech } = Astro.props;
   {isFavourite && '⭐'}
   {
     link ? (
+      // prettier-ignore: Prevent extra whitespace for anchor tag
       <a href={link} target="_blank" rel="noopener">
         {name}
       </a>
