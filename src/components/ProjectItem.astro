@@ -11,9 +11,8 @@ const { isFavourite, link, name, type, tech } = Astro.props;
   {isFavourite && '⭐'}
   {
     link ? (
-      <a href={link} target="_blank" rel="noopener">
-        {name}
-      </a>
+      // prettier-ignore
+      <a href={link} target="_blank" rel="noopener">{name}</a>
     ) : (
       <>{name}</>
     )
