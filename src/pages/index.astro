@@ -73,7 +73,7 @@ const designProjects = (await getEntry('projects', 'design'))?.data || [];
     <section class="mt-32">
       <h2 class="text-3xl font-medium">Projects</h2>
       <div class="text-muted-foreground">
-        Things I've crafted over the years...(⭐ = favourite)
+        Things I've crafted over the years...(⭐ favourite)
       </div>
       <ul class="mt-4 list-disc pl-4">
         {projects.map((project) => <ProjectItem {...project} />)}

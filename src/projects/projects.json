@@ -32,8 +32,8 @@
     "tech": ["Swift", "SwiftUI", "SwiftData"]
   },
   {
-    "name": "Hypercube",
-    "tech": ["React", "FastAPI", "Docker"],
+    "name": "hypercube",
+    "tech": ["React", "FastAPI", "Docker", "AWS"],
     "type": "Web"
   },
   {
