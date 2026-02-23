@@ -34,6 +34,7 @@
   {
     "name": "hypercube",
     "tech": ["React", "FastAPI", "Docker", "AWS"],
+    "link": "https://hypercube.sg",
     "type": "Web"
   },
   {
