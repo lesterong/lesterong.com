@@ -170,8 +170,13 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     const workMask = document.querySelector('[data-work-mask]');
     const workToggle = document.querySelector('[data-work-toggle]');
     const extraWorkRows = document.querySelectorAll('[data-work-extra]');
+    const projectHoverTriggers = document.querySelectorAll(
+      '[data-project-hover-trigger]',
+    );
 
     const LINK_UNDERLINE_VARIANTS = 4;
+    const PROJECT_PREVIEW_OFFSET = 20;
+    const PROJECT_PREVIEW_SIZE = 96;
     const WORK_TRANSITION_MS = 300;
     let workTransitionTimeout;
 
@@ -281,6 +286,57 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       workToggle.addEventListener('click', () => {
         const isExpanded = workToggle.getAttribute('aria-expanded') === 'true';
         setWorkExpanded(!isExpanded);
+      });
+    }
+
+    if (!reducedMotion.matches) {
+      projectHoverTriggers.forEach((trigger) => {
+        const row = trigger.closest('tr');
+        const preview = row?.querySelector('[data-project-hover-preview]');
+        const previewInner = row?.querySelector(
+          '[data-project-hover-preview-inner]',
+        );
+        let hideTimeout;
+
+        if (!preview || !previewInner) return;
+
+        document.body.append(preview);
+
+        const movePreview = (event) => {
+          const viewportPadding = 16;
+          const hasRoomOnRight =
+            event.clientX + PROJECT_PREVIEW_OFFSET + PROJECT_PREVIEW_SIZE <
+            window.innerWidth - viewportPadding;
+          const x = hasRoomOnRight
+            ? event.clientX + PROJECT_PREVIEW_OFFSET
+            : event.clientX - PROJECT_PREVIEW_OFFSET - PROJECT_PREVIEW_SIZE;
+          const y = Math.min(
+            Math.max(event.clientY, viewportPadding + PROJECT_PREVIEW_SIZE / 2),
+            window.innerHeight - viewportPadding - PROJECT_PREVIEW_SIZE / 2,
+          );
+
+          preview.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        };
+
+        trigger.addEventListener('pointerenter', (event) => {
+          window.clearTimeout(hideTimeout);
+          movePreview(event);
+          preview.classList.remove('hidden');
+          window.requestAnimationFrame(() => {
+            previewInner.style.opacity = '1';
+            previewInner.style.scale = '1';
+          });
+        });
+
+        trigger.addEventListener('pointermove', movePreview);
+
+        trigger.addEventListener('pointerleave', () => {
+          previewInner.style.opacity = '0';
+          previewInner.style.scale = '0.9';
+          hideTimeout = window.setTimeout(() => {
+            preview.classList.add('hidden');
+          }, 150);
+        });
       });
     }
 

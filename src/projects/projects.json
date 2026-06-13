@@ -4,93 +4,109 @@
     "link": "https://yonsei-campus.com",
     "type": "Web",
     "tech": ["Astro", "React", "MapboxGLJS"],
-    "isFavourite": true
+    "isFavourite": true,
+    "hoverSketch": "yonsei-digital-twin"
   },
   {
     "name": "NUS Digital Twin",
     "link": "https://nus-digital-twin.com",
     "type": "Web",
     "tech": ["Astro", "React", "CesiumJS"],
-    "isFavourite": true
+    "isFavourite": true,
+    "hoverSketch": "nus-digital-twin"
   },
   {
     "name": "Ah Leong's Farm",
     "link": "https://github.com/cs3217-2425/group-project-ah-leong-s-farm",
     "type": "iOS",
     "tech": ["Swift", "UIKit", "SpriteKit", "CoreData"],
-    "isFavourite": true
+    "isFavourite": true,
+    "hoverSketch": "ah-leongs-farm"
   },
   {
     "name": "OmniCAT",
     "type": "Web",
     "tech": ["NextJS", "React", "ThreeJS", "Django"],
-    "isFavourite": true
+    "isFavourite": true,
+    "hoverSketch": "omnicat"
   },
   {
     "name": "Peggle Clone",
     "type": "iOS",
-    "tech": ["Swift", "SwiftUI", "SwiftData"]
+    "tech": ["Swift", "SwiftUI", "SwiftData"],
+    "hoverSketch": "peggle-clone"
   },
   {
     "name": "hypercube",
     "tech": ["React", "FastAPI", "Docker", "AWS"],
     "link": "https://hypercube.sg",
-    "type": "Web"
+    "type": "Web",
+    "hoverSketch": "hypercube"
   },
   {
     "name": "GoodBI",
     "link": "https://good-bi.vercel.app/",
     "type": "Web",
-    "tech": ["NextJS", "React", "FastAPI"]
+    "tech": ["NextJS", "React", "FastAPI"],
+    "hoverSketch": "goodbi"
   },
   {
     "name": "squares",
     "link": "https://squares.lesterong.com",
     "type": "Web",
-    "tech": ["NextJS", "React"]
+    "tech": ["NextJS", "React"],
+    "hoverSketch": "squares"
   },
   {
     "name": "civictechlab.org",
     "link": "https://civictechlab.org",
     "type": "Web",
-    "tech": ["Astro", "React", "Bootstrap", "TinaCMS"]
+    "tech": ["Astro", "React", "Bootstrap", "TinaCMS"],
+    "hoverSketch": "civictechlab-org"
   },
   {
     "name": "capitalsofthefuture.org",
     "link": "https://capitalsofthefuture.org",
     "type": "Web",
-    "tech": ["Astro", "React", "TinaCMS"]
+    "tech": ["Astro", "React", "TinaCMS"],
+    "hoverSketch": "capitalsofthefuture-org"
   },
   {
     "name": "Taskority",
     "type": "Web",
-    "tech": ["React", "Ruby on Rails"]
+    "tech": ["React", "Ruby on Rails"],
+    "hoverSketch": "taskority"
   },
   {
     "name": "seaclimatenpos.org",
     "link": "https://seaclimatenpos.org",
     "type": "Web",
-    "tech": ["JavaScript", "Bootstrap"]
+    "tech": ["JavaScript", "Bootstrap"],
+    "hoverSketch": "seaclimatenpos-org"
   },
   {
     "name": "NUS FAQ",
     "type": "Web",
-    "tech": ["React", "Firebase RT DB"]
+    "tech": ["React", "Firebase RT DB"],
+    "hoverSketch": "nus-faq"
   },
   {
     "name": "bayuhao.org",
     "link": "https://bayuhao.org",
     "type": "Web",
-    "tech": ["Astro"]
+    "tech": ["Astro"],
+    "hoverSketch": "bayuhao-org"
   },
   {
     "name": "NUScheduler",
     "type": "Desktop",
-    "tech": ["Java", "JavaFX"]
+    "tech": ["Java", "JavaFX"],
+    "hoverSketch": "nuscheduler"
   },
   {
     "name": "John Chatbot",
     "type": "Desktop",
-    "tech": ["Java", "JavaFX"]
+    "tech": ["Java", "JavaFX"],
+    "hoverSketch": "john-chatbot"
   }
 ]

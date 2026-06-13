@@ -1,0 +1,241 @@
+---
+type SketchName =
+  | 'yonsei-digital-twin'
+  | 'nus-digital-twin'
+  | 'ah-leongs-farm'
+  | 'omnicat'
+  | 'peggle-clone'
+  | 'hypercube'
+  | 'goodbi'
+  | 'squares'
+  | 'civictechlab-org'
+  | 'capitalsofthefuture-org'
+  | 'taskority'
+  | 'seaclimatenpos-org'
+  | 'nus-faq'
+  | 'bayuhao-org'
+  | 'nuscheduler'
+  | 'john-chatbot';
+
+type Props = {
+  name?: SketchName;
+};
+
+const { name } = Astro.props;
+const pathClass =
+  'fill-none stroke-current stroke-[1.5] stroke-linecap-round stroke-linejoin-round';
+---
+
+{
+  name === 'yonsei-digital-twin' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M48 30c-8-8-19-10-33-8 10 7 18 13 28 27" />
+      <path class={pathClass} d="M48 30c8-8 19-10 33-8-10 7-18 13-28 27" />
+      <path
+        class={pathClass}
+        d="M20 25c8 2 16 6 24 16M76 25c-8 2-16 6-24 16M29 34c6 2 11 5 16 12M67 34c-6 2-11 5-16 12"
+      />
+      <path
+        class={pathClass}
+        d="M45 35c4-5 10-4 13 0l-6 3c5 4 6 11 3 17-2 4-5 6-7 6s-5-2-7-6c-3-6-2-13 3-17Z"
+      />
+      <path class={pathClass} d="M42 60l-6 9M48 61v10M54 60l6 9M39 70h18" />
+      <path class={pathClass} d="M39 72h18l3 13H36zM33 85h30" />
+    </svg>
+  )
+}
+{
+  name === 'nus-digital-twin' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path
+        class={pathClass}
+        d="M29 22c3-9 11-11 18-5 5-7 15-7 20 0 7-3 14 2 13 10 8 5 10 14 5 22 4 9 0 18-9 23-3 10-12 17-24 20l-2-17c-2 1-5 1-7 0l-2 17c-12-3-21-10-24-20-9-5-13-14-9-23-5-8-3-17 5-22-1-8 8-12 16-5Z"
+      />
+      <path
+        class={pathClass}
+        d="M28 35c-6-8-16-4-15 5M68 35c6-8 16-4 15 5M35 24c5 4 9 5 13 3 4 2 8 1 13-3"
+      />
+      <path
+        class={pathClass}
+        d="M29 43c5-8 16-10 25-5 8-5 18-3 23 5M31 29c-6 6-10 13-11 22M65 29c6 6 10 13 11 22"
+      />
+      <path class={pathClass} d="M35 48c2-3 6-3 8 0M53 48c2-3 6-3 8 0" />
+      <path
+        class={pathClass}
+        d="M39 56c4-5 14-5 18 0l-9 7-9-7ZM48 63v8M38 71c5 5 15 5 20 0"
+      />
+      <path
+        class={pathClass}
+        d="M33 58l-16-4M33 64l-17 2M63 58l16-4M63 64l17 2M25 78l-10 8M71 78l10 8"
+      />
+      <path
+        class={pathClass}
+        d="M34 76c-8 3-13 9-12 17M62 76c8 3 13 9 12 17M27 93h15M54 93h15M31 88l-2 6M37 88v6M59 88v6M65 88l2 6M74 67c8 3 11 9 8 15-2 4-6 6-10 5"
+      />
+    </svg>
+  )
+}
+{
+  name === 'ah-leongs-farm' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M48 78V35" />
+      <path class={pathClass} d="M47 42c-13-15-28-12-34 0 12 8 25 8 34 0Z" />
+      <path class={pathClass} d="M50 34c8-17 23-20 34-10-7 14-20 19-34 10Z" />
+      <path class={pathClass} d="M21 79c16-7 38-7 54 0" />
+      <path class={pathClass} d="M28 67c12-4 28-4 40 0" />
+    </svg>
+  )
+}
+{
+  name === 'omnicat' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M19 22h29v20H19zM19 55h29v20H19z" />
+      <path class={pathClass} d="M26 35l6-7 5 5 5-8M27 64h13M27 69h9" />
+      <path class={pathClass} d="M52 48h27v20H62L52 77z" />
+      <path class={pathClass} d="M60 58l5 5 9-11" />
+      <path class={pathClass} d="M48 32c8 3 13 9 15 16M48 65c7-3 12-8 15-17" />
+      <path class={pathClass} d="M64 21l14 25 3-12 11-5-28-8Z" />
+    </svg>
+  )
+}
+{
+  name === 'peggle-clone' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M24 74c9-8 39-8 48 0" />
+      <path
+        class={pathClass}
+        d="M48 16c13 0 24 11 24 24S61 64 48 64 24 53 24 40s11-24 24-24Z"
+      />
+      <path class={pathClass} d="M38 33c5-6 15-7 21-1" />
+      <path class={pathClass} d="M34 78c7 4 21 6 28 0" />
+    </svg>
+  )
+}
+{
+  name === 'hypercube' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M22 32h42v42H22z" />
+      <path class={pathClass} d="M34 20h42v42H34z" />
+      <path
+        class={pathClass}
+        d="M22 32l12-12M64 32l12-12M64 74l12-12M22 74l12-12"
+      />
+      <path class={pathClass} d="M34 32h30v30H34z" />
+    </svg>
+  )
+}
+{
+  name === 'goodbi' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M18 76h61" />
+      <path
+        class={pathClass}
+        d="M25 76V50h12v26M43 76V32h12v44M61 76V42h12v34"
+      />
+      <path class={pathClass} d="M23 32c9 0 16-4 23-11 9 10 17 12 29 6" />
+    </svg>
+  )
+}
+{
+  name === 'squares' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M21 21h54v54H21z" />
+      <path class={pathClass} d="M34 34h41v41H34z" />
+      <path class={pathClass} d="M21 21l13 13M75 21v13M21 75h13" />
+      <path class={pathClass} d="M47 47h16v16H47z" />
+    </svg>
+  )
+}
+{
+  name === 'civictechlab-org' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path
+        class={pathClass}
+        d="M29 15 58 22 47 33c-15-3-29 6-34 20-5 17 5 33 22 38 11 3 23 0 31-8L47 94 12 85 3 54Z"
+      />
+      <path class={pathClass} d="M73 41 81 67 57 91" />
+      <path
+        class={pathClass}
+        d="M47 33c-17-4-34 7-38 24-5 20 8 38 28 42M66 83c8-11 11-25 7-40"
+      />
+      <path
+        class={pathClass}
+        d="M39 40c12 0 22 10 22 22S51 84 39 84 17 74 17 62s10-22 22-22Z"
+      />
+      <path
+        class={pathClass}
+        d="M73 6c15 0 27 12 27 27S88 60 73 60 46 48 46 33 58 6 73 6Z"
+      />
+      <path class={pathClass} d="M55 50 64 41M60 55 69 46" />
+    </svg>
+  )
+}
+{
+  name === 'capitalsofthefuture-org' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path
+        class={pathClass}
+        d="M19 75h58M25 67h46M29 37h38M33 37v30M45 37v30M57 37v30M48 17c9 5 17 11 22 20H26c5-9 13-15 22-20Z"
+      />
+      <path class={pathClass} d="M48 17v20" />
+    </svg>
+  )
+}
+{
+  name === 'taskority' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M24 20h43l7 8v48H24z" />
+      <path class={pathClass} d="M34 43l8 8 19-21" />
+      <path class={pathClass} d="M34 64h28" />
+    </svg>
+  )
+}
+{
+  name === 'seaclimatenpos-org' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M24 66c7-31 33-45 56-38-4 26-24 45-56 38Z" />
+      <path class={pathClass} d="M24 66c17-10 33-22 49-35" />
+    </svg>
+  )
+}
+{
+  name === 'nus-faq' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M19 25h58v37H43L27 76V62h-8z" />
+      <path class={pathClass} d="M42 39c1-8 15-8 16 0 1 7-8 8-8 15" />
+      <path class={pathClass} d="M50 62h.1" />
+    </svg>
+  )
+}
+{
+  name === 'bayuhao-org' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M21 18h54v60H21z" />
+      <path class={pathClass} d="M21 31h54" />
+      <path class={pathClass} d="M42 55c0-8 12-8 12 0s-12 8-12 0Z" />
+      <path class={pathClass} d="M35 70c6-10 20-10 26 0" />
+      <path class={pathClass} d="M30 25h.1M38 25h.1" />
+    </svg>
+  )
+}
+{
+  name === 'nuscheduler' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M22 25h52v50H22zM22 39h52M35 18v14M61 18v14" />
+      <path
+        class={pathClass}
+        d="M34 50h8M48 50h8M62 50h8M34 62h8M48 62h8M62 62h8"
+      />
+    </svg>
+  )
+}
+{
+  name === 'john-chatbot' && (
+    <svg viewBox="0 0 96 96" aria-hidden="true" class="size-full">
+      <path class={pathClass} d="M25 33h46v31H56L44 76V64H25z" />
+      <path class={pathClass} d="M48 21v12M39 21h18" />
+      <path class={pathClass} d="M39 49h.1M57 49h.1" />
+      <path class={pathClass} d="M40 57c5 4 11 4 16 0" />
+    </svg>
+  )
+}

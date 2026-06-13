@@ -1,4 +1,4 @@
-import { file, glob } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const projects = defineCollection({
@@ -10,6 +10,26 @@ const projects = defineCollection({
       type: z.string(),
       tech: z.array(z.string()),
       isFavourite: z.boolean().optional(),
+      hoverSketch: z
+        .enum([
+          'yonsei-digital-twin',
+          'nus-digital-twin',
+          'ah-leongs-farm',
+          'omnicat',
+          'peggle-clone',
+          'hypercube',
+          'goodbi',
+          'squares',
+          'civictechlab-org',
+          'capitalsofthefuture-org',
+          'taskority',
+          'seaclimatenpos-org',
+          'nus-faq',
+          'bayuhao-org',
+          'nuscheduler',
+          'john-chatbot',
+        ])
+        .optional(),
     }),
   ),
 });

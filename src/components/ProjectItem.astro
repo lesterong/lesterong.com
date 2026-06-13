@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import ProjectHoverSketch from './ProjectHoverSketch.astro';
 
 type Props = CollectionEntry<'projects'>['data'][number] & {
   initiallyHidden?: boolean;
@@ -7,6 +8,7 @@ type Props = CollectionEntry<'projects'>['data'][number] & {
 
 const {
   initiallyHidden = false,
+  hoverSketch,
   isFavourite,
   link,
   name,
@@ -41,15 +43,41 @@ const meta = [type, tech.join(', ')].filter(Boolean).join(' / ');
         </svg>
       )
     }
+    {
+      hoverSketch && (
+        <div
+          data-project-hover-preview
+          class="pointer-events-none fixed top-0 left-0 z-30 hidden will-change-transform motion-reduce:hidden sm:block"
+          aria-hidden="true"
+        >
+          <div
+            data-project-hover-preview-inner
+            class="text-foreground size-24 -translate-y-1/2 scale-90 opacity-0 transition-[opacity,scale] duration-150 ease-out"
+          >
+            <ProjectHoverSketch name={hoverSketch} />
+          </div>
+        </div>
+      )
+    }
   </td>
   <td class="py-1.5 pr-4 align-baseline leading-relaxed">
     {
       link ? (
-        <a href={link} target="_blank" rel="noopener">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener"
+          data-project-hover-trigger={hoverSketch ? 'true' : undefined}
+        >
           {name}
         </a>
       ) : (
-        <span class="text-foreground">{name}</span>
+        <span
+          class="text-foreground"
+          data-project-hover-trigger={hoverSketch ? 'true' : undefined}
+        >
+          {name}
+        </span>
       )
     }
     <div class="text-muted-foreground text-sm leading-relaxed sm:hidden">
