@@ -1,13 +1,26 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-type Props = CollectionEntry<'projects'>['data'][number];
+type Props = CollectionEntry<'projects'>['data'][number] & {
+  initiallyHidden?: boolean;
+};
 
-const { isFavourite, link, name, type, tech } = Astro.props;
+const {
+  initiallyHidden = false,
+  isFavourite,
+  link,
+  name,
+  type,
+  tech,
+} = Astro.props;
 const meta = [type, tech.join(', ')].filter(Boolean).join(' / ');
 ---
 
-<tr class="grid grid-cols-[1.5rem_minmax(0,1fr)] align-baseline sm:table-row">
+<tr
+  data-work-extra={initiallyHidden ? 'true' : undefined}
+  hidden={initiallyHidden ? true : undefined}
+  class="grid grid-cols-[1.5rem_minmax(0,1fr)] align-baseline sm:table-row"
+>
   <td class="py-1.5 pr-2 align-baseline sm:w-6">
     {
       isFavourite && (

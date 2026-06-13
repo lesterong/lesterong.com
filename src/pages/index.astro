@@ -7,6 +7,23 @@ const EMAIL = 'lesterong776@gmail.com';
 
 const projects = (await getEntry('projects', 'projects'))?.data || [];
 
+let NUM_NON_FAVOURITE_TO_SHOW = 2;
+let visibleNonFavouriteCount = 0;
+const workProjects = projects.map((project) => {
+  if (project.isFavourite) {
+    return { ...project, initiallyHidden: false };
+  }
+
+  visibleNonFavouriteCount += 1;
+  return {
+    ...project,
+    initiallyHidden: visibleNonFavouriteCount > NUM_NON_FAVOURITE_TO_SHOW,
+  };
+});
+const hiddenProjectCount = workProjects.filter(
+  (project) => project.initiallyHidden,
+).length;
+
 const sectionClass = 'my-8';
 const headingClass = 'mb-1 font-light font-serif italic';
 const bodyClass = 'text-muted-foreground leading-relaxed';
@@ -25,8 +42,8 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     </div>
   </div>
 
-  <main class="relative z-10 mx-auto max-w-152 px-4 py-16 sm:px-6 sm:py-10">
-    <header class="mb-16 sm:mb-12">
+  <main class="relative z-10 mx-auto max-w-152 px-4 py-8 sm:px-6 sm:py-10">
+    <header class="mb-8 sm:mb-12">
       <h1 class="text-base font-semibold">lesterong</h1>
       <p class="text-muted-foreground -mt-0.5">/ design + engineering</p>
     </header>
@@ -72,11 +89,29 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
           <span aria-hidden="true">✧</span> favourites
         </p>
       </div>
-      <table class="block w-full border-collapse sm:table">
-        <tbody class="block sm:table-row-group">
-          {projects.map((project) => <ProjectItem {...project} />)}
-        </tbody>
-      </table>
+      <div class="relative pb-14" data-work-list>
+        <div class="work-table-mask" data-work-mask>
+          <table class="block w-full border-collapse sm:table">
+            <tbody class="block sm:table-row-group">
+              {workProjects.map((project) => <ProjectItem {...project} />)}
+            </tbody>
+          </table>
+        </div>
+        {
+          hiddenProjectCount > 0 && (
+            <button
+              type="button"
+              data-work-toggle
+              data-collapsed-label={`show ${hiddenProjectCount} more`}
+              data-expanded-label="show fewer"
+              aria-expanded="false"
+              class="text-muted-foreground hover:text-foreground absolute bottom-0 left-1/2 -translate-x-1/2 text-sm underline underline-offset-4 transition-colors"
+            >
+              show {hiddenProjectCount} more
+            </button>
+          )
+        }
+      </div>
     </section>
 
     <section class={sectionClass}>
@@ -94,7 +129,7 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       </p>
     </section>
 
-    <footer class="mt-16">
+    <footer class="mt-8 sm:mt-12">
       <p class="text-muted-foreground text-sm leading-relaxed">
         lesterong.com / 2019–{new Date().getFullYear()}
       </p>
@@ -104,6 +139,40 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
   <script is:inline>
     const orb = document.querySelector('[data-scroll-orb]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const workList = document.querySelector('[data-work-list]');
+    const workMask = document.querySelector('[data-work-mask]');
+    const workToggle = document.querySelector('[data-work-toggle]');
+    const extraWorkRows = document.querySelectorAll('[data-work-extra]');
+
+    const setWorkExpanded = (isExpanded) => {
+      extraWorkRows.forEach((row) => {
+        row.hidden = !isExpanded;
+      });
+
+      if (workMask) {
+        workMask.classList.toggle('work-table-mask', !isExpanded);
+      }
+
+      if (workList) {
+        workList.classList.toggle('pb-14', !isExpanded);
+        workList.style.paddingBottom = isExpanded ? '3.5rem' : '';
+      }
+
+      if (workToggle) {
+        workToggle.setAttribute('aria-expanded', String(isExpanded));
+        workToggle.textContent = isExpanded
+          ? workToggle.dataset.expandedLabel
+          : workToggle.dataset.collapsedLabel;
+      }
+    };
+
+    if (workToggle && extraWorkRows.length > 0) {
+      workToggle.addEventListener('click', () => {
+        const isExpanded = workToggle.getAttribute('aria-expanded') === 'true';
+        setWorkExpanded(!isExpanded);
+      });
+    }
 
     if (orb && !reducedMotion.matches) {
       let ticking = false;

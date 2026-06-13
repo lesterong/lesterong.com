@@ -39,3 +39,22 @@
     @apply text-foreground decoration-foreground/30 hover:decoration-foreground underline underline-offset-4;
   }
 }
+
+@layer components {
+  .work-table-mask {
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black calc(100% - 7rem),
+      rgb(0 0 0 / 55%) calc(100% - 3.5rem),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black calc(100% - 7rem),
+      rgb(0 0 0 / 55%) calc(100% - 3.5rem),
+      transparent 100%
+    );
+  }
+}
