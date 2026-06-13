@@ -24,6 +24,8 @@ const hiddenProjectCount = workProjects.filter(
   (project) => project.initiallyHidden,
 ).length;
 
+const revealClass =
+  'animate-[reveal_420ms_ease-out_both] [animation-delay:var(--reveal-delay,0ms)] motion-reduce:animate-none';
 const sectionClass = 'my-8';
 const headingClass = 'mb-1 font-light font-serif italic';
 const bodyClass = 'text-muted-foreground leading-relaxed';
@@ -35,32 +37,41 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     aria-hidden="true"
   >
     <div data-scroll-orb class="absolute top-0 left-1/2 will-change-transform">
-      <div
-        class="size-120 -translate-x-1/2 translate-y-[8%] rounded-full bg-[#ff66ff]/18 opacity-70 blur-3xl dark:bg-[#ff66ff]/10"
-      >
+      <div class="-translate-x-1/2 translate-y-[8%]">
+        <div
+          class="size-120 origin-center animate-[orb-entry_900ms_cubic-bezier(0.22,1,0.36,1)_both] rounded-full bg-[#ff66ff]/18 opacity-70 blur-3xl will-change-transform motion-reduce:animate-none dark:bg-[#ff66ff]/10"
+        >
+        </div>
       </div>
     </div>
   </div>
 
   <main class="relative z-10 mx-auto max-w-152 px-4 py-8 sm:px-6 sm:py-10">
-    <header class="mb-8 sm:mb-12">
+    <header class:list={[revealClass, 'mb-8']} style="--reveal-delay: 0ms">
       <h1 class="text-lg font-semibold">lesterong</h1>
     </header>
 
-    <section class={sectionClass} aria-label="Introduction">
+    <section
+      class:list={[revealClass, sectionClass, '']}
+      style="--reveal-delay: 60ms"
+      aria-label="Introduction"
+    >
       <p class={bodyClass}>
         Hey! I'm Lester. I build interfaces for the web and iOS, with an
         interest in front-end engineering, animation, and human-computer
         interaction.
       </p>
-      <p class={`${bodyClass} mt-3`}>
+      <p class:list={[bodyClass, 'mt-3']}>
         I like software that feels clear, polished, and easy to use. Most of my
         work sits somewhere between engineering and design: shaping the product,
         refining the details, and shipping the interface.
       </p>
     </section>
 
-    <section class={sectionClass}>
+    <section
+      class:list={[revealClass, sectionClass]}
+      style="--reveal-delay: 120ms"
+    >
       <h2 class={headingClass}>present</h2>
       <p class={bodyClass}>
         I currently work as an iOS engineer at a large-scale e-commerce company.
@@ -69,7 +80,10 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       </p>
     </section>
 
-    <section class={sectionClass}>
+    <section
+      class:list={[revealClass, sectionClass]}
+      style="--reveal-delay: 180ms"
+    >
       <h2 class={headingClass}>past</h2>
       <p class={bodyClass}>
         I started learning web development in 2020 through
@@ -81,7 +95,10 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       </p>
     </section>
 
-    <section class={sectionClass}>
+    <section
+      class:list={[revealClass, sectionClass]}
+      style="--reveal-delay: 240ms"
+    >
       <div class="mb-2 flex items-baseline justify-between gap-4">
         <h2 class={headingClass}>work</h2>
         <p class="text-muted-foreground text-sm leading-relaxed">
@@ -116,7 +133,10 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       </div>
     </section>
 
-    <section class={sectionClass}>
+    <section
+      class:list={[revealClass, sectionClass]}
+      style="--reveal-delay: 300ms"
+    >
       <h2 class={headingClass}>social</h2>
       <p class={bodyClass}>
         You can find me on
@@ -131,7 +151,10 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       </p>
     </section>
 
-    <footer class="mt-8 sm:mt-12">
+    <footer
+      class:list={[revealClass, 'mt-8 sm:mt-12']}
+      style="--reveal-delay: 360ms"
+    >
       <p class="text-muted-foreground text-sm leading-relaxed">
         lesterong.com / 2019–{new Date().getFullYear()} / design engineer
       </p>

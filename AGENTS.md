@@ -32,14 +32,18 @@ The site should feel restrained, calm, and editorial rather than like a typical 
 
 ## Tailwind usage
 
-- This project uses Tailwind CSS. Prefer Tailwind utilities for layout, spacing, typography, color, and responsive behavior.
+- This project uses Tailwind CSS. Prefer Tailwind utilities for layout, spacing, typography, color, responsive behavior, transitions, and animation application.
 - Keep `src/styles/global.css` small.
 - Use global CSS mainly for:
   - Tailwind imports/theme tokens
   - light/dark color variables
   - body defaults
   - shared base link styling
+  - custom `@keyframes` when Tailwind arbitrary animation utilities need them
 - Do not move most component/page styling into custom CSS unless there is a strong reason.
+- In Astro files, prefer `class:list` when composing shared class constants with local utility classes instead of template-string class concatenation.
+- For motion, keep animations subtle and snappy, and include `motion-reduce:animate-none` or an equivalent reduced-motion fallback.
+- When animating transforms, avoid putting unrelated transform responsibilities on the same element. For example, use separate nested elements for scroll movement, positioning/centering, and scale/opacity animation so one transform does not override another.
 
 ## Responsive behavior
 
