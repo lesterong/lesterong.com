@@ -89,7 +89,10 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
         </p>
       </div>
       <div class="relative pb-14" data-work-list>
-        <div class="work-table-mask" data-work-mask>
+        <div
+          class="work-table-mask overflow-hidden transition-[height] duration-300 ease-out"
+          data-work-mask
+        >
           <table class="block w-full border-collapse sm:table">
             <tbody class="block sm:table-row-group">
               {workProjects.map((project) => <ProjectItem {...project} />)}
@@ -144,13 +147,67 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     const workToggle = document.querySelector('[data-work-toggle]');
     const extraWorkRows = document.querySelectorAll('[data-work-extra]');
 
-    const setWorkExpanded = (isExpanded) => {
-      extraWorkRows.forEach((row) => {
-        row.hidden = !isExpanded;
-      });
+    const WORK_TRANSITION_MS = 300;
+    let workTransitionTimeout;
 
-      if (workMask) {
-        workMask.classList.toggle('work-table-mask', !isExpanded);
+    const setExtraRowsHidden = (isHidden) => {
+      extraWorkRows.forEach((row) => {
+        row.hidden = isHidden;
+        row.style.display = isHidden ? 'none' : '';
+      });
+    };
+
+    const syncWorkToggle = (isExpanded) => {
+      if (!workToggle) return;
+
+      workToggle.setAttribute('aria-expanded', String(isExpanded));
+      workToggle.textContent = isExpanded
+        ? workToggle.dataset.expandedLabel
+        : workToggle.dataset.collapsedLabel;
+    };
+
+    const getCollapsedWorkHeight = () => {
+      setExtraRowsHidden(true);
+      const height = workMask.scrollHeight;
+      setExtraRowsHidden(false);
+      return height;
+    };
+
+    const setWorkExpanded = (isExpanded) => {
+      syncWorkToggle(isExpanded);
+
+      if (!workMask || reducedMotion.matches) {
+        setExtraRowsHidden(!isExpanded);
+        workMask?.classList.toggle('work-table-mask', !isExpanded);
+
+        if (workList) {
+          workList.classList.toggle('pb-14', !isExpanded);
+          workList.style.paddingBottom = isExpanded ? '3.5rem' : '';
+        }
+
+        return;
+      }
+
+      window.clearTimeout(workTransitionTimeout);
+      workToggle?.setAttribute('disabled', '');
+
+      const startHeight = workMask.offsetHeight;
+
+      if (isExpanded) {
+        setExtraRowsHidden(false);
+      }
+
+      const endHeight = isExpanded
+        ? workMask.scrollHeight
+        : getCollapsedWorkHeight();
+
+      workMask.style.height = `${startHeight}px`;
+      workMask.getBoundingClientRect();
+
+      if (isExpanded) {
+        workMask.classList.remove('work-table-mask');
+      } else {
+        workMask.classList.add('work-table-mask');
       }
 
       if (workList) {
@@ -158,12 +215,33 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
         workList.style.paddingBottom = isExpanded ? '3.5rem' : '';
       }
 
-      if (workToggle) {
-        workToggle.setAttribute('aria-expanded', String(isExpanded));
-        workToggle.textContent = isExpanded
-          ? workToggle.dataset.expandedLabel
-          : workToggle.dataset.collapsedLabel;
-      }
+      const finishTransition = () => {
+        if (!isExpanded) {
+          setExtraRowsHidden(true);
+        }
+
+        workMask.classList.toggle('work-table-mask', !isExpanded);
+        workMask.style.height = '';
+        workToggle?.removeAttribute('disabled');
+        workMask.removeEventListener('transitionend', handleTransitionEnd);
+      };
+
+      const handleTransitionEnd = (event) => {
+        if (event.propertyName !== 'height') return;
+        window.clearTimeout(workTransitionTimeout);
+        finishTransition();
+      };
+
+      workMask.addEventListener('transitionend', handleTransitionEnd);
+
+      window.requestAnimationFrame(() => {
+        workMask.style.height = `${endHeight}px`;
+      });
+
+      workTransitionTimeout = window.setTimeout(
+        finishTransition,
+        WORK_TRANSITION_MS + 50,
+      );
     };
 
     if (workToggle && extraWorkRows.length > 0) {
