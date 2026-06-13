@@ -3,21 +3,33 @@ import { Font } from 'astro:assets';
 
 import '../styles/global.css';
 
-const description = 'Lester Ong - Software Engineer and Designer';
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = 'Lester Ong',
+  description = 'Lester Ong is a Singapore-based software engineer and designer focused on thoughtful web and iOS interfaces.',
+} = Astro.props;
+
+const pageTitle = title === 'Lester Ong' ? title : `${title} — Lester Ong`;
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="/logo512.png" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Lester Ong" />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/logo512.png" />
     <script
@@ -25,12 +37,14 @@ const description = 'Lester Ong - Software Engineer and Designer';
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="961bc002-6cde-462e-a0dc-4e58778b9fd9"></script>
-    <title>Lester Ong</title>
+    <title>{pageTitle}</title>
   </head>
   <Font cssVariable="--font-figtree" preload />
   <Font cssVariable="--font-playfair-display" preload />
   <Font cssVariable="--font-jetbrains-mono" preload />
-  <body class="text-foreground bg-background">
+  <body class="bg-background text-foreground min-h-svh antialiased">
     <slot />
   </body>
+
+
 </html>

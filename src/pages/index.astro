@@ -6,136 +6,126 @@ import ProjectItem from '../components/ProjectItem.astro';
 const EMAIL = 'lesterong776@gmail.com';
 
 const projects = (await getEntry('projects', 'projects'))?.data || [];
-const designProjects = (await getEntry('projects', 'design'))?.data || [];
+
+const sectionClass = 'my-8';
+const headingClass = 'mb-1 font-light font-serif italic';
+const bodyClass = 'text-muted-foreground leading-relaxed';
 ---
 
 <Layout>
-  <div class="bg-background absolute top-0 -z-10 h-full w-full max-w-xl">
-    <div
-      class="absolute top-0 size-120 -translate-x-1/2 translate-y-[20%] rounded-full bg-[#ff66ff]/30 opacity-50 blur-3xl dark:bg-[#ff66ff]/15"
-    >
+  <div
+    class="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+    aria-hidden="true"
+  >
+    <div data-scroll-orb class="absolute top-0 left-1/2 will-change-transform">
+      <div
+        class="size-120 -translate-x-1/2 translate-y-[8%] rounded-full bg-[#ff66ff]/18 opacity-70 blur-3xl dark:bg-[#ff66ff]/10"
+      >
+      </div>
     </div>
   </div>
-  <main class="mx-auto max-w-3xl px-6 py-8 sm:px-12">
-    <section>
-      <h1 class="text-xl font-semibold">lesterong</h1>
-      <div class="text-muted-foreground -mt-0.5">/ design + engineering</div>
+
+  <main class="relative z-10 mx-auto max-w-152 px-4 py-16 sm:px-6 sm:py-10">
+    <header class="mb-16 sm:mb-12">
+      <h1 class="text-base font-semibold">lesterong</h1>
+      <p class="text-muted-foreground -mt-0.5">/ design + engineering</p>
+    </header>
+
+    <section class={sectionClass} aria-label="Introduction">
+      <p class={bodyClass}>
+        Hey! I'm Lester. I build interfaces for the web and iOS, with an
+        interest in front-end engineering, animation, and human-computer
+        interaction.
+      </p>
+      <p class={`${bodyClass} mt-3`}>
+        I like software that feels clear, polished, and easy to use. Most of my
+        work sits somewhere between engineering and design: shaping the product,
+        refining the details, and shipping the interface.
+      </p>
     </section>
 
-    <section
-      class="flex h-[calc(100lvh-50px-32px)] min-h-96 max-w-xl items-center text-5xl sm:text-6xl"
-    >
-      <div>
-        I
-        <span class="font-serif text-[#0097AB] italic dark:text-[#00C6E0]"
-          >design</span
-        >
-        and
-        <span
-          class="font-mono tracking-tighter text-[#4447FF] dark:text-[#8082FF]"
-          >develop</span
-        >
-        digital experiences you'll love.
-        <span class="text-lg whitespace-nowrap">(well, hopefully)</span>
-      </div>
+    <section class={sectionClass}>
+      <h2 class={headingClass}>present</h2>
+      <p class={bodyClass}>
+        I currently work as an iOS engineer at a large-scale e-commerce company.
+        Outside of work, I'm exploring creative tools, spatial interfaces, and
+        practical ways AI can support better products.
+      </p>
     </section>
 
-    <section class="mt-12 text-lg leading-relaxed">
-      <h2 class="sr-only">About Me</h2>
-      <div>
-        I'm Lester, a software engineer based in Singapore. My main interests
-        encompasses front-end software engineering, animations and
-        human-computer interaction. I find joy in crafting delightful user
-        interfaces that users love.
-      </div>
-      <div class="mt-6">
-        I first picked up web development in 2020 when I discovered
+    <section class={sectionClass}>
+      <h2 class={headingClass}>past</h2>
+      <p class={bodyClass}>
+        I started learning web development in 2020 through
         <a href="https://www.theodinproject.com/" target="_blank" rel="noopener"
           >The Odin Project</a
-        >. Since then, I've worked on many projects spanning multiple domains,
-        including architecture and e-commerce. In 2025, I earned my B.Comp in
-        Computer Science from the National University of Singapore. Right now,
-        I'm an iOS engineer at a large-scale e-commerce company.
+        >. Since then, I've worked on projects across digital twins,
+        architecture, education technology and games. In 2025, I graduated from
+        the National University of Singapore with a B.Comp in Computer Science.
+      </p>
+    </section>
+
+    <section class={sectionClass}>
+      <div class="mb-2 flex items-baseline justify-between gap-4">
+        <h2 class={headingClass}>work</h2>
+        <p class="text-muted-foreground text-sm leading-relaxed">
+          <span aria-hidden="true">✧</span> favourites
+        </p>
       </div>
-      <div class="mt-6">
-        You can see more of my work below or on my
+      <table class="block w-full border-collapse sm:table">
+        <tbody class="block sm:table-row-group">
+          {projects.map((project) => <ProjectItem {...project} />)}
+        </tbody>
+      </table>
+    </section>
+
+    <section class={sectionClass}>
+      <h2 class={headingClass}>social</h2>
+      <p class={bodyClass}>
+        You can find me on
         <a href="https://github.com/lesterong" target="_blank" rel="noopener"
           >GitHub</a
-        >. You can also reach me on
+        >, connect on
         <a
           href="https://linkedin.com/in/lesterongpc"
           target="_blank"
           rel="noopener">LinkedIn</a
-        > or via
-        <a href=`mailto:${EMAIL}`>email</a>.
-      </div>
+        >, or <a href={`mailto:${EMAIL}`}>email</a> me.
+      </p>
     </section>
 
-    <section class="mt-32">
-      <h2 class="text-3xl font-medium">Projects</h2>
-      <div class="text-muted-foreground">
-        Things I've crafted over the years...(⭐ favourite)
-      </div>
-      <ul class="mt-4 list-disc pl-4">
-        {projects.map((project) => <ProjectItem {...project} />)}
-      </ul>
-
-      <div class="text-muted-foreground mt-12">
-        ...and the ones I only worked on design.
-      </div>
-      <ul class="mt-4 list-disc pl-4">
-        {designProjects.map((project) => <ProjectItem {...project} />)}
-      </ul>
-    </section>
-
-    <section class="mt-32">
-      <h2 class="text-3xl font-medium">Tools</h2>
-      <div class="text-muted-foreground">The tools I love and use daily.</div>
-      <ul class="mt-4 list-disc pl-4">
-        <li>
-          Notion <span class="text-muted-foreground"
-            >(project management and note-taking)</span
-          >
-        </li>
-        <li>
-          Jetbrains IDEs <span class="text-muted-foreground">(any, really)</span
-          >
-        </li>
-        <li>Figma <span class="text-muted-foreground">(design work)</span></li>
-        <li>
-          Arc Browser <span class="text-muted-foreground"
-            >(RIP, my browser of choice)</span
-          >
-        </li>
-        <li>Macbook Pro M5, 2025</li>
-        <li>
-          MX Anywhere 3S <span class="text-muted-foreground"
-            >(when the trackpad hurts my fingers)</span
-          >
-        </li>
-      </ul>
-    </section>
-
-    <footer class="text-muted-foreground mt-32 text-sm">
-      <div>
-        <a
-          href="https://github.com/lesterong"
-          rel="noopener"
-          target="_blank"
-          class="hover:text-foreground no-underline">github</a
-        > /
-        <a
-          href="https://linkedin.com/in/lesterongpc"
-          rel="noopener"
-          target="_blank"
-          class="hover:text-foreground no-underline">linkedin</a
-        > / <a href=`mailto:${EMAIL}` class="hover:text-foreground no-underline"
-          >email</a
-        >
-      </div>
-      <div class="mt-1.5">
-        &copy; lesterong.com, 2019 - {new Date().getFullYear()}
-      </div>
+    <footer class="mt-16">
+      <p class="text-muted-foreground text-sm leading-relaxed">
+        lesterong.com / 2019–{new Date().getFullYear()}
+      </p>
     </footer>
   </main>
+
+  <script is:inline>
+    const orb = document.querySelector('[data-scroll-orb]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (orb && !reducedMotion.matches) {
+      let ticking = false;
+
+      const updateOrb = () => {
+        const progress = window.scrollY;
+        const y = progress * 0.08;
+        const x = Math.sin(progress * 0.002) * 18;
+
+        orb.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        ticking = false;
+      };
+
+      const requestUpdate = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateOrb);
+          ticking = true;
+        }
+      };
+
+      updateOrb();
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+    }
+  </script>
 </Layout>

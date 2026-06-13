@@ -1,21 +1,51 @@
 ---
-import Tooltip from './Tooltip.astro';
 import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'projects'>['data'][number];
 
 const { isFavourite, link, name, type, tech } = Astro.props;
+const meta = [type, tech.join(', ')].filter(Boolean).join(' / ');
 ---
 
-<li>
-  {isFavourite && '⭐'}
-  {
-    link ? (
-      // prettier-ignore
-      <a href={link} target="_blank" rel="noopener">{name}</a>
-    ) : (
-      <>{name}</>
-    )
-  }
-  <Tooltip triggerText={type} tooltipText={tech.join(', ')} />
-</li>
+<tr class="grid grid-cols-[1.5rem_minmax(0,1fr)] align-baseline sm:table-row">
+  <td class="py-1.5 pr-2 align-baseline sm:w-6">
+    {
+      isFavourite && (
+        <svg
+          viewBox="0 0 18 18"
+          class="text-foreground/70 mt-1 size-4"
+          aria-label="Selected project"
+          role="img"
+        >
+          <path
+            d="M9.2 1.9c.6 2.4 1.4 4.4 2.5 5.2 1 .7 2.8.9 4.4 1-1.6.7-3.3 1.3-4 2.3-.9 1.1-1.4 3.1-2 5.6-.7-2.3-1.4-4.3-2.5-5.2-1-.8-2.8-1-5.1-1.2 2.1-.6 3.8-1.2 4.7-2.3.8-1 1.3-2.8 2-5.4Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.4"
+          />
+        </svg>
+      )
+    }
+  </td>
+  <td class="py-1.5 pr-4 align-baseline leading-relaxed">
+    {
+      link ? (
+        <a href={link} target="_blank" rel="noopener">
+          {name}
+        </a>
+      ) : (
+        <span class="text-foreground">{name}</span>
+      )
+    }
+    <div class="text-muted-foreground text-sm leading-relaxed sm:hidden">
+      {meta}
+    </div>
+  </td>
+  <td
+    class="text-muted-foreground hidden py-1.5 text-right align-baseline text-sm leading-relaxed sm:table-cell"
+  >
+    {meta}
+  </td>
+</tr>
