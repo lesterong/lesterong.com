@@ -165,13 +165,23 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     const orb = document.querySelector('[data-scroll-orb]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+    const links = document.querySelectorAll('a');
     const workList = document.querySelector('[data-work-list]');
     const workMask = document.querySelector('[data-work-mask]');
     const workToggle = document.querySelector('[data-work-toggle]');
     const extraWorkRows = document.querySelectorAll('[data-work-extra]');
 
+    const LINK_UNDERLINE_VARIANTS = 4;
     const WORK_TRANSITION_MS = 300;
     let workTransitionTimeout;
+
+    links.forEach((link) => {
+      const variant = Math.floor(Math.random() * LINK_UNDERLINE_VARIANTS) + 1;
+      link.style.setProperty(
+        '--link-underline',
+        `var(--link-underline-${variant})`,
+      );
+    });
 
     const setExtraRowsHidden = (isHidden) => {
       extraWorkRows.forEach((row) => {
