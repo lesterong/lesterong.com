@@ -179,6 +179,8 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
     const PROJECT_PREVIEW_SIZE = 96;
     const WORK_TRANSITION_MS = 300;
     let workTransitionTimeout;
+    let workTransitionFrame;
+    let workAnimation;
 
     links.forEach((link) => {
       const variant = Math.floor(Math.random() * LINK_UNDERLINE_VARIANTS) + 1;
@@ -227,6 +229,9 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       }
 
       window.clearTimeout(workTransitionTimeout);
+      window.cancelAnimationFrame(workTransitionFrame);
+      workAnimation?.cancel();
+      workAnimation = undefined;
       workToggle?.setAttribute('disabled', '');
 
       const startHeight = workMask.offsetHeight;
@@ -254,10 +259,16 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
       }
 
       const finishTransition = () => {
+        if (!workToggle?.hasAttribute('disabled')) return;
+
+        window.clearTimeout(workTransitionTimeout);
+
         if (!isExpanded) {
           setExtraRowsHidden(true);
         }
 
+        window.cancelAnimationFrame(workTransitionFrame);
+        workAnimation = undefined;
         workMask.classList.toggle('work-table-mask', !isExpanded);
         workMask.style.height = '';
         workToggle?.removeAttribute('disabled');
@@ -270,10 +281,31 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
         finishTransition();
       };
 
+      if (workMask.animate) {
+        workAnimation = workMask.animate(
+          [{ height: `${startHeight}px` }, { height: `${endHeight}px` }],
+          {
+            duration: WORK_TRANSITION_MS,
+            easing: 'ease-out',
+          },
+        );
+        workMask.style.height = `${endHeight}px`;
+        workAnimation.addEventListener('finish', finishTransition, {
+          once: true,
+        });
+        workTransitionTimeout = window.setTimeout(
+          finishTransition,
+          WORK_TRANSITION_MS + 50,
+        );
+        return;
+      }
+
       workMask.addEventListener('transitionend', handleTransitionEnd);
 
-      window.requestAnimationFrame(() => {
-        workMask.style.height = `${endHeight}px`;
+      workTransitionFrame = window.requestAnimationFrame(() => {
+        workTransitionFrame = window.requestAnimationFrame(() => {
+          workMask.style.height = `${endHeight}px`;
+        });
       });
 
       workTransitionTimeout = window.setTimeout(
