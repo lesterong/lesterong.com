@@ -119,3 +119,8 @@
     transform: scale(1);
   }
 }
+
+:root:not(.is-ready) [style*='--reveal-delay'] {
+  opacity: 0;
+  animation: none !important;
+}

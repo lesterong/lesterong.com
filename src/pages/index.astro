@@ -164,6 +164,12 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
   </main>
 
   <script is:inline>
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add('is-ready');
+      });
+    });
+
     const orb = document.querySelector('[data-scroll-orb]');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
