@@ -32,6 +32,16 @@ const pageTitle = title === 'Lester Ong' ? title : `${title} — Lester Ong`;
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/logo512.png" />
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches;
+      const isDark = storedTheme ? storedTheme === 'dark' : prefersDark;
+
+      document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+      document.documentElement.classList.toggle('dark', isDark);
+    </script>
     <script
       is:inline
       defer
