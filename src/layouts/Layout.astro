@@ -52,7 +52,9 @@ const pageTitle = title === 'Lester Ong' ? title : `${title} — Lester Ong`;
   <Font cssVariable="--font-figtree" preload />
   <Font cssVariable="--font-playfair-display" preload />
   <Font cssVariable="--font-jetbrains-mono" preload />
-  <body class="bg-background text-foreground min-h-svh antialiased">
+  <body
+    class="bg-background text-foreground min-h-svh antialiased transition-[background-color] duration-300 ease-out motion-reduce:transition-none"
+  >
     <slot />
   </body>
 

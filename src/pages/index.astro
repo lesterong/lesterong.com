@@ -286,11 +286,54 @@ const bodyClass = 'text-muted-foreground leading-relaxed';
 
     setTheme(getPreferredTheme());
 
-    themeToggle?.addEventListener('click', () => {
+    themeToggle?.addEventListener('click', async (event) => {
       const nextTheme =
         document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      const canRevealTheme =
+        'startViewTransition' in document && !reducedMotion.matches;
+
       localStorage.setItem('theme', nextTheme);
-      setTheme(nextTheme);
+
+      if (!canRevealTheme) {
+        setTheme(nextTheme);
+        return;
+      }
+
+      const buttonRect = themeToggle.getBoundingClientRect();
+      const originX = event.clientX || buttonRect.left + buttonRect.width / 2;
+      const originY = event.clientY || buttonRect.top + buttonRect.height / 2;
+      const endRadius = Math.hypot(
+        Math.max(originX, window.innerWidth - originX),
+        Math.max(originY, window.innerHeight - originY),
+      );
+
+      document.documentElement.classList.add('is-theme-revealing');
+
+      const transition = document.startViewTransition(() => {
+        setTheme(nextTheme);
+      });
+
+      await transition.ready;
+
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${originX}px ${originY}px)`,
+            `circle(${endRadius}px at ${originX}px ${originY}px)`,
+          ],
+        },
+        {
+          duration: 600,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          pseudoElement: '::view-transition-new(root)',
+        },
+      );
+
+      try {
+        await transition.finished;
+      } finally {
+        document.documentElement.classList.remove('is-theme-revealing');
+      }
     });
 
     links.forEach((link) => {
